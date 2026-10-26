@@ -177,6 +177,7 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
     private TextView greeting;
     private View clockBlock;
     private View btnInputs;
+    private GradientDrawable inputConnectedDot;
     /** config show_inputs_pill: false keeps the Inputs pill hidden even when the TV has inputs. */
     private boolean showInputsPill = true;
     private TextView btnWifi;
@@ -333,6 +334,10 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
 
         @Override
         public void onInputRemoved(String inputId) {
+            updateInputsButton();
+        }
+        @Override
+        public void onInputStateChanged(String inputId, int state) {
             updateInputsButton();
         }
     };
@@ -738,6 +743,18 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
         }
 
         btnInputs = findViewById(R.id.btnInputs);
+        inputConnectedDot = new GradientDrawable();
+        inputConnectedDot.setShape(GradientDrawable.OVAL);
+        inputConnectedDot.setColor(0xFF30C759);
+        inputConnectedDot.setStroke(Math.max(1, Math.round(density)), 0xFF203029);
+        inputConnectedDot.setAlpha(0);
+        btnInputs.getOverlay().add(inputConnectedDot);
+        btnInputs.addOnLayoutChangeListener((v, l, t, r, b, ol, ot, or, ob) -> {
+            int size = Math.round(7 * density);
+            int inset = Math.round(3 * density);
+            inputConnectedDot.setBounds(v.getWidth() - inset - size, inset,
+                    v.getWidth() - inset, inset + size);
+        });
         View btnMusic = findViewById(R.id.btnMusic);
         btnMusic.setVisibility(SpotifyPlayback.isAvailable(this) ? View.VISIBLE : View.GONE);
         btnMusic.setOnClickListener(v -> SpotifyPlayback.play(this));
@@ -2957,16 +2974,21 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
         boolean any = liveTvIntent() != null || !sourcePanelService.isEmpty()
                 || (coocaaSources && !CoocaaSources.list(this).isEmpty());
         TvInputManager tim = (TvInputManager) getSystemService(TV_INPUT_SERVICE);
-        if (!any && tim != null) {
+        boolean connected = false;
+        if (tim != null) {
             for (TvInputInfo info : tim.getTvInputList()) {
                 // Inputs hidden in Settings > Inputs are left out of the menu, so they don't count here either.
                 if (info.isPassthroughInput() && !info.isHidden(this)) {
                     any = true;
-                    break;
+                    Integer mapped = mappedSource(info.getId());
+                    if ((mapped == null || mapped != -1)
+                            && tim.getInputState(info.getId()) == TvInputManager.INPUT_STATE_CONNECTED)
+                        connected = true;
                 }
             }
         }
         btnInputs.setVisibility(any ? View.VISIBLE : View.GONE);
+        if (inputConnectedDot != null) inputConnectedDot.setAlpha(connected ? 255 : 0);
     }
 
     /** boot_to_live_tv, or the Open on start app: the first time Home comes up after the TV starts, open that app

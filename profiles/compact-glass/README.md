@@ -84,6 +84,8 @@ The clock is 30% smaller with a short date underneath. Pass `-DisableScreensaver
 
 The More window shows the currently displayed wallpaper's photographer, licence, and Wikimedia source URL below its apps. Home stays free of attribution text. See `CREDITS.md` and `wallpapers.sources.json` for the complete reusable collection metadata.
 
+Inputs sorts connected HDMI sources first. A small green dot at the Inputs button's upper-right corner appears whenever Android reports a visible external source connected, and updates on connection changes.
+
 Edit `dock_apps` in `config.json` to change the chosen app order, with the PS5 package at position five when that tile is used. The saved order is explicit; usage history from one TV is not copied to other TVs. App package names in the hidden/More lists must be reviewed on each destination device. Change the wallpaper collection in this folder to change the backgrounds; source/license metadata stays in the repository and need not appear on Home.
 
 Reapply the profile with `tools/theme.ps1 -TvHost '<tv-ip>:<connection-port>' -Theme profiles/compact-glass`. Reset the theme with the same script and `-Reset`. To return Home to the stock launcher, choose it in the TV's default-app settings; this installer leaves it enabled. It does not restore a previously installed APK version or remove the optional shortcut. Use Android Settings to manage an app you no longer want.
