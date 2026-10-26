@@ -8,7 +8,8 @@ param(
     [string]$Ps5InputId = '',
     [ValidatePattern('^$|^[A-Za-z][A-Za-z0-9_]*(\.[A-Za-z][A-Za-z0-9_]*)+$')]
     [string]$Ps5TvPackage = '',
-    [switch]$DisableScreensaver
+    [switch]$DisableScreensaver,
+    [switch]$EnableNowPlaying
 )
 
 $ErrorActionPreference = 'Stop'
@@ -172,6 +173,12 @@ try {
     }
     Assert-LauncherVisible
     $homeFinal = Get-HomeComponent
+    if ($EnableNowPlaying) {
+        Invoke-Tv 'cmd notification allow_listener com.gathin.tvhome/.NowPlayingAccess' | Out-Null
+        & $python -I (Join-Path $repoDir 'tools/theme_restart.py')
+        if ($LASTEXITCODE -ne 0) { throw 'Could not restart Home after enabling media access.' }
+        Write-Host 'Enabled local media-session access for the Now playing badge.'
+    }
     $report = [ordered]@{
         profile = 'compact-glass'
         installedAtUtc = (Get-Date).ToUniversalTime().ToString('o')
@@ -183,6 +190,7 @@ try {
         profileConfigSha256 = (Get-FileHash -Algorithm SHA256 -LiteralPath (Join-Path $profileDir 'config.json')).Hash
         ps5ShortcutInstalled = [bool]$Ps5InputId
         screensaverDisabled = [bool]$DisableScreensaver
+        nowPlayingAccessEnabled = [bool]$EnableNowPlaying
         packagesDisabledByThisScript = @()
     }
     if ($Ps5InputId) { $report.ps5ApkSha256 = (Get-FileHash -Algorithm SHA256 -LiteralPath $shortcutApk).Hash }

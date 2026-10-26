@@ -16,6 +16,7 @@
     <bool name="glass_all_rows">true</bool>
     <bool name="compact_home_tiles">true</bool>
     <bool name="compact_home_clock">true</bool>
+    <bool name="brief_wallpaper_location">true</bool>
     <bool name="outline_app_focus">true</bool>
     <bool name="show_dock_down_hint">true</bool>
     <bool name="inputs_active_first">true</bool>

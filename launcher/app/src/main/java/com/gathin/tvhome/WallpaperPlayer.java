@@ -56,6 +56,8 @@ final class WallpaperPlayer {
     /** wallpaper_captions: the shown picture's name from wallpapers/captions.txt; null when off or there are none. */
     private final TextView caption;
     private final Map<String, String> names;
+    private final boolean briefCaption;
+    private final Runnable hideLocation = this::hideLocation;
     /** Photo attribution shown only in More, keyed by the wallpaper's local filename. */
     private final Map<String, String> sources = new HashMap<>();
     /** wallpaper_moods: the collection's groups by time of day; empty rotates through all of it. */
@@ -98,9 +100,16 @@ final class WallpaperPlayer {
             String credit = entry.substring(split + 1).trim();
             if (!file.isEmpty() && !credit.isEmpty()) sources.put(file, credit);
         }
-        names = config.wallpaperCaptions && config.wallpaperEnabled && !files.isEmpty()
+        briefCaption = context.getResources().getBoolean(R.bool.brief_wallpaper_location);
+        names = briefCaption ? new HashMap<>() : config.wallpaperCaptions && config.wallpaperEnabled && !files.isEmpty()
                 ? WallpaperCaptions.read(files.get(0).getParentFile()) : Collections.emptyMap();
-        caption = names.isEmpty() ? null : makeCaption(context, root);
+        if (briefCaption) {
+            for (String entry : context.getResources().getStringArray(R.array.wallpaper_locations)) {
+                int split = entry.indexOf('=');
+                if (split > 0) names.put(entry.substring(0, split), entry.substring(split + 1));
+            }
+        }
+        caption = names.isEmpty() ? null : makeCaption(context, root, briefCaption);
         if (config.wallpaperEnabled && !files.isEmpty()) {
             root.addView(image, 0, new FrameLayout.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
@@ -140,11 +149,14 @@ final class WallpaperPlayer {
 
     void start() {
         active = true;
+        if (briefCaption) showCaption(false);
         update();
     }
 
     void stop() {
         active = false;
+        root.removeCallbacks(hideLocation);
+        if (briefCaption && caption != null) { caption.animate().cancel(); caption.setAlpha(0f); }
     }
 
     String sourceCredit() {
@@ -175,6 +187,7 @@ final class WallpaperPlayer {
     }
 
     void close() {
+        root.removeCallbacks(hideLocation);
         active = false;
         closed = true;
         decoder.shutdownNow();
@@ -222,10 +235,10 @@ final class WallpaperPlayer {
      * Small light text under the top-right buttons, above everything else and never focusable. It sits where the
      * top bar ends in every layout, so it does not cover the clock, the stats line or the tiles.
      */
-    private static TextView makeCaption(Context context, FrameLayout root) {
+    private static TextView makeCaption(Context context, FrameLayout root, boolean brief) {
         float dp = context.getResources().getDisplayMetrics().density;
         TextView text = new TextView(context);
-        text.setTextSize(TypedValue.COMPLEX_UNIT_SP, 15);
+        text.setTextSize(TypedValue.COMPLEX_UNIT_SP, brief ? 11 : 15);
         text.setTextColor(0xD9FFFFFF);
         text.setShadowLayer(6 * dp, 0, dp, 0xCC000000);
         text.setSingleLine(true);
@@ -239,9 +252,10 @@ final class WallpaperPlayer {
             // the system font is fine
         }
         FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.TOP | Gravity.END);
-        params.topMargin = Math.round(110 * dp);
-        params.setMarginEnd(Math.round(62 * dp));
+                ViewGroup.LayoutParams.WRAP_CONTENT, (brief ? Gravity.BOTTOM : Gravity.TOP) | Gravity.END);
+        params.topMargin = brief ? 0 : Math.round(110 * dp);
+        params.bottomMargin = brief ? Math.round(22 * dp) : 0;
+        params.setMarginEnd(Math.round((brief ? 28 : 62) * dp));
         root.addView(text, params);
         return text;
     }
@@ -249,6 +263,15 @@ final class WallpaperPlayer {
     /** The displayed picture's name, faded across a change; a picture without a name hides the caption. */
     private void showCaption(boolean fade) {
         if (caption == null) return;
+        if (briefCaption) {
+            root.removeCallbacks(hideLocation);
+            caption.animate().cancel();
+            String location = names.get(displayed);
+            caption.setText(location == null ? "" : location);
+            caption.setAlpha(location == null ? 0f : 1f);
+            root.postDelayed(hideLocation, 6_000L);
+            return;
+        }
         String name = names.get(displayed);
         caption.animate().cancel();
         if (name == null) {
@@ -265,6 +288,10 @@ final class WallpaperPlayer {
             caption.setText(name);
             caption.animate().alpha(1f).setDuration(350).start();
         }).start();
+    }
+
+    private void hideLocation() {
+        if (caption != null) caption.animate().alpha(0f).setDuration(400).start();
     }
 
     /** Names plus sizes: enough to notice a different collection without hashing every image. */

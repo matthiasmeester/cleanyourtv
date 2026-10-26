@@ -178,6 +178,12 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
     private View clockBlock;
     private View btnInputs;
     private GradientDrawable inputConnectedDot;
+    private boolean appsCollapsed;
+    private NowPlayingBadge nowPlayingBadge;
+    private int wakeKey = -1;
+    private final Runnable collapseIdleApps = () -> {
+        if (hasWindowFocus() && !this.reordering) setAppsCollapsed(true);
+    };
     /** config show_inputs_pill: false keeps the Inputs pill hidden even when the TV has inputs. */
     private boolean showInputsPill = true;
     private TextView btnWifi;
@@ -746,11 +752,10 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
         inputConnectedDot = new GradientDrawable();
         inputConnectedDot.setShape(GradientDrawable.OVAL);
         inputConnectedDot.setColor(0xFF30C759);
-        inputConnectedDot.setStroke(Math.max(1, Math.round(density)), 0xFF203029);
         inputConnectedDot.setAlpha(0);
         btnInputs.getOverlay().add(inputConnectedDot);
         btnInputs.addOnLayoutChangeListener((v, l, t, r, b, ol, ot, or, ob) -> {
-            int size = Math.round(7 * density);
+            int size = Math.round(9 * density);
             int inset = Math.round(3 * density);
             inputConnectedDot.setBounds(v.getWidth() - inset - size, inset,
                     v.getWidth() - inset, inset + size);
@@ -881,6 +886,7 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
 
         // Hide the glass when focus leaves the tiles.
         getWindow().getDecorView().getViewTreeObserver().addOnGlobalFocusChangeListener((oldF, newF) -> {
+            if (inTopBar(newF) && !inTopBar(oldF)) setAppsCollapsed(true);
             boolean onTile = newF != null && newF.getId() == R.id.card;
             if (!onTile) hideGlass();
         });
@@ -1054,6 +1060,10 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
         if (showStats) startStats();
         sky.update();
         wallpaperPlayer.start();
+        if (nowPlayingBadge == null) nowPlayingBadge = new NowPlayingBadge(this, root);
+        nowPlayingBadge.start();
+        setAppsCollapsed(false);
+        restartAppIdle();
         handler.postDelayed(minuteTick, MINUTE_MS);
         if (festive && diya != null) {
             diya.start();
@@ -1210,6 +1220,32 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
     public void onUserInteraction() {
         super.onUserInteraction();
         restartIdleClock();
+        restartAppIdle();
+    }
+
+    private boolean inTopBar(View view) {
+        while (view != null) {
+            if (view.getId() == R.id.topButtons) return true;
+            view = view.getParent() instanceof View ? (View) view.getParent() : null;
+        }
+        return false;
+    }
+
+    private void restartAppIdle() {
+        root.removeCallbacks(collapseIdleApps);
+        root.postDelayed(collapseIdleApps, 30_000L);
+    }
+
+    private void setAppsCollapsed(boolean collapsed) {
+        if (grid == null || glass == null) return;
+        appsCollapsed = collapsed;
+        grid.animate().cancel();
+        grid.animate().alpha(collapsed ? 0f : 1f).setDuration(reducedMotion ? 0 : 180).start();
+        grid.setImportantForAccessibility(collapsed ? View.IMPORTANT_FOR_ACCESSIBILITY_NO_HIDE_DESCENDANTS
+                : View.IMPORTANT_FOR_ACCESSIBILITY_AUTO);
+        glass.setVisibility(collapsed ? View.INVISIBLE : View.VISIBLE);
+        if (collapsed) { hideHero(); ambient.setAlpha(0f); }
+        updateDockDownHint();
     }
 
     private void restartIdleClock() {
@@ -1220,6 +1256,9 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
     @Override
     protected void onPause() {
         super.onPause();
+        if (nowPlayingBadge != null) nowPlayingBadge.stop();
+        root.removeCallbacks(collapseIdleApps);
+        wakeKey = -1;
         root.removeCallbacks(showIdleClock);
         endReorder();   // Home or another app while reordering keeps the order so far
         wallpaperPlayer.stop();
@@ -1325,6 +1364,21 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
      */
     @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
+        int wakeCode = event.getKeyCode();
+        if (wakeCode == wakeKey) {
+            if (event.getAction() == KeyEvent.ACTION_UP) wakeKey = -1;
+            return true;
+        }
+        boolean navigation = wakeCode == KeyEvent.KEYCODE_DPAD_UP || wakeCode == KeyEvent.KEYCODE_DPAD_DOWN
+                || wakeCode == KeyEvent.KEYCODE_DPAD_LEFT || wakeCode == KeyEvent.KEYCODE_DPAD_RIGHT
+                || wakeCode == KeyEvent.KEYCODE_DPAD_CENTER || wakeCode == KeyEvent.KEYCODE_ENTER
+                || wakeCode == KeyEvent.KEYCODE_BACK || wakeCode == KeyEvent.KEYCODE_MENU;
+        if (appsCollapsed && navigation && event.getAction() == KeyEvent.ACTION_DOWN) {
+            wakeKey = wakeCode;
+            setAppsCollapsed(false);
+            restartAppIdle();
+            return true;
+        }
         // Vendor keys (TCL Netflix button, 4062) never reach the key services, only the focused window.
         if (event.getKeyCode() >= 1000 && RemoteKeys.handle(this, event, homeAppKeys.get(event.getKeyCode()), null)) return true;
         if (handleSettingsKey(event)) return true;
@@ -1804,10 +1858,11 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
         View hint = findViewById(R.id.dockDownHint);
         if (hint == null || grid == null || adapter == null) return;
         int focused = focusedTilePosition();
-        boolean visible = getResources().getBoolean(R.bool.show_dock_down_hint)
+        boolean visible = appsCollapsed || getResources().getBoolean(R.bool.show_dock_down_hint)
                 && dockRow && !singleRow && adapter.appCount() > COLUMNS
                 && (focused < 0 || focused < COLUMNS);
         hint.setVisibility(visible ? View.VISIBLE : View.GONE);
+        hint.setRotation(appsCollapsed ? 180f : 0f);
         if (visible) {
             if (hint.getWidth() == 0) {
                 hint.postOnAnimation(this::updateDockDownHint);
@@ -2410,7 +2465,7 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
         // Its own width, not the column's: in Hebrew the column is only as wide as the clock.
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        lp.topMargin = Math.round(4 * density);
+        lp.topMargin = Math.round((getResources().getBoolean(R.bool.compact_home_clock) ? -6 : 4) * density);
         if (getResources().getBoolean(R.bool.rtl_menu_bar)) {
             // Date and clock flush right; the greeting stays left and follows the clock by translation.
             lp.gravity = Gravity.RIGHT;
