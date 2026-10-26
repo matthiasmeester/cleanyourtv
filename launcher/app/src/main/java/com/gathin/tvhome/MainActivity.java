@@ -1291,6 +1291,7 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
         if (campfirePlayer == null) campfirePlayer = new CampfirePlayer(this, root);
         addSeparator(rows);
         View row = addInputRow(rows, popup, R.drawable.ic_campfire, "", -1, () -> { });
+        row.setTag(POPUP_HORIZONTAL_ADJUSTMENT);
         TextView label = row.findViewById(R.id.title);
         Runnable refresh = () -> label.setText("Campfire volume: ◀ " + campfirePlayer.volume() + "% ▶");
         refresh.run();
@@ -3138,19 +3139,56 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
         TvInputManager tim = (TvInputManager) getSystemService(TV_INPUT_SERVICE);
         boolean connected = false;
         if (tim != null) {
-            for (TvInputInfo info : tim.getTvInputList()) {
+            List<TvInputInfo> inputs = tim.getTvInputList();
+            Map<String, List<TvInputInfo>> cec = inputCecDevices(inputs);
+            Set<String> inputIds = new HashSet<>();
+            for (TvInputInfo info : inputs) inputIds.add(info.getId());
+            boolean unreliable = unreliableHdmiState(tim, inputs, inputIds);
+            for (TvInputInfo info : inputs) {
                 // Inputs hidden in Settings > Inputs are left out of the menu, so they don't count here either.
                 if (info.isPassthroughInput() && !info.isHidden(this)) {
+                    if (Integer.valueOf(-1).equals(mappedSource(info.getId()))) continue;
+                    if (info.getParentId() != null && inputIds.contains(info.getParentId())) continue;
                     any = true;
-                    Integer mapped = mappedSource(info.getId());
-                    if ((mapped == null || mapped != -1)
-                            && tim.getInputState(info.getId()) == TvInputManager.INPUT_STATE_CONNECTED)
-                        connected = true;
+                    // Match the rows actually shown: AV has no reliable hotplug detection, and
+                    // a CEC child's state replaces its parent's rather than lighting a second dot.
+                    List<TvInputInfo> devices = cec.get(info.getId());
+                    for (TvInputInfo row : devices == null ? Collections.singletonList(info) : devices) {
+                        int state = InputStatus.displayedState(info.getType() == TvInputInfo.TYPE_HDMI,
+                                unreliable, tim.getInputState(row.getId()));
+                        if (state == TvInputManager.INPUT_STATE_CONNECTED) connected = true;
+                    }
                 }
             }
         }
         btnInputs.setVisibility(any ? View.VISIBLE : View.GONE);
         if (inputConnectedDot != null) inputConnectedDot.setAlpha(connected ? 255 : 0);
+    }
+
+    private Map<String, List<TvInputInfo>> inputCecDevices(List<TvInputInfo> inputs) {
+        Set<String> ids = new HashSet<>();
+        for (TvInputInfo info : inputs) ids.add(info.getId());
+        Map<String, List<TvInputInfo>> devices = new HashMap<>();
+        for (TvInputInfo info : inputs) {
+            String parent = info.getParentId();
+            if (parent == null || !ids.contains(parent)
+                    || !info.isPassthroughInput() || info.isHidden(this)) continue;
+            List<TvInputInfo> onPort = devices.get(parent);
+            if (onPort == null) devices.put(parent, onPort = new ArrayList<>());
+            onPort.add(info);
+        }
+        return devices;
+    }
+
+    private boolean unreliableHdmiState(TvInputManager tim, List<TvInputInfo> inputs, Set<String> ids) {
+        int ports = 0, connected = 0;
+        for (TvInputInfo info : inputs) {
+            if (!info.isPassthroughInput() || info.getType() != TvInputInfo.TYPE_HDMI) continue;
+            if (info.getParentId() != null && ids.contains(info.getParentId())) continue;
+            ports++;
+            if (tim.getInputState(info.getId()) == TvInputManager.INPUT_STATE_CONNECTED) connected++;
+        }
+        return InputStatus.unreliableHdmi(ports, connected);
     }
 
     /** boot_to_live_tv, or the Open on start app: the first time Home comes up after the TV starts, open that app
@@ -3316,41 +3354,27 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
             // only when nothing on it speaks CEC.
             Set<String> inputIds = new HashSet<>();
             for (TvInputInfo info : inputs) inputIds.add(info.getId());
-            Map<String, List<TvInputInfo>> cecDevices = new HashMap<>();
-            for (TvInputInfo info : inputs) {
-                String parent = info.getParentId();
-                if (parent == null || !inputIds.contains(parent)) continue;
-                if (!info.isPassthroughInput() || info.isHidden(this)) continue;
-                List<TvInputInfo> onPort = cecDevices.get(parent);
-                if (onPort == null) cecDevices.put(parent, onPort = new ArrayList<>());
-                onPort.add(info);
-            }
+            Map<String, List<TvInputInfo>> cecDevices = inputCecDevices(inputs);
             // Some TVs (Sony) report every HDMI port as connected whether or not anything is plugged in,
             // so drop the HDMI status then. A TV with every port really in use loses it too.
-            int hdmiPorts = 0, hdmiConnected = 0;
-            for (TvInputInfo info : inputs) {
-                if (!info.isPassthroughInput() || info.getType() != TvInputInfo.TYPE_HDMI) continue;
-                if (info.getParentId() != null && inputIds.contains(info.getParentId())) continue;
-                hdmiPorts++;
-                if (tim.getInputState(info.getId()) == TvInputManager.INPUT_STATE_CONNECTED) hdmiConnected++;
-            }
-            boolean hdmiStateBogus = hdmiPorts > 1 && hdmiConnected == hdmiPorts;
+            boolean hdmiStateBogus = unreliableHdmiState(tim, inputs, inputIds);
             boolean activeFirst = getResources().getBoolean(R.bool.inputs_active_first) && !hdmiStateBogus;
             Set<String> connectedHdmi = new HashSet<>();
             if (activeFirst) {
                 // Snapshot before sorting: state can change, and comparator results must stay consistent.
                 for (TvInputInfo info : inputs) {
-                    if (info.getType() == TvInputInfo.TYPE_HDMI
-                            && tim.getInputState(info.getId()) == TvInputManager.INPUT_STATE_CONNECTED)
-                        connectedHdmi.add(info.getId());
-                }
-                // A connected CEC child also makes its port active when the port reports standby.
-                // cecDevices already excludes hidden/non-passthrough children.
-                for (Map.Entry<String, List<TvInputInfo>> entry : cecDevices.entrySet()) {
-                    for (TvInputInfo device : entry.getValue()) {
-                        if (tim.getInputState(device.getId()) == TvInputManager.INPUT_STATE_CONNECTED) {
-                            connectedHdmi.add(entry.getKey());
-                            connectedHdmi.add(device.getId());
+                    if (info.getType() != TvInputInfo.TYPE_HDMI
+                            || !info.isPassthroughInput() || info.isHidden(this)
+                            || Integer.valueOf(-1).equals(mappedSource(info.getId()))) continue;
+                    if (info.getParentId() != null && inputIds.contains(info.getParentId())) continue;
+                    // Use the same replacement rows as the menu/dot. A physically connected
+                    // parent must not promote a standby CEC device above genuinely live inputs.
+                    List<TvInputInfo> devices = cecDevices.get(info.getId());
+                    for (TvInputInfo row : devices == null ? Collections.singletonList(info) : devices) {
+                        if (InputStatus.displayedState(true, hdmiStateBogus, tim.getInputState(row.getId()))
+                                == TvInputManager.INPUT_STATE_CONNECTED) {
+                            connectedHdmi.add(info.getId());
+                            connectedHdmi.add(row.getId());
                         }
                     }
                 }
@@ -3411,7 +3435,7 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
                         if (name == null || name.length() == 0) name = named ? custom : device.loadLabel(this);
                         String deviceLabel = name == null || name.length() == 0 ? label : name + " \u00B7 " + label;
                         final String deviceId = device.getId();
-                        int state = hdmiStateBogus ? -1 : tim.getInputState(deviceId);
+                        int state = InputStatus.displayedState(hdmi, hdmiStateBogus, tim.getInputState(deviceId));
                         View row = addInputRow(rows, popup, R.drawable.ic_input, deviceLabel, state, () -> openInput(deviceId));
                         if (connectedOnly && InputFold.folds(true, state)) fold(row, folded);
                     }
@@ -3422,7 +3446,7 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
                 final String id = info.getId();
                 // Analog AV jacks have no hotplug detection, and some TVs report them as always connected
                 // (TCL Smart TV Pro G03 says "Connected" with nothing plugged in), so AV rows show no state.
-                int state = !hdmi || hdmiStateBogus ? -1 : tim.getInputState(id);
+                int state = InputStatus.displayedState(hdmi, hdmiStateBogus, tim.getInputState(id));
                 View row = addInputRow(rows, popup, hdmi ? R.drawable.ic_input : R.drawable.ic_av, label, state,
                         () -> openInput(id));
                 if (connectedOnly && InputFold.folds(hdmi, state)) fold(row, folded);
@@ -3504,8 +3528,44 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
         folded.add(view);
     }
 
+    private static final Object POPUP_HORIZONTAL_ADJUSTMENT = new Object();
+
+    /** A popup is a separate window, so route horizontal navigation back to its header anchor. */
+    private final class TopBarPopupContent extends FrameLayout {
+        View anchor;
+        PopupWindow popup;
+
+        TopBarPopupContent(View panel) {
+            super(MainActivity.this);
+            addView(panel, new FrameLayout.LayoutParams(
+                    ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        }
+
+        @Override public boolean dispatchKeyEvent(KeyEvent event) {
+            int key = event.getKeyCode();
+            View focused = findFocus();
+            boolean adjusting = focused != null && focused.getTag() == POPUP_HORIZONTAL_ADJUSTMENT;
+            if (anchor != null && inTopBar(anchor) && !adjusting
+                    && (key == KeyEvent.KEYCODE_DPAD_LEFT || key == KeyEvent.KEYCODE_DPAD_RIGHT)) {
+                if (event.getAction() == KeyEvent.ACTION_DOWN && event.getRepeatCount() == 0) {
+                    int direction = key == KeyEvent.KEYCODE_DPAD_LEFT ? View.FOCUS_LEFT : View.FOCUS_RIGHT;
+                    View target = anchor.focusSearch(direction);
+                    // At either end stay on the anchor; never fall through to the app dock.
+                    if (target == null || !inTopBar(target)) target = anchor;
+                    popup.dismiss();
+                    restartAppIdle();
+                    target.requestFocus(); // Focus only: never activate the music action.
+                }
+                return true;
+            }
+            return super.dispatchKeyEvent(event);
+        }
+    }
+
     private PopupWindow glassPopup(View panel, int width) {
-        final PopupWindow popup = new PopupWindow(panel, width, ViewGroup.LayoutParams.WRAP_CONTENT, true);
+        TopBarPopupContent content = new TopBarPopupContent(panel);
+        final PopupWindow popup = new PopupWindow(content, width, ViewGroup.LayoutParams.WRAP_CONTENT, true);
+        content.popup = popup;
         popup.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));   // needed for Back to dismiss
         popup.setOutsideTouchable(true);
         popup.setAnimationStyle(0);
@@ -3519,6 +3579,7 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
 
     /** Drop in: fade and unfold from the top edge, hanging under the anchor pill. */
     private void dropIn(PopupWindow popup, View panel, View anchor, int gravity) {
+        ((TopBarPopupContent) popup.getContentView()).anchor = anchor;
         panel.setAlpha(0f);
         panel.setPivotY(0f);
         panel.setScaleY(0.92f);

@@ -23,6 +23,9 @@ public class ThemeFilesTest {
     }
 
     @Test public void onlyTheFixedCampfireVideoIsWritable() {
+        assertEquals("campfire-audio.mp3", ThemeFiles.path(Collections.singletonList("campfire-audio.mp3")));
+        assertNull(ThemeFiles.path(Collections.singletonList("other.mp3")));
+        assertNull(ThemeFiles.path(Arrays.asList("wallpapers", "campfire-audio.mp3")));
         assertEquals("campfire.mp4", ThemeFiles.path(Collections.singletonList("campfire.mp4")));
         assertNull(ThemeFiles.path(Collections.singletonList("other.mp4")));
         assertNull(ThemeFiles.path(Collections.singletonList("../campfire.mp4")));

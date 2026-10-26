@@ -16,6 +16,8 @@ final class CampfirePlayer implements TextureView.SurfaceTextureListener {
     final TextureView view;
     private final Context context;
     private MediaPlayer player;
+    private MediaPlayer audioPlayer;
+    private boolean separateAudio;
     private Surface surface;
     private boolean enabled;
     private int videoWidth, videoHeight;
@@ -55,6 +57,7 @@ final class CampfirePlayer implements TextureView.SurfaceTextureListener {
     }
 
     private void release() {
+        if (audioPlayer != null) { audioPlayer.release(); audioPlayer = null; }
         if (player != null) { player.release(); player = null; }
         if (surface != null) { surface.release(); surface = null; }
     }
@@ -67,15 +70,41 @@ final class CampfirePlayer implements TextureView.SurfaceTextureListener {
             surface = new Surface(texture);
             next.setSurface(surface);
             next.setDataSource(new File(Config.dir(context), "campfire.mp4").getAbsolutePath());
-            next.setVolume(volume / 100f, volume / 100f);
+            File audio = new File(Config.dir(context), "campfire-audio.mp3");
+            separateAudio = audio.isFile();
+            next.setVolume(separateAudio ? 0f : volume / 100f, separateAudio ? 0f : volume / 100f);
             next.setLooping(true);
             next.setOnVideoSizeChangedListener((mp, width, height) -> {
                 videoWidth = width; videoHeight = height; fit();
             });
-            next.setOnPreparedListener(mp -> { if (enabled && player == mp) mp.start(); });
+            next.setOnPreparedListener(mp -> {
+                if (enabled && player == mp) {
+                    mp.start();
+                    if (separateAudio) prepareAudio(audio);
+                }
+            });
             next.setOnErrorListener((mp, what, extra) -> { failed(); return true; });
             next.prepareAsync();
         } catch (Exception error) { failed(); }
+    }
+
+    /** Independent loop: a long sound recording must not restart with the short video. */
+    private void prepareAudio(File file) {
+        try {
+            MediaPlayer next = new MediaPlayer();
+            audioPlayer = next;
+            next.setDataSource(file.getAbsolutePath());
+            next.setVolume(volume / 100f, volume / 100f);
+            next.setLooping(true);
+            next.setOnPreparedListener(mp -> { if (enabled && audioPlayer == mp) mp.start(); });
+            next.setOnErrorListener((mp, what, extra) -> { audioFailed(); return true; });
+            next.prepareAsync();
+        } catch (Exception error) { audioFailed(); }
+    }
+
+    private void audioFailed() {
+        if (audioPlayer != null) { audioPlayer.release(); audioPlayer = null; }
+        Toast.makeText(context, "Campfire audio unavailable. Reinstall the audio file.", Toast.LENGTH_LONG).show();
     }
 
     private void failed() {
@@ -88,7 +117,8 @@ final class CampfirePlayer implements TextureView.SurfaceTextureListener {
     void setVolume(int value) {
         volume = Math.max(0, Math.min(100, value));
         context.getSharedPreferences("ambient_mode", Context.MODE_PRIVATE).edit().putInt("volume", volume).apply();
-        if (player != null) player.setVolume(volume / 100f, volume / 100f);
+        if (player != null && !separateAudio) player.setVolume(volume / 100f, volume / 100f);
+        if (audioPlayer != null) audioPlayer.setVolume(volume / 100f, volume / 100f);
     }
 
     String sourceCredit() {

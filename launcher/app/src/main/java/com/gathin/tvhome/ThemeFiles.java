@@ -19,6 +19,7 @@ final class ThemeFiles {
             String name = segments.get(0);
             return Config.FILE_NAME.equals(name) || "wallpaper.jpg".equals(name) || "theme_revision".equals(name)
                     || "campfire.mp4".equals(name)
+                    || "campfire-audio.mp3".equals(name)
                     || "campfire-custom.txt".equals(name)
                     ? name : null;
         }

@@ -357,6 +357,7 @@
   "dock_even_padding": true,
   "icon_only_buttons": true,
   "icon_only_inputs": true,
+  "live_tv_package": "",
   "app_library": true,
   "library_button": false,
   "show_library_pill": false,

@@ -116,6 +116,8 @@ To install your own local MP4, pass `-CampfireVideo 'C:\path\to\video.mp4'`. Per
 
 The bottom of the settings popup shows a separate campfire-volume control only while Campfire is on: Left/Right changes it by 5%, from 0–100%, saved on this TV. It defaults to muted. A custom video must contain audio for this control to produce sound; the bundled licensed fallback is silent.
 
+Alternatively, pass `-CampfireAudio 'C:\path\to\fireplace.mp3'` to install a separate local sound loop. Its full recording loops independently of the short video, and replaces (mutes) any embedded video audio. Both players stop when Campfire is off or Home is backgrounded, and neither requests audio focus from Spotify. This MP3 is copied at its original gain; the saved campfire volume controls it. It stays private and is not bundled or committed. Omitting this option preserves an existing sidecar; delete `content://com.gathin.tvhome.theme/campfire-audio.mp3` through the theme provider to restore embedded-video audio.
+
 The selected fireplace visuals are Wikimedia's `Kaminfeuer.webm`, already reproduced by the bundled H.264 fallback. The original is 1280×720 and silent (the 1440p minimum applies to the photo catalogue). To combine these visuals with your own already-amplified audio without re-encoding the video:
 
 ```powershell

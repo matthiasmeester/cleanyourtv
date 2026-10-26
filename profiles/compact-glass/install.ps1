@@ -11,6 +11,7 @@ param(
     [switch]$DisableScreensaver,
     [switch]$EnableNowPlaying,
     [string]$CampfireVideo = '',
+    [string]$CampfireAudio = '',
     [ValidateRange(1, 8)]
     [double]$CampfireAudioGain = 3
 )
@@ -35,6 +36,13 @@ if ($CampfireVideo -and -not (Test-Path -LiteralPath $CampfireVideo -PathType Le
     throw 'The supplied -CampfireVideo file does not exist.'
 }
 if ($CampfireVideo) { $CampfireVideo = (Resolve-Path -LiteralPath $CampfireVideo).Path }
+if ($CampfireAudio) {
+    if (-not (Test-Path -LiteralPath $CampfireAudio -PathType Leaf) -or
+            [IO.Path]::GetExtension($CampfireAudio) -ine '.mp3') {
+        throw '-CampfireAudio must name an existing MP3 file.'
+    }
+    $CampfireAudio = (Resolve-Path -LiteralPath $CampfireAudio).Path
+}
 $campfireFfmpeg = $null
 if ($CampfireVideo -and $CampfireAudioGain -ne 1) {
     $campfireFfmpeg = Get-Command ffmpeg -CommandType Application -ErrorAction SilentlyContinue
@@ -211,6 +219,11 @@ try {
             Invoke-Tv 'content delete --uri content://com.gathin.tvhome.theme/campfire-custom.txt' | Out-Null
         }
     }
+    if ($CampfireAudio) {
+        & $python -I $pushTool $CampfireAudio '/data/local/tmp/cyt-campfire-audio.mp3'
+        if ($LASTEXITCODE -ne 0) { throw 'Campfire audio upload failed.' }
+        Invoke-Tv 'content write --uri content://com.gathin.tvhome.theme/campfire-audio.mp3 < /data/local/tmp/cyt-campfire-audio.mp3' | Out-Null
+    }
     if ($EnableNowPlaying) {
         Invoke-Tv 'cmd notification allow_listener com.gathin.tvhome/.NowPlayingAccess' | Out-Null
         & $python -I (Join-Path $repoDir 'tools/theme_restart.py')
@@ -230,6 +243,7 @@ try {
         screensaverDisabled = [bool]$DisableScreensaver
         nowPlayingAccessEnabled = [bool]$EnableNowPlaying
         customCampfireInstalled = [bool]$CampfireVideo
+        separateCampfireAudioInstalled = [bool]$CampfireAudio
         campfireAudioGain = $(if ($CampfireVideo) { $CampfireAudioGain } else { 1 })
         packagesDisabledByThisScript = @()
     }
