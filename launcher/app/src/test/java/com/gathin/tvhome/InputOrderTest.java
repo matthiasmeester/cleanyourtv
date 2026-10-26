@@ -10,6 +10,20 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class InputOrderTest {
+    @Test public void standbyDevicePrecedesEmptyPorts() {
+        assertTrue(InputOrder.compare(true, false, true, "HDMI 3",
+                true, false, false, "HDMI 1", true) < 0);
+    }
+
+    @Test public void liveDeviceStillPrecedesStandbyDevice() {
+        assertTrue(InputOrder.compare(true, true, true, "HDMI 2",
+                true, false, true, "HDMI 3", true) < 0);
+    }
+
+    @Test public void disabledPriorityKeepsNameOrderForKnownDevices() {
+        assertTrue(InputOrder.compare(true, false, true, "HDMI 3",
+                true, false, false, "HDMI 1", false) > 0);
+    }
     @Test public void connectedHdmiThreePrecedesUnusedHdmiOneAndTwo() {
         List<Source> sources = new ArrayList<>(Arrays.asList(
                 new Source("HDMI 2", true, false),

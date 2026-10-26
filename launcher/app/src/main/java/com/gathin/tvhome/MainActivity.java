@@ -3381,8 +3381,10 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
             }
             java.util.Comparator<TvInputInfo> inputOrder = (a, b) -> InputOrder.compare(
                     a.getType() == TvInputInfo.TYPE_HDMI, connectedHdmi.contains(a.getId()),
+                    cecDevices.containsKey(a.getId()) || a.getParentId() != null,
                     String.valueOf(a.loadLabel(this)),
                     b.getType() == TvInputInfo.TYPE_HDMI, connectedHdmi.contains(b.getId()),
+                    cecDevices.containsKey(b.getId()) || b.getParentId() != null,
                     String.valueOf(b.loadLabel(this)), activeFirst);
             Collections.sort(inputs, inputOrder);
             for (List<TvInputInfo> devices : cecDevices.values()) Collections.sort(devices, inputOrder);
@@ -3437,6 +3439,13 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
                         final String deviceId = device.getId();
                         int state = InputStatus.displayedState(hdmi, hdmiStateBogus, tim.getInputState(deviceId));
                         View row = addInputRow(rows, popup, R.drawable.ic_input, deviceLabel, state, () -> openInput(deviceId));
+                        // A known device in standby is different from an empty port. This
+                        // muted marker belongs only to its menu row, never the header icon.
+                        if (state != TvInputManager.INPUT_STATE_CONNECTED) {
+                            View dot = row.findViewById(R.id.dot);
+                            dot.setBackgroundTintList(android.content.res.ColorStateList.valueOf(0xFF92969D));
+                            dot.setVisibility(View.VISIBLE);
+                        }
                         if (connectedOnly && InputFold.folds(true, state)) fold(row, folded);
                     }
                     continue;
