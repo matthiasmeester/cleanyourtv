@@ -5,6 +5,12 @@
   "minimum_android_sdk": 26,
   "installer": "install.ps1",
   "theme": "config.json",
+  "campfire": {
+    "file": "media/campfire.mp4",
+    "credits": "media/CREDITS.md",
+    "silent": true,
+    "enabled_by_default": false
+  },
   "wallpapers": {
     "directory": "wallpapers",
     "source_manifest": "wallpapers.sources.json",

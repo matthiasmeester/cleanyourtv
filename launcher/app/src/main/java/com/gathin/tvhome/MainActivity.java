@@ -179,10 +179,18 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
     private View btnInputs;
     private GradientDrawable inputConnectedDot;
     private boolean appsCollapsed;
+    private boolean idleHidden;
+    private boolean campfireEnabled;
+    private CampfirePlayer campfirePlayer;
+    private final java.util.Map<View, Float> campfireUiAlpha = new java.util.HashMap<>();
     private NowPlayingBadge nowPlayingBadge;
     private int wakeKey = -1;
     private final Runnable collapseIdleApps = () -> {
-        if (hasWindowFocus() && !this.reordering) setAppsCollapsed(true);
+        if (hasWindowFocus() && !this.reordering) {
+            setAppsCollapsed(true);
+            idleHidden = true;
+            if (campfireEnabled) hideCampfireUi();
+        }
     };
     /** config show_inputs_pill: false keeps the Inputs pill hidden even when the TV has inputs. */
     private boolean showInputsPill = true;
@@ -780,11 +788,7 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
             ((TextView) btnSettings).setText(R.string.launcher_settings);
             ((TextView) btnSettings).setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.ic_home_settings_pill, 0, 0, 0);
         }
-        btnSettings.setOnClickListener(v -> {
-            if (launcherSettingsButton) startActivityForResult(
-                    new Intent(this, LauncherSettingsActivity.class), LAUNCHER_SETTINGS_REQUEST);
-            else open(systemIntent(Settings.ACTION_SETTINGS));
-        });
+        btnSettings.setOnClickListener(v -> showSettingsMenu());
         btnReorder = findViewById(R.id.btnReorder);
         btnReorder.setOnClickListener(v -> toggleReorder());
         btnReorder.setVisibility(cfg.reorderButton ? View.VISIBLE : View.GONE);
@@ -1062,6 +1066,10 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
         wallpaperPlayer.start();
         if (nowPlayingBadge == null) nowPlayingBadge = new NowPlayingBadge(this, root);
         nowPlayingBadge.start();
+        if (campfirePlayer == null) campfirePlayer = new CampfirePlayer(this, root);
+        campfireEnabled = getSharedPreferences("ambient_mode", MODE_PRIVATE).getBoolean("campfire", false);
+        restoreCampfireUi();
+        if (campfireEnabled) { wallpaperPlayer.stop(); campfirePlayer.start(); }
         setAppsCollapsed(false);
         restartAppIdle();
         handler.postDelayed(minuteTick, MINUTE_MS);
@@ -1233,12 +1241,13 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
 
     private void restartAppIdle() {
         root.removeCallbacks(collapseIdleApps);
-        root.postDelayed(collapseIdleApps, 30_000L);
+        root.postDelayed(collapseIdleApps, campfireEnabled ? 10_000L : 30_000L);
     }
 
     private void setAppsCollapsed(boolean collapsed) {
         if (grid == null || glass == null) return;
         appsCollapsed = collapsed;
+        if (!collapsed) { idleHidden = false; restoreCampfireUi(); }
         grid.animate().cancel();
         grid.animate().alpha(collapsed ? 0f : 1f).setDuration(reducedMotion ? 0 : 180).start();
         grid.setImportantForAccessibility(collapsed ? View.IMPORTANT_FOR_ACCESSIBILITY_NO_HIDE_DESCENDANTS
@@ -1246,6 +1255,41 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
         glass.setVisibility(collapsed ? View.INVISIBLE : View.VISIBLE);
         if (collapsed) { hideHero(); ambient.setAlpha(0f); }
         updateDockDownHint();
+    }
+
+    private void hideCampfireUi() {
+        if (campfirePlayer == null || !campfireUiAlpha.isEmpty()) return;
+        for (int i = 0; i < root.getChildCount(); i++) {
+            View child = root.getChildAt(i);
+            if (child == campfirePlayer.view) continue;
+            campfireUiAlpha.put(child, child.getAlpha());
+            child.animate().cancel();
+            child.setAlpha(0f);
+        }
+    }
+
+    private void restoreCampfireUi() {
+        for (java.util.Map.Entry<View, Float> entry : campfireUiAlpha.entrySet()) {
+            entry.getKey().animate().cancel();
+            entry.getKey().setAlpha(entry.getValue());
+        }
+        campfireUiAlpha.clear();
+    }
+
+    private void addCampfireToggle(LinearLayout rows, PopupWindow popup) {
+        addInputRow(rows, popup, R.drawable.ic_campfire, "Campfire: " + (campfireEnabled ? "On" : "Off"), -1, () -> {
+            if (campfirePlayer == null) campfirePlayer = new CampfirePlayer(this, root);
+            if (!campfireEnabled && !campfirePlayer.available()) {
+                Toast.makeText(this, "Install the campfire video from the reusable profile first.", Toast.LENGTH_LONG).show();
+                return;
+            }
+            campfireEnabled = !campfireEnabled;
+            getSharedPreferences("ambient_mode", MODE_PRIVATE).edit().putBoolean("campfire", campfireEnabled).apply();
+            setAppsCollapsed(false);
+            if (campfireEnabled) { wallpaperPlayer.stop(); campfirePlayer.start(); }
+            else { campfirePlayer.stop(); wallpaperPlayer.start(); }
+            restartAppIdle();
+        });
     }
 
     private void restartIdleClock() {
@@ -1256,6 +1300,8 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
     @Override
     protected void onPause() {
         super.onPause();
+        restoreCampfireUi();
+        if (campfirePlayer != null) campfirePlayer.stop();
         if (nowPlayingBadge != null) nowPlayingBadge.stop();
         root.removeCallbacks(collapseIdleApps);
         wakeKey = -1;
@@ -1373,7 +1419,7 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
                 || wakeCode == KeyEvent.KEYCODE_DPAD_LEFT || wakeCode == KeyEvent.KEYCODE_DPAD_RIGHT
                 || wakeCode == KeyEvent.KEYCODE_DPAD_CENTER || wakeCode == KeyEvent.KEYCODE_ENTER
                 || wakeCode == KeyEvent.KEYCODE_BACK || wakeCode == KeyEvent.KEYCODE_MENU;
-        if (appsCollapsed && navigation && event.getAction() == KeyEvent.ACTION_DOWN) {
+        if (idleHidden && navigation && event.getAction() == KeyEvent.ACTION_DOWN) {
             wakeKey = wakeCode;
             setAppsCollapsed(false);
             restartAppIdle();
@@ -1728,7 +1774,8 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
         libraryFromTopBar = false;
         libraryFromVpnPill = false;
         appLibrary = new AppLibraryDialog(this, animations, reducedMotion, appLibrarySelection, libraryOkOpens,
-                wallpaperPlayer.sourceCredit(), adapter::containsPackage, () -> reloadApps(false), () -> {
+                campfireEnabled ? "Kaminfeuer — Larvis — CC BY-SA 4.0 (silent H.264 conversion)\nhttps://commons.wikimedia.org/wiki/File:Kaminfeuer.webm"
+                        : wallpaperPlayer.sourceCredit(), adapter::containsPackage, () -> reloadApps(false), () -> {
             appLibrary = null;
             openPopup = null;
             if (libraryFromTopBar) {
@@ -1754,6 +1801,7 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
 
     @Override
     public void onTileFocused(int position, View card) {
+        if (appsCollapsed && !idleHidden) setAppsCollapsed(false);
         updateDockDownHint();
         lastFocused = position;
         lastFocusedKey = adapter.keyAt(position);
@@ -3465,6 +3513,7 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
         View panel = getLayoutInflater().inflate(R.layout.popup_inputs, root, false);
         LinearLayout rows = panel.findViewById(R.id.rows);
         PopupWindow popup = glassPopup(panel, (int) (220 * density));
+        addCampfireToggle(rows, popup);
         // Inputs opens its own list once this one has closed.
         if (showInputsMenuRow) addInputRow(rows, popup, R.drawable.ic_input, getString(R.string.inputs), -1, () -> root.post(this::showInputs));
         addInputRow(rows, popup, R.drawable.ic_wifi, getString(R.string.quick_network), -1, this::openNetworkPill);
@@ -3494,6 +3543,9 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
         View panel = getLayoutInflater().inflate(R.layout.popup_inputs, root, false);
         LinearLayout rows = panel.findViewById(R.id.rows);
         PopupWindow popup = glassPopup(panel, (int) (200 * density));
+        addCampfireToggle(rows, popup);
+        addInputRow(rows, popup, R.drawable.ic_settings, getString(R.string.settings), -1,
+                () -> open(systemIntent(Settings.ACTION_SETTINGS)));
         if (!launcherSettingsButton) addSettingsMenuRow(rows, popup, R.string.launcher_settings, () -> startActivityForResult(
                 new Intent(this, LauncherSettingsActivity.class), LAUNCHER_SETTINGS_REQUEST));
         // Firmware that ships its own settings app next to the AOSP one (Xiaomi China is one): the

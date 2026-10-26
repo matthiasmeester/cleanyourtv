@@ -173,6 +173,12 @@ try {
     }
     Assert-LauncherVisible
     $homeFinal = Get-HomeComponent
+    $campfireAsset = Join-Path $profileDir 'media/campfire.mp4'
+    if (Test-Path -LiteralPath $campfireAsset -PathType Leaf) {
+        & $python -I $pushTool $campfireAsset '/data/local/tmp/cyt-campfire.mp4'
+        if ($LASTEXITCODE -ne 0) { throw 'Campfire upload failed.' }
+        Invoke-Tv 'content write --uri content://com.gathin.tvhome.theme/campfire.mp4 < /data/local/tmp/cyt-campfire.mp4' | Out-Null
+    }
     if ($EnableNowPlaying) {
         Invoke-Tv 'cmd notification allow_listener com.gathin.tvhome/.NowPlayingAccess' | Out-Null
         & $python -I (Join-Path $repoDir 'tools/theme_restart.py')

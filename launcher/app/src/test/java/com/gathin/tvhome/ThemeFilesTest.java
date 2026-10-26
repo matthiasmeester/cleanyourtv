@@ -22,6 +22,14 @@ public class ThemeFilesTest {
         assertEquals("wallpapers/Night_2.WEBP", ThemeFiles.path(Arrays.asList("wallpapers", "Night_2.WEBP")));
     }
 
+    @Test public void onlyTheFixedCampfireVideoIsWritable() {
+        assertEquals("campfire.mp4", ThemeFiles.path(Collections.singletonList("campfire.mp4")));
+        assertNull(ThemeFiles.path(Collections.singletonList("other.mp4")));
+        assertNull(ThemeFiles.path(Collections.singletonList("../campfire.mp4")));
+        assertNull(ThemeFiles.path(Arrays.asList("wallpapers", "campfire.mp4")));
+        assertFalse(ThemeFiles.collectionImage("campfire.mp4"));
+    }
+
     @Test public void theCollectionsCaptionsAreAllowed() {
         assertEquals("wallpapers/captions.txt", ThemeFiles.path(Arrays.asList("wallpapers", "captions.txt")));
         assertNull(ThemeFiles.path(Collections.singletonList("captions.txt")));
