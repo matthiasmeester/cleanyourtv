@@ -8,13 +8,18 @@
   "campfire": {
     "file": "media/campfire.mp4",
     "credits": "media/CREDITS.md",
-    "silent": true,
+    "bundled_clip_silent": true,
+    "custom_audio_supported": true,
+    "custom_audio_gain_default": 3,
+    "volume_muted_by_default": true,
     "enabled_by_default": false
   },
   "wallpapers": {
     "directory": "wallpapers",
     "source_manifest": "wallpapers.sources.json",
-    "count": 12,
+    "night_source_manifest": "night-wallpapers.sources.json",
+    "count": 14,
+    "night_schedule_without_location": "19:00-07:00 in the TV time zone",
     "minimum_width_pixels": 3557,
     "maximum_width_pixels": 3840
   },

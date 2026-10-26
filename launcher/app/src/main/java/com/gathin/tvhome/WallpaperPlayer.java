@@ -164,6 +164,10 @@ final class WallpaperPlayer {
         return credit == null ? "" : credit;
     }
 
+    void showLocationBriefly() {
+        if (briefCaption && active) showCaption(false);
+    }
+
     /** Drops the wallpaper texture when Home is hidden and Android asks the process to free memory. */
     void releaseForMemoryPressure() {
         if (current == null) return;

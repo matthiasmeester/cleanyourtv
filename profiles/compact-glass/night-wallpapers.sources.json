@@ -1,0 +1,34 @@
+{
+  "collection": "compact-glass-night",
+  "source": "Wikimedia Commons",
+  "retrieved": "2026-10-26",
+  "changes": "Original photograph or official Wikimedia derivative; no local pixel editing, recompression, or artificial night conversion.",
+  "images": [
+    {
+      "file": "013.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Aurora_Borealis_Skrova-1.jpg",
+      "author": "Birgit Fostervold",
+      "license": "CC BY-SA 4.0",
+      "original_dimensions": [3840, 2160],
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/8/81/Aurora_Borealis_Skrova-1.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/8/81/Aurora_Borealis_Skrova-1.jpg",
+      "dimensions": [3840, 2160],
+      "format": "JPEG",
+      "bytes": 4753914,
+      "sha256": "98ca616b360b0365bba3f4dfdf6afdf1aa1fc5f22722db2433c14437ae94643a"
+    },
+    {
+      "file": "014.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Milky_Way_over_Rocky_Mountain_National_Park_(26367276674).jpg",
+      "author": "NPS/Jeremy M. White",
+      "license": "Public domain (United States federal government work)",
+      "original_dimensions": [4000, 1374],
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Milky_Way_over_Rocky_Mountain_National_Park_%2826367276674%29.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Milky_Way_over_Rocky_Mountain_National_Park_%2826367276674%29.jpg/3840px-Milky_Way_over_Rocky_Mountain_National_Park_%2826367276674%29.jpg",
+      "dimensions": [3840, 1319],
+      "format": "JPEG",
+      "bytes": 1432887,
+      "sha256": "12b841777e1773873ebf02461e2d3a2fb344a28a29ac1c80dc7ffd1c37d2cf77"
+    }
+  ]
+}

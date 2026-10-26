@@ -11,7 +11,7 @@ import android.widget.FrameLayout;
 import android.widget.Toast;
 import java.io.File;
 
-/** Local silent video, without audio-focus requests or any media-session controls. */
+/** Local video with its own volume, without audio-focus requests or media-session controls. */
 final class CampfirePlayer implements TextureView.SurfaceTextureListener {
     final TextureView view;
     private final Context context;
@@ -19,9 +19,11 @@ final class CampfirePlayer implements TextureView.SurfaceTextureListener {
     private Surface surface;
     private boolean enabled;
     private int videoWidth, videoHeight;
+    private int volume;
 
     CampfirePlayer(Context context, FrameLayout root) {
         this.context = context;
+        volume = Math.max(0, Math.min(100, context.getSharedPreferences("ambient_mode", Context.MODE_PRIVATE).getInt("volume", 0)));
         view = new TextureView(context);
         view.setOpaque(false);
         view.setFocusable(false);
@@ -63,7 +65,7 @@ final class CampfirePlayer implements TextureView.SurfaceTextureListener {
             surface = new Surface(texture);
             next.setSurface(surface);
             next.setDataSource(new File(Config.dir(context), "campfire.mp4").getAbsolutePath());
-            next.setVolume(0f, 0f);
+            next.setVolume(volume / 100f, volume / 100f);
             next.setLooping(true);
             next.setOnVideoSizeChangedListener((mp, width, height) -> {
                 videoWidth = width; videoHeight = height; fit();
@@ -77,6 +79,20 @@ final class CampfirePlayer implements TextureView.SurfaceTextureListener {
     private void failed() {
         stop();
         Toast.makeText(context, "Campfire video unavailable. Reinstall the profile media.", Toast.LENGTH_LONG).show();
+    }
+
+    int volume() { return volume; }
+
+    void setVolume(int value) {
+        volume = Math.max(0, Math.min(100, value));
+        context.getSharedPreferences("ambient_mode", Context.MODE_PRIVATE).edit().putInt("volume", volume).apply();
+        if (player != null) player.setVolume(volume / 100f, volume / 100f);
+    }
+
+    String sourceCredit() {
+        File dir = Config.dir(context);
+        if (dir != null && new File(dir, "campfire-custom.txt").isFile()) return "Personal campfire video";
+        return "Kaminfeuer — Larvis — CC BY-SA 4.0 (silent H.264 conversion)\nhttps://commons.wikimedia.org/wiki/File:Kaminfeuer.webm";
     }
 
     private void fit() {

@@ -9,7 +9,10 @@ param(
     [ValidatePattern('^$|^[A-Za-z][A-Za-z0-9_]*(\.[A-Za-z][A-Za-z0-9_]*)+$')]
     [string]$Ps5TvPackage = '',
     [switch]$DisableScreensaver,
-    [switch]$EnableNowPlaying
+    [switch]$EnableNowPlaying,
+    [string]$CampfireVideo = '',
+    [ValidateRange(1, 8)]
+    [double]$CampfireAudioGain = 3
 )
 
 $ErrorActionPreference = 'Stop'
@@ -28,6 +31,17 @@ if (-not (Test-Path -LiteralPath (Join-Path $profileDir 'config.json') -PathType
     throw 'This profile is incomplete: config.json is missing.'
 }
 if ($Ps5TvPackage -and -not $Ps5InputId) { throw '-Ps5TvPackage requires -Ps5InputId.' }
+if ($CampfireVideo -and -not (Test-Path -LiteralPath $CampfireVideo -PathType Leaf)) {
+    throw 'The supplied -CampfireVideo file does not exist.'
+}
+if ($CampfireVideo) { $CampfireVideo = (Resolve-Path -LiteralPath $CampfireVideo).Path }
+$campfireFfmpeg = $null
+if ($CampfireVideo -and $CampfireAudioGain -ne 1) {
+    $campfireFfmpeg = Get-Command ffmpeg -CommandType Application -ErrorAction SilentlyContinue
+    if (-not $campfireFfmpeg) {
+        throw 'Install ffmpeg on PATH to boost custom campfire audio, or pass -CampfireAudioGain 1 to keep its original audio.'
+    }
+}
 if ($Ps5InputId -and $Ps5InputId -notmatch '^[A-Za-z0-9_.$/:-]+$') {
     throw 'Pass the complete TV input ID from dumpsys tv_input, without spaces or shell characters.'
 }
@@ -126,6 +140,20 @@ try {
     }
     $homeBefore | Out-File -FilePath (Join-Path $backupDir 'home-before.txt') -Encoding utf8
     Write-Host "Saved device inventory in $backupDir"
+    $campfireAsset = Join-Path $profileDir 'media/campfire.mp4'
+    if ($CampfireVideo) {
+        $campfireAsset = $CampfireVideo
+        if ($CampfireAudioGain -ne 1) {
+            $campfireAsset = Join-Path $backupDir 'campfire-adjusted.mp4'
+            $gainText = $CampfireAudioGain.ToString([System.Globalization.CultureInfo]::InvariantCulture)
+            $ffmpegArgs = @('-nostdin', '-n', '-hide_banner', '-loglevel', 'error',
+                '-i', $CampfireVideo, '-map', '0:v:0', '-map', '0:a:0?',
+                '-c:v', 'copy', '-af', "volume=$gainText,alimiter=limit=0.95:level=false",
+                '-c:a', 'aac', '-b:a', '192k', '-movflags', '+faststart', $campfireAsset)
+            & $campfireFfmpeg.Source @ffmpegArgs
+            if ($LASTEXITCODE -ne 0) { throw 'Could not prepare the custom campfire audio; no video has been uploaded.' }
+        }
+    }
     if ($DisableScreensaver) {
         Invoke-Tv 'settings put secure screensaver_enabled 0' | Out-Null
         if ((Invoke-Tv 'settings get secure screensaver_enabled') -ne '0') {
@@ -173,11 +201,15 @@ try {
     }
     Assert-LauncherVisible
     $homeFinal = Get-HomeComponent
-    $campfireAsset = Join-Path $profileDir 'media/campfire.mp4'
     if (Test-Path -LiteralPath $campfireAsset -PathType Leaf) {
         & $python -I $pushTool $campfireAsset '/data/local/tmp/cyt-campfire.mp4'
         if ($LASTEXITCODE -ne 0) { throw 'Campfire upload failed.' }
         Invoke-Tv 'content write --uri content://com.gathin.tvhome.theme/campfire.mp4 < /data/local/tmp/cyt-campfire.mp4' | Out-Null
+        if ($CampfireVideo) {
+            Invoke-Tv 'content write --uri content://com.gathin.tvhome.theme/campfire-custom.txt < /dev/null' | Out-Null
+        } else {
+            Invoke-Tv 'content delete --uri content://com.gathin.tvhome.theme/campfire-custom.txt' | Out-Null
+        }
     }
     if ($EnableNowPlaying) {
         Invoke-Tv 'cmd notification allow_listener com.gathin.tvhome/.NowPlayingAccess' | Out-Null
@@ -197,6 +229,8 @@ try {
         ps5ShortcutInstalled = [bool]$Ps5InputId
         screensaverDisabled = [bool]$DisableScreensaver
         nowPlayingAccessEnabled = [bool]$EnableNowPlaying
+        customCampfireInstalled = [bool]$CampfireVideo
+        campfireAudioGain = $(if ($CampfireVideo) { $CampfireAudioGain } else { 1 })
         packagesDisabledByThisScript = @()
     }
     if ($Ps5InputId) { $report.ps5ApkSha256 = (Get-FileHash -Algorithm SHA256 -LiteralPath $shortcutApk).Hash }

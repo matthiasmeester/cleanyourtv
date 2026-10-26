@@ -1,6 +1,6 @@
-The twelve wallpaper photos are from Wikimedia Commons and retain their individual CC BY / CC BY-SA licences below, separate from the repository's MIT licence.
+The fourteen wallpaper photos are from Wikimedia Commons and retain their individual licences below, separate from the repository's MIT licence.
 
-These files are official Wikimedia derivatives at 3840 pixels wide, except 007.jpg (the 3557-pixel original). No local pixel editing, JPEG recompression, or baked-in darkening was applied. The launcher crops and dims only while rendering. Exact download URLs, dimensions, sizes, and SHA-256 hashes are recorded in wallpapers.sources.json.
+These files are official Wikimedia derivatives at 3840 pixels wide, except 007.jpg (the 3557-pixel original) and 013.jpg (the 3840-pixel original). No local pixel editing, JPEG recompression, or baked-in darkening was applied. The launcher crops and dims only while rendering. Exact download URLs, dimensions, sizes, and SHA-256 hashes are recorded in wallpapers.sources.json and night-wallpapers.sources.json. The night group contains separate photographs taken at night, not generated or darkened variants of the daytime scenes.
 
 - 001.jpg: "Karst mountains colorful clouds and mist at sunrise from the top of Mount Nam Xay Vang Vieng Laos.jpg" by Basile Morin, CC BY-SA 4.0
   https://commons.wikimedia.org/wiki/File:Karst_mountains_colorful_clouds_and_mist_at_sunrise_from_the_top_of_Mount_Nam_Xay_Vang_Vieng_Laos.jpg
@@ -26,6 +26,11 @@ These files are official Wikimedia derivatives at 3840 pixels wide, except 007.j
   https://commons.wikimedia.org/wiki/File:%D0%A2%D0%B0%D1%80%D0%B0%D1%81%D1%96%D0%B2_%D0%BE%D0%B1%D1%80%D1%96%D0%B9._%D0%A1%D0%B2%D1%96%D1%82%D0%B0%D0%BD%D0%BE%D0%BA_(edited).jpg
 - 012.jpg: "Kuang Si Falls and a turquoise water pool in Luang Prabang province Laos.jpg" by Basile Morin, CC BY-SA 4.0
   https://commons.wikimedia.org/wiki/File:Kuang_Si_Falls_and_a_turquoise_water_pool_in_Luang_Prabang_province_Laos.jpg
+
+- 013.jpg: "Aurora Borealis Skrova-1.jpg" by Birgit Fostervold, CC BY-SA 4.0
+  https://commons.wikimedia.org/wiki/File:Aurora_Borealis_Skrova-1.jpg
+- 014.jpg: "Milky Way over Rocky Mountain National Park (26367276674).jpg" by NPS/Jeremy M. White, public domain (United States federal government work)
+  https://commons.wikimedia.org/wiki/File:Milky_Way_over_Rocky_Mountain_National_Park_(26367276674).jpg
 
 Licences: CC BY 4.0 https://creativecommons.org/licenses/by/4.0/ , CC BY-SA 4.0 https://creativecommons.org/licenses/by-sa/4.0/ ,
 CC BY-SA 3.0 https://creativecommons.org/licenses/by-sa/3.0/

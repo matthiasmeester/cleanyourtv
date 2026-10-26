@@ -2,7 +2,6 @@ package com.gathin.tvhome;
 
 import android.content.ComponentName;
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.graphics.drawable.GradientDrawable;
 import android.media.MediaMetadata;
 import android.media.session.MediaController;
@@ -14,7 +13,6 @@ import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
@@ -28,7 +26,6 @@ final class NowPlayingBadge {
     private final Handler handler = new Handler(Looper.getMainLooper());
     private final List<MediaController> controllers = new ArrayList<>();
     private final LinearLayout bubble;
-    private final ImageView artwork;
     private final TextView title, artist;
     private boolean listening;
     private final MediaSessionManager.OnActiveSessionsChangedListener changed = this::bind;
@@ -52,21 +49,18 @@ final class NowPlayingBadge {
         glass.setCornerRadius(dp(13));
         glass.setStroke(dp(1), 0x33FFFFFF);
         bubble.setBackground(glass);
-        artwork = new ImageView(context);
-        artwork.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        artwork.setImportantForAccessibility(View.IMPORTANT_FOR_ACCESSIBILITY_NO);
-        bubble.addView(artwork, new LinearLayout.LayoutParams(dp(32), dp(32)));
         LinearLayout lines = new LinearLayout(context);
         lines.setOrientation(LinearLayout.VERTICAL);
-        lines.setPadding(dp(8), 0, 0, 0);
         title = line(11, 0xF2FFFFFF);
         artist = line(9, 0xB3FFFFFF);
         lines.addView(title);
         lines.addView(artist);
-        bubble.addView(lines, new LinearLayout.LayoutParams(0, -2, 1));
-        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(dp(220), -2, Gravity.TOP | Gravity.RIGHT);
-        params.topMargin = dp(80);
-        params.rightMargin = dp(56);
+        title.setMaxWidth(dp(155));
+        artist.setMaxWidth(dp(155));
+        bubble.addView(lines, new LinearLayout.LayoutParams(-2, -2));
+        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(-2, -2, Gravity.BOTTOM | Gravity.LEFT);
+        params.bottomMargin = dp(22);
+        params.leftMargin = dp(28);
         bubble.setVisibility(View.GONE);
         root.addView(bubble, params);
     }
@@ -99,7 +93,6 @@ final class NowPlayingBadge {
         for (MediaController controller : controllers) controller.unregisterCallback(playback);
         controllers.clear();
         bubble.setVisibility(View.GONE);
-        artwork.setImageDrawable(null);
     }
 
     private void refresh() {
@@ -127,15 +120,11 @@ final class NowPlayingBadge {
             if (TextUtils.isEmpty(performer) && metadata != null) performer = metadata.getDescription().getSubtitle();
             title.setText(TextUtils.isEmpty(track) ? "Now playing" : track);
             artist.setText(TextUtils.isEmpty(performer) ? appName(controller.getPackageName()) : performer);
-            Bitmap art = metadata == null ? null : metadata.getDescription().getIconBitmap();
-            if (art != null) artwork.setImageBitmap(art);
-            else artwork.setImageResource(R.drawable.ic_play_music);
             bubble.setContentDescription("Now playing: " + title.getText() + ", " + artist.getText());
             bubble.setVisibility(View.VISIBLE);
             return;
         }
         bubble.setVisibility(View.GONE);
-        artwork.setImageDrawable(null);
     }
 
     private CharSequence appName(String name) {

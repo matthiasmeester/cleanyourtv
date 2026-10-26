@@ -189,6 +189,7 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
         if (hasWindowFocus() && !this.reordering) {
             setAppsCollapsed(true);
             idleHidden = true;
+            findViewById(R.id.topButtons).setAlpha(0f);
             if (campfireEnabled) hideCampfireUi();
         }
     };
@@ -525,6 +526,11 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
         greetingName = cfg.greetingName;
         if (cfg.dateBelowClock) moveDateBelowClock();
         if (getResources().getBoolean(R.bool.compact_home_clock)) {
+            // Match the 28dp screen inset of the music badge and wallpaper location below.
+            View headerContainer = (View) clockBlock.getParent().getParent();
+            int edgeInset = Math.round(28 * density);
+            headerContainer.setPaddingRelative(edgeInset, headerContainer.getPaddingTop(),
+                    edgeInset, headerContainer.getPaddingBottom());
             ((TextView) findViewById(R.id.clock)).setTextSize(36.4f);
             ((TextView) findViewById(R.id.ampm)).setTextSize(10.5f);
             android.widget.TextClock date = findViewById(R.id.date);
@@ -1247,7 +1253,11 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
     private void setAppsCollapsed(boolean collapsed) {
         if (grid == null || glass == null) return;
         appsCollapsed = collapsed;
-        if (!collapsed) { idleHidden = false; restoreCampfireUi(); }
+        if (!collapsed) {
+            idleHidden = false;
+            restoreCampfireUi();
+            findViewById(R.id.topButtons).setAlpha(1f);
+        }
         grid.animate().cancel();
         grid.animate().alpha(collapsed ? 0f : 1f).setDuration(reducedMotion ? 0 : 180).start();
         grid.setImportantForAccessibility(collapsed ? View.IMPORTANT_FOR_ACCESSIBILITY_NO_HIDE_DESCENDANTS
@@ -1274,6 +1284,25 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
             entry.getKey().setAlpha(entry.getValue());
         }
         campfireUiAlpha.clear();
+    }
+
+    private void addCampfireVolume(LinearLayout rows, PopupWindow popup) {
+        if (!campfireEnabled) return;
+        if (campfirePlayer == null) campfirePlayer = new CampfirePlayer(this, root);
+        addSeparator(rows);
+        View row = addInputRow(rows, popup, R.drawable.ic_campfire, "", -1, () -> { });
+        TextView label = row.findViewById(R.id.title);
+        Runnable refresh = () -> label.setText("Campfire volume: ◀ " + campfirePlayer.volume() + "% ▶");
+        refresh.run();
+        row.setOnClickListener(v -> { });
+        row.setOnKeyListener((v, key, event) -> {
+            if (key != KeyEvent.KEYCODE_DPAD_LEFT && key != KeyEvent.KEYCODE_DPAD_RIGHT) return false;
+            if (event.getAction() == KeyEvent.ACTION_DOWN) {
+                campfirePlayer.setVolume(campfirePlayer.volume() + (key == KeyEvent.KEYCODE_DPAD_RIGHT ? 5 : -5));
+                refresh.run();
+            }
+            return true;
+        });
     }
 
     private void addCampfireToggle(LinearLayout rows, PopupWindow popup) {
@@ -1422,6 +1451,20 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
         if (idleHidden && navigation && event.getAction() == KeyEvent.ACTION_DOWN) {
             wakeKey = wakeCode;
             setAppsCollapsed(false);
+            if (wakeCode == KeyEvent.KEYCODE_DPAD_UP) {
+                ViewGroup bar = findViewById(R.id.topButtons);
+                for (int i = 0; i < bar.getChildCount(); i++) {
+                    View button = bar.getChildAt(i);
+                    if (button.getVisibility() == View.VISIBLE && button.isFocusable()) {
+                        button.requestFocus();
+                        break;
+                    }
+                }
+            } else {
+                grid.scrollToPosition(0);
+                focusTile(0);
+            }
+            if (!campfireEnabled) wallpaperPlayer.showLocationBriefly();
             restartAppIdle();
             return true;
         }
@@ -1761,7 +1804,23 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
 
     @Override
     public void onBackPressed() {
-        // Home screen: Back goes nowhere.
+        // Popups normally handle Back in their own window. Keep the fallback ordered so
+        // dismissing a menu never also hides Home underneath it.
+        if (cardPrompt != null) {
+            cardPrompt.dismiss();
+            return;
+        }
+        if (appLibrary != null) {
+            appLibrary.close();
+            return;
+        }
+        if (openPopup != null) {
+            openPopup.dismiss();
+            return;
+        }
+        // With no deeper screen, Back enters the same quiet state as inactivity.
+        root.removeCallbacks(collapseIdleApps);
+        collapseIdleApps.run();
     }
 
     // ---- glass highlight -------------------------------------------------------------------------
@@ -1774,7 +1833,7 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
         libraryFromTopBar = false;
         libraryFromVpnPill = false;
         appLibrary = new AppLibraryDialog(this, animations, reducedMotion, appLibrarySelection, libraryOkOpens,
-                campfireEnabled ? "Kaminfeuer — Larvis — CC BY-SA 4.0 (silent H.264 conversion)\nhttps://commons.wikimedia.org/wiki/File:Kaminfeuer.webm"
+                campfireEnabled ? campfirePlayer.sourceCredit()
                         : wallpaperPlayer.sourceCredit(), adapter::containsPackage, () -> reloadApps(false), () -> {
             appLibrary = null;
             openPopup = null;
@@ -3513,7 +3572,6 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
         View panel = getLayoutInflater().inflate(R.layout.popup_inputs, root, false);
         LinearLayout rows = panel.findViewById(R.id.rows);
         PopupWindow popup = glassPopup(panel, (int) (220 * density));
-        addCampfireToggle(rows, popup);
         // Inputs opens its own list once this one has closed.
         if (showInputsMenuRow) addInputRow(rows, popup, R.drawable.ic_input, getString(R.string.inputs), -1, () -> root.post(this::showInputs));
         addInputRow(rows, popup, R.drawable.ic_wifi, getString(R.string.quick_network), -1, this::openNetworkPill);
@@ -3531,6 +3589,8 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
             addInputRow(rows, popup, R.drawable.ic_settings, getString(R.string.settings), -1,
                     () -> open(systemIntent(Settings.ACTION_SETTINGS)));
         }
+        addCampfireToggle(rows, popup);
+        addCampfireVolume(rows, popup);
         panel.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
         popup.setWidth(Math.max((int) (220 * density), Math.min(panel.getMeasuredWidth(), (int) (360 * density))));
         dropIn(popup, panel, anchor, getResources().getBoolean(R.bool.rtl_menu_bar) ? Gravity.START : Gravity.END);
@@ -3543,9 +3603,9 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
         View panel = getLayoutInflater().inflate(R.layout.popup_inputs, root, false);
         LinearLayout rows = panel.findViewById(R.id.rows);
         PopupWindow popup = glassPopup(panel, (int) (200 * density));
-        addCampfireToggle(rows, popup);
         addInputRow(rows, popup, R.drawable.ic_settings, getString(R.string.settings), -1,
                 () -> open(systemIntent(Settings.ACTION_SETTINGS)));
+        addCampfireToggle(rows, popup);
         if (!launcherSettingsButton) addSettingsMenuRow(rows, popup, R.string.launcher_settings, () -> startActivityForResult(
                 new Intent(this, LauncherSettingsActivity.class), LAUNCHER_SETTINGS_REQUEST));
         // Firmware that ships its own settings app next to the AOSP one (Xiaomi China is one): the
@@ -3562,6 +3622,7 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
         addSettingsMenuRow(rows, popup, R.string.reorder, this::toggleReorder);
         // A launcher may not restart the TV itself; the Home key helper can open the system power menu instead.
         if (HomeKeyService.canOpenPowerMenu()) addSettingsMenuRow(rows, popup, R.string.power_menu, HomeKeyService::openPowerMenu);
+        addCampfireVolume(rows, popup);
         panel.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
         popup.setWidth(Math.max((int) (200 * density), panel.getMeasuredWidth()));
         // Hebrew puts Settings at the left of the header: grow the menu inward from it.
