@@ -31,6 +31,12 @@ public class ThemeFilesTest {
     }
 
     @Test public void theCollectionsCaptionsAreAllowed() {
+        assertEquals("wallpapers/catalog.tsv", ThemeFiles.path(Arrays.asList("wallpapers", "catalog.tsv")));
+        assertNull(ThemeFiles.path(Collections.singletonList("catalog.tsv")));
+        assertNull(ThemeFiles.path(Arrays.asList("wallpapers", "../catalog.tsv")));
+        assertEquals("wallpapers/credits.txt", ThemeFiles.path(Arrays.asList("wallpapers", "credits.txt")));
+        assertNull(ThemeFiles.path(Collections.singletonList("credits.txt")));
+        assertFalse(ThemeFiles.collectionImage("credits.txt"));
         assertEquals("wallpapers/captions.txt", ThemeFiles.path(Arrays.asList("wallpapers", "captions.txt")));
         assertNull(ThemeFiles.path(Collections.singletonList("captions.txt")));
         assertNull(ThemeFiles.path(Arrays.asList("wallpapers", "notes.txt")));

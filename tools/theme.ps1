@@ -52,7 +52,7 @@ function Drop($name) { "rm -f $dir/$name 2>/dev/null; content delete --uri $uri/
 $clearWallpapers = "mkdir -p $dir/wallpapers 2>/dev/null; rm -f $dir/wallpapers/*.[jJ][pP][gG] $dir/wallpapers/*.[jJ][pP][eE][gG] $dir/wallpapers/*.[pP][nN][gG] $dir/wallpapers/*.[wW][eE][bB][pP] 2>/dev/null; content delete --uri $uri/wallpapers 2>/dev/null"
 
 if ($Reset) {
-    Invoke-Tv tv.py "mkdir -p $dir 2>/dev/null; $(Drop 'config.json'); $(Drop 'wallpaper.jpg'); $(Drop 'wallpapers/captions.txt'); $clearWallpapers; printf '%s' '$revision' > $tmp-theme_revision; $(Put 'theme_revision')" | Out-Null
+    Invoke-Tv tv.py "mkdir -p $dir 2>/dev/null; $(Drop 'config.json'); $(Drop 'wallpaper.jpg'); $(Drop 'wallpapers/captions.txt'); $(Drop 'wallpapers/credits.txt'); $(Drop 'wallpapers/catalog.tsv'); $clearWallpapers; printf '%s' '$revision' > $tmp-theme_revision; $(Put 'theme_revision')" | Out-Null
     & $py -I theme_restart.py
     if ($LASTEXITCODE) { throw 'Home restart recovery failed' }
     Write-Host 'reset'
@@ -90,13 +90,16 @@ foreach ($image in $images) {
     Invoke-Tv b64push.py $image.FullName (Stage "wallpapers/$($image.Name)")
     Invoke-Tv tv.py (Put "wallpapers/$($image.Name)") | Out-Null
 }
-# The collection's names (wallpaper_captions); a theme without them leaves no stale names behind.
-$captions = Join-Path $Theme 'wallpapers\captions.txt'
-if (Test-Path $captions -PathType Leaf) {
-    Invoke-Tv b64push.py $captions (Stage 'wallpapers/captions.txt')
-    Invoke-Tv tv.py (Put 'wallpapers/captions.txt') | Out-Null
-} else {
-    Invoke-Tv tv.py (Drop 'wallpapers/captions.txt') | Out-Null
+# The collection's captions and attribution; a theme without them leaves no stale metadata.
+foreach ($metadataName in @('captions.txt', 'credits.txt', 'catalog.tsv')) {
+    $metadataPath = "wallpapers/$metadataName"
+    $metadataFile = Join-Path $Theme $metadataPath
+    if (Test-Path $metadataFile -PathType Leaf) {
+        Invoke-Tv b64push.py $metadataFile (Stage $metadataPath)
+        Invoke-Tv tv.py (Put $metadataPath) | Out-Null
+    } else {
+        Invoke-Tv tv.py (Drop $metadataPath) | Out-Null
+    }
 }
 Invoke-Tv tv.py "printf '%s' '$revision' > $tmp-theme_revision; $(Put 'theme_revision')" | Out-Null
 & $py -I theme_restart.py

@@ -25,7 +25,9 @@ final class CampfirePlayer implements TextureView.SurfaceTextureListener {
         this.context = context;
         volume = Math.max(0, Math.min(100, context.getSharedPreferences("ambient_mode", Context.MODE_PRIVATE).getInt("volume", 0)));
         view = new TextureView(context);
-        view.setOpaque(false);
+        // The video is opaque and center-cropped to cover the screen. Avoid blending
+        // every decoded frame with the wallpaper retained underneath it.
+        view.setOpaque(true);
         view.setFocusable(false);
         view.setImportantForAccessibility(View.IMPORTANT_FOR_ACCESSIBILITY_NO);
         view.setSurfaceTextureListener(this);
@@ -91,7 +93,17 @@ final class CampfirePlayer implements TextureView.SurfaceTextureListener {
 
     String sourceCredit() {
         File dir = Config.dir(context);
-        if (dir != null && new File(dir, "campfire-custom.txt").isFile()) return "Personal campfire video";
+        File credit = dir == null ? null : new File(dir, "campfire-custom.txt");
+        if (credit != null && credit.isFile()) {
+            if (credit.length() > 0 && credit.length() <= 4096) {
+                try {
+                    String text = new String(java.nio.file.Files.readAllBytes(credit.toPath()),
+                            java.nio.charset.StandardCharsets.UTF_8).trim();
+                    if (!text.isEmpty()) return text;
+                } catch (java.io.IOException ignored) { }
+            }
+            return "Personal campfire video";
+        }
         return "Kaminfeuer — Larvis — CC BY-SA 4.0 (silent H.264 conversion)\nhttps://commons.wikimedia.org/wiki/File:Kaminfeuer.webm";
     }
 

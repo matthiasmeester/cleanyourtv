@@ -16,9 +16,27 @@ The profile hides selected app tiles from the main screen. Hiding an app does no
 - A soft-colored three-dot More tile inside the app grid. Settings and Inputs keep their icons; the Inputs menu sorts connected HDMI inputs before names.
 - An explicit favorites order with the PS5 shortcut in slot five when installed. This order is saved in configuration rather than inferred from usage on a different TV.
 
-The fourteen saved wallpaper JPEGs are 3557 to 3840 pixels wide (3K/4K source assets), with hashes and public source URLs in [wallpapers.sources.json](wallpapers.sources.json) and [night-wallpapers.sources.json](night-wallpapers.sources.json). Wallpapers use 32-bit color (`ARGB_8888`) and are decoded for the launcher's native surface. On a 1920 by 1080 launcher surface, output is native 1080p; supplying a 4K image does not change the TV's display resolution. Home briefly shows a short location label; full source and license information stays in More and the repository.
+The online collection contains **106 day photographs and 114 night photographs**, including landscapes, cities, musicians, concert photography, archival scenes and spaceflight. Each listed source is at least **2560 × 1440**; no image was upscaled or artificially darkened. Find every location, author, licence, original source and available story in [the illustrated catalogue](catalog.html), [CSV index](catalog.csv), [day manifest](wallpapers.sources.json), and [night manifest](night-wallpapers.sources.json). The illustrated catalogue loads Wikimedia images over the internet as you scroll; it is not an offline gallery.
+
+The TV retains only a bounded **100,000,000-byte image cache**, rather than installing the full collection. A small offline seed set is listed in `manifest.json`; the complete remote index is `wallpapers/catalog.tsv`. Cached images remain available without internet, but unseen photographs cannot download while offline. The limit concerns image files; application code, metadata and decoded image memory are separate. The browser catalogue is also separate from the TV cache and may transfer more than 100 MB if you browse every photograph.
+
+Most catalogue entries were downloaded and checked with Pillow during curation. Entries marked `download_verified: false` have source-reported dimensions only and no invented checksum; the TV must validate their actual format and dimensions before displaying them. Recorded SHA-256 hashes identify verified source bytes. Photos keep their individual licences, separate from this repository's MIT licence. The original 014.jpg panorama is excluded because its height was below 1440 pixels.
+
+This profile opts into downloading photographs from Wikimedia HTTPS image hosts. Those hosts receive the TV's IP address, requested image URLs and request timing; that necessarily reveals which photographs were requested. No Spotify credentials, personal location, separate viewing-history upload, or analytics are required. The downloaded file itself is subject to the cache limit. Full-size research downloads are private local material, not part of the public repository or an installation.
+
+This personal fork deliberately adds `android.permission.INTERNET` for on-demand wallpaper downloads, unlike the upstream local-only launcher. Downloads require no API key and allow only `upload.wikimedia.org` and `thumb.wikimedia.org`. Cached files live in `wallpaper-cache`; each transfer is limited to 20,000,000 bytes. The included four seed images total 11,732,325 bytes and count toward the overall 100,000,000-byte image budget. These installation and network details are recorded explicitly in `manifest.json`.
+
+Home briefly shows a short location label; full source and licence information stays in More. Source resolution does not change the TV display resolution: a 1080p launcher surface still renders at 1080p. To reduce effects on modest TV hardware, this profile disables row fades and advanced effects and enables reduced motion.
 
 The day and night collections contain selected photographs, not generated or manually painted scenes. Night uses real nighttime photographs rather than darkened copies of daytime images. With no location configured, the switch uses 19:00–07:00 in the TV's time zone; this is a time-based fallback, not local sunset detection. Configuring the launcher's latitude and longitude enables its existing sunrise/sunset calculation; personal coordinates are not included in this public profile.
+
+The night collection also includes illuminated late-blue-hour city scenes, dark concert stages and astronomical/space photography. Historical photographs with genuinely unknown venue information say so rather than guessing. Political rallies, gore and explicit material are excluded.
+
+## Rebuild the photo catalogue
+
+The two source manifests are the canonical reusable collection. Run `python profiles/compact-glass/build_catalog.py` to regenerate the online index, location captions, More credits, HTML/CSV catalogue, mood lists and manifest counts. Run the same command with `--check` to check for stale outputs without changing them. Pillow is required to validate any locally present seed JPEGs; the generator never downloads, resizes or recompresses photographs. Reinstallation uses these public manifests and the small seed set, not private staging files. Review the installer and network behaviour before installing on another TV.
+
+Validation requires the local image set to match `offline_seed_files` exactly and stay at or below 20,000,000 bytes, preventing accidental inclusion of the full research collection. It also rejects uncatalogued images, unsafe download URLs, duplicate source photographs and non-permitted licences. Run the offline safety tests with `python -m unittest discover -s profiles/compact-glass -p test_catalog.py`.
 
 ## Requirements
 
@@ -97,6 +115,14 @@ Campfire keeps the screen awake while it is visible; switching it off or leaving
 To install your own local MP4, pass `-CampfireVideo 'C:\path\to\video.mp4'`. Personal video files are not committed. The installer uses ffmpeg from PATH to amplify custom audio by 3×, limiting peaks to avoid clipping, and copies the video stream unchanged. Its generated `campfire-adjusted.mp4` stays in the private backup folder. Pass `-CampfireAudioGain 1` to preserve the original audio without ffmpeg, or choose another gain from 1 to 8. This processing never changes system or Spotify volume.
 
 The bottom of the settings popup shows a separate campfire-volume control only while Campfire is on: Left/Right changes it by 5%, from 0–100%, saved on this TV. It defaults to muted. A custom video must contain audio for this control to produce sound; the bundled licensed fallback is silent.
+
+The selected fireplace visuals are Wikimedia's `Kaminfeuer.webm`, already reproduced by the bundled H.264 fallback. The original is 1280×720 and silent (the 1440p minimum applies to the photo catalogue). To combine these visuals with your own already-amplified audio without re-encoding the video:
+
+```powershell
+ffmpeg -i profiles/compact-glass/media/campfire.mp4 -stream_loop -1 -i private-audio.mp4 -map 0:v:0 -map 1:a:0 -c:v copy -c:a aac -b:a 192k -t 10.76 -movflags +faststart private-fireplace.mp4
+```
+
+Install that private result using `-CampfireVideo` and `-CampfireAudioGain 1` to avoid amplifying twice. Keep personal media outside Git. An optional UTF-8 `campfire-custom.txt` in the TV theme directory can provide custom source credits (up to 4096 bytes); an empty marker retains the generic personal-video label. Replacing media does not reset the TV's saved on/off or volume preferences.
 
 The compact Now playing bubble at bottom left shows the track and artist only while playback is active, without artwork or a logo. Pass `-EnableNowPlaying` to grant Android notification-listener access to `com.gathin.tvhome/.NowPlayingAccess`, which permits media-session observation. The implementation never reads notification contents, sends playback commands, fetches artwork URLs, or stores track history. It needs no Spotify credentials. Revoke with `cmd notification disallow_listener com.gathin.tvhome/.NowPlayingAccess`; the bubble then stays hidden. Missing metadata falls back to the application name.
 

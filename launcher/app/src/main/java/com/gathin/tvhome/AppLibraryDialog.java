@@ -24,6 +24,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -91,6 +92,7 @@ final class AppLibraryDialog {
     private final boolean rtl;
     private TextView instructions;
     private TextView backButton;
+    private TextView sourceButton;
     private int totalApps;
     final PopupWindow popup;
     private final float density;
@@ -360,6 +362,7 @@ final class AppLibraryDialog {
         stopHighlight();
         resize(catalogWidth, catalogHeight);
         panel.removeAllViews();
+        sourceButton = null;
         LinearLayout header = new LinearLayout(activity);
         header.setGravity(Gravity.CENTER_VERTICAL);
         header.setPadding(dp(12), dp(4), dp(8), dp(4));
@@ -387,7 +390,8 @@ final class AppLibraryDialog {
             backButton.setOnKeyListener((v, key, event) -> {
                 if (event.getAction() != KeyEvent.ACTION_DOWN) return false;
                 if (key == KeyEvent.KEYCODE_DPAD_DOWN) {
-                    focusMoreCard();
+                    if (apps.isEmpty() && sourceButton != null) sourceButton.requestFocus();
+                    else focusMoreCard();
                     return true;
                 }
                 return key == KeyEvent.KEYCODE_DPAD_UP || key == KeyEvent.KEYCODE_DPAD_LEFT
@@ -465,12 +469,96 @@ final class AppLibraryDialog {
 
     private void addWallpaperSource() {
         if (!moreMode || wallpaperSource.isEmpty()) return;
-        TextView source = text(wallpaperSource, 11, 0xA6FFFFFF);
-        source.setMaxLines(4);
-        source.setPadding(dp(12), dp(8), dp(12), 0);
-        source.setFocusable(false);
-        source.setClickable(false);
-        panel.addView(source, new LinearLayout.LayoutParams(-1, -2));
+        TextView source = text("Background source & details", 13, Color.WHITE);
+        sourceButton = source;
+        source.setBackgroundResource(R.drawable.pill_bg);
+        source.setTextColor(activity.getColorStateList(R.color.more_button_text));
+        source.setGravity(Gravity.CENTER_VERTICAL);
+        source.setPadding(dp(12), dp(8), dp(12), dp(8));
+        source.setFocusableInTouchMode(true);
+        source.setOnFocusChangeListener((v, focused) -> {
+            if (focused && highlight != null) highlight.setAlpha(0f);
+        });
+        source.setOnClickListener(v -> showWallpaperSource(source));
+        source.setOnKeyListener((v, key, event) -> {
+            if (event.getAction() != KeyEvent.ACTION_DOWN) return false;
+            if (key == KeyEvent.KEYCODE_DPAD_UP) {
+                if (apps.isEmpty()) backButton.requestFocus();
+                else focusMoreCard();
+                return true;
+            }
+            return key == KeyEvent.KEYCODE_DPAD_DOWN || key == KeyEvent.KEYCODE_DPAD_LEFT
+                    || key == KeyEvent.KEYCODE_DPAD_RIGHT;
+        });
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(-1, dp(40));
+        params.setMargins(dp(12), dp(6), dp(12), 0);
+        panel.addView(source, params);
+    }
+
+    /** Full attribution stays local and readable with the remote; URLs never launch a browser. */
+    private void showWallpaperSource(TextView source) {
+        dismissActions();
+        LinearLayout details = new LinearLayout(activity);
+        details.setOrientation(LinearLayout.VERTICAL);
+        details.setPadding(dp(20), dp(16), dp(20), dp(16));
+        details.setBackgroundResource(R.drawable.glass_panel);
+        LinearLayout header = new LinearLayout(activity);
+        header.setGravity(Gravity.CENTER_VERTICAL);
+        TextView title = text("Background source & details", 20, Color.WHITE);
+        header.addView(title, new LinearLayout.LayoutParams(0, -2, 1));
+        TextView back = text(activity.getString(R.string.more_apps_back), 15, Color.WHITE);
+        back.setBackgroundResource(R.drawable.pill_bg);
+        back.setTextColor(activity.getColorStateList(R.color.more_button_text));
+        back.setGravity(Gravity.CENTER);
+        back.setPadding(dp(14), 0, dp(14), 0);
+        back.setFocusableInTouchMode(true);
+        header.addView(back, new LinearLayout.LayoutParams(-2, dp(40)));
+        details.addView(header, new LinearLayout.LayoutParams(-1, dp(48)));
+        ScrollView scroll = new ScrollView(activity);
+        scroll.setFocusableInTouchMode(true);
+        scroll.setDescendantFocusability(ViewGroup.FOCUS_BLOCK_DESCENDANTS);
+        scroll.setFillViewport(true);
+        scroll.setOverScrollMode(View.OVER_SCROLL_NEVER);
+        TextView credit = text(wallpaperSource, 14, 0xE6FFFFFF);
+        credit.setPadding(dp(4), dp(12), dp(4), dp(12));
+        credit.setLineSpacing(dp(5), 1f);
+        credit.setFocusable(false);
+        credit.setClickable(false);
+        scroll.addView(credit, new ScrollView.LayoutParams(-1, -2));
+        details.addView(scroll, new LinearLayout.LayoutParams(-1, 0, 1));
+        View decor = activity.getWindow().getDecorView();
+        int height = Math.min(dp(380), Math.max(dp(160), decor.getHeight() - dp(64)));
+        PopupWindow menu = new PopupWindow(details, catalogWidth, height, true);
+        actionPopup = menu;
+        menu.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        menu.setOutsideTouchable(false);
+        menu.setAnimationStyle(0);
+        menu.setOnDismissListener(() -> {
+            if (actionPopup == menu) actionPopup = null;
+            source.post(() -> {
+                if (!closed && popup.isShowing() && actionPopup == null && source == sourceButton)
+                    source.requestFocus();
+            });
+        });
+        back.setOnClickListener(v -> menu.dismiss());
+        back.setOnKeyListener((v, key, event) -> {
+            if (event.getAction() != KeyEvent.ACTION_DOWN) return false;
+            if (key == KeyEvent.KEYCODE_DPAD_DOWN) { scroll.requestFocus(); return true; }
+            return key == KeyEvent.KEYCODE_DPAD_UP || key == KeyEvent.KEYCODE_DPAD_LEFT
+                    || key == KeyEvent.KEYCODE_DPAD_RIGHT;
+        });
+        scroll.setOnKeyListener((v, key, event) -> {
+            if (event.getAction() != KeyEvent.ACTION_DOWN) return false;
+            if (key == KeyEvent.KEYCODE_DPAD_UP) {
+                if (scroll.getScrollY() == 0) back.requestFocus();
+                else scroll.smoothScrollBy(0, -dp(72));
+                return true;
+            }
+            if (key == KeyEvent.KEYCODE_DPAD_DOWN) { scroll.smoothScrollBy(0, dp(72)); return true; }
+            return key == KeyEvent.KEYCODE_DPAD_LEFT || key == KeyEvent.KEYCODE_DPAD_RIGHT;
+        });
+        menu.showAtLocation(decor, Gravity.CENTER, 0, 0);
+        scroll.requestFocus();
     }
 
     private void dismissActions() {
@@ -733,6 +821,11 @@ final class AppLibraryDialog {
                 }
             });
             holder.itemView.setOnKeyListener((v, key, event) -> {
+                if (moreMode && sourceButton != null && event.getAction() == KeyEvent.ACTION_DOWN
+                        && key == KeyEvent.KEYCODE_DPAD_DOWN) {
+                    sourceButton.requestFocus();
+                    return true;
+                }
                 if (moreMode && event.getAction() == KeyEvent.ACTION_DOWN && key == KeyEvent.KEYCODE_DPAD_UP) {
                     backButton.requestFocus();
                     return true;

@@ -55,7 +55,7 @@ del() { echo "rm -f $DIR/$1 2>/dev/null; content delete --uri $URI/$1 2>/dev/nul
 CLEAR_WALLPAPERS="mkdir -p $DIR/wallpapers 2>/dev/null; rm -f $DIR/wallpapers/*.[jJ][pP][gG] $DIR/wallpapers/*.[jJ][pP][eE][gG] $DIR/wallpapers/*.[pP][nN][gG] $DIR/wallpapers/*.[wW][eE][bB][pP] 2>/dev/null; content delete --uri $URI/wallpapers 2>/dev/null"
 
 if [ "${1:-}" = --reset ]; then
-  tv "mkdir -p $DIR 2>/dev/null; $(del config.json); $(del wallpaper.jpg); $(del wallpapers/captions.txt); $CLEAR_WALLPAPERS; printf '%s' '$REVISION' > $TMP-theme_revision; $(put theme_revision)" >/dev/null
+  tv "mkdir -p $DIR 2>/dev/null; $(del config.json); $(del wallpaper.jpg); $(del wallpapers/captions.txt); $(del wallpapers/credits.txt); $(del wallpapers/catalog.tsv); $CLEAR_WALLPAPERS; printf '%s' '$REVISION' > $TMP-theme_revision; $(put theme_revision)" >/dev/null
   "$PY" -I theme_restart.py
   echo reset
   exit 0
@@ -115,13 +115,15 @@ for NAME in $NAMES; do
   "$PY" -I b64push.py "$THEME/wallpapers/$NAME" "$(stage "wallpapers/$NAME")"
   tv "$(put "wallpapers/$NAME")" >/dev/null
 done
-# The collection's names (wallpaper_captions); a theme without them leaves no stale names behind.
-if [ -f "$THEME/wallpapers/captions.txt" ]; then
-  "$PY" -I b64push.py "$THEME/wallpapers/captions.txt" "$(stage wallpapers/captions.txt)"
-  tv "$(put wallpapers/captions.txt)" >/dev/null
-else
-  tv "$(del wallpapers/captions.txt)" >/dev/null
-fi
+# The collection's captions and attribution; a theme without them leaves no stale metadata.
+for METADATA in captions.txt credits.txt catalog.tsv; do
+  if [ -f "$THEME/wallpapers/$METADATA" ]; then
+    "$PY" -I b64push.py "$THEME/wallpapers/$METADATA" "$(stage "wallpapers/$METADATA")"
+    tv "$(put "wallpapers/$METADATA")" >/dev/null
+  else
+    tv "$(del "wallpapers/$METADATA")" >/dev/null
+  fi
+done
 tv "printf '%s' '$REVISION' > $TMP-theme_revision; $(put theme_revision)" >/dev/null
 "$PY" -I theme_restart.py
 echo applied

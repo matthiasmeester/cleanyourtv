@@ -1,9 +1,2332 @@
 {
   "collection": "compact-glass",
-  "source": "Wikimedia Commons imageinfo API",
-  "retrieved": "2026-10-26",
-  "changes": "Downloaded the Wikimedia 3840-pixel derivatives, or original when smaller, without local image editing.",
+  "period": "day",
+  "minimum_dimensions": [
+    2560,
+    1440
+  ],
+  "storage": "Online catalogue; bounded on-device cache, not a bundled full collection",
   "images": [
+    {
+      "title": "Valley View Yosemite August 2013 002.jpg",
+      "location": "Yosemite Valley, California, USA",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "King of Hearts",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Valley_View_Yosemite_August_2013_002.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Valley_View_Yosemite_August_2013_002.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Valley_View_Yosemite_August_2013_002.jpg/3840px-Valley_View_Yosemite_August_2013_002.jpg",
+      "source_dimensions": [
+        4928,
+        3264
+      ],
+      "file": "day-001.jpg",
+      "dimensions": [
+        3840,
+        2543
+      ],
+      "sha256": "7202cac8a9ee76db59cc0e46a141e120c5fd595ec9acee341c613278c4c14e36",
+      "original_dimensions": [
+        4928,
+        3264
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Grand Canyon Powell Point Evening Light 02 2013.jpg",
+      "location": "Grand Canyon, Arizona, USA",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "Tuxyso",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Grand_Canyon_Powell_Point_Evening_Light_02_2013.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/01/Grand_Canyon_Powell_Point_Evening_Light_02_2013.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Grand_Canyon_Powell_Point_Evening_Light_02_2013.jpg/3840px-Grand_Canyon_Powell_Point_Evening_Light_02_2013.jpg",
+      "source_dimensions": [
+        4583,
+        2899
+      ],
+      "file": "day-002.jpg",
+      "dimensions": [
+        3840,
+        2429
+      ],
+      "sha256": "c024fee941c569055a4b661927bf766cf452db895ade41b17f044ac7e5ee541e",
+      "original_dimensions": [
+        4583,
+        2899
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "1 moraine lake pano 2019.jpg",
+      "location": "Moraine Lake, Alberta, Canada",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "Chensiyuan",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:1_moraine_lake_pano_2019.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/03/1_moraine_lake_pano_2019.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/1_moraine_lake_pano_2019.jpg/3840px-1_moraine_lake_pano_2019.jpg",
+      "source_dimensions": [
+        14949,
+        7983
+      ],
+      "file": "day-003.jpg",
+      "dimensions": [
+        3840,
+        2051
+      ],
+      "sha256": "1c1dfb9a67be6a35b064d6a41c9725124011d50106c653bde83c4d607ca54106",
+      "original_dimensions": [
+        14949,
+        7983
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Peyto Lake-Banff NP-Canada.jpg",
+      "location": "Peyto Lake, Alberta, Canada",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "Tobias Alt, Tobi 87",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Peyto_Lake-Banff_NP-Canada.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/9/91/Peyto_Lake-Banff_NP-Canada.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Peyto_Lake-Banff_NP-Canada.jpg/3840px-Peyto_Lake-Banff_NP-Canada.jpg",
+      "source_dimensions": [
+        4150,
+        2467
+      ],
+      "file": "day-004.jpg",
+      "dimensions": [
+        3840,
+        2283
+      ],
+      "sha256": "ef3533a49956e37358e5bdb8bd84c3dd7a1a14e4de2c72312547b56b5cdfa06e",
+      "original_dimensions": [
+        4150,
+        2467
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "A view towards Torres Del Paine.jpg",
+      "location": "Torres del Paine, Chile",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "Winky from Oxford, UK",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "page": "https://commons.wikimedia.org/wiki/File:A_view_towards_Torres_Del_Paine.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/A_view_towards_Torres_Del_Paine.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/A_view_towards_Torres_Del_Paine.jpg",
+      "source_dimensions": [
+        3072,
+        2048
+      ],
+      "file": "day-005.jpg",
+      "dimensions": [
+        3072,
+        2048
+      ],
+      "sha256": "3afce6350b12768b930a8a59a7ead176aaf40c54d17df2b49278f2d7270b69f5",
+      "original_dimensions": [
+        3072,
+        2048
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Iguazu Décembre 2007 - Panorama 3.jpg",
+      "location": "Iguazú Falls, Argentina and Brazil",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "Martin St-Amant (S23678)",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Iguazu_D%C3%A9cembre_2007_-_Panorama_3.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/2/21/Iguazu_D%C3%A9cembre_2007_-_Panorama_3.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/2/21/Iguazu_D%C3%A9cembre_2007_-_Panorama_3.jpg",
+      "source_dimensions": [
+        3155,
+        2325
+      ],
+      "file": "day-006.jpg",
+      "dimensions": [
+        3155,
+        2325
+      ],
+      "sha256": "a8d925e11369c6a321e11ec3c9492e2606bb3d34fe829461e2f32d61503ac9b1",
+      "original_dimensions": [
+        3155,
+        2325
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Salar de Uyuni, Bolivia, 2016-02-04, DD 10-12 HDR.JPG",
+      "location": "Salar de Uyuni, Bolivia",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "Diego Delso",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Salar_de_Uyuni,_Bolivia,_2016-02-04,_DD_10-12_HDR.JPG",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/6/64/Salar_de_Uyuni%2C_Bolivia%2C_2016-02-04%2C_DD_10-12_HDR.JPG",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Salar_de_Uyuni%2C_Bolivia%2C_2016-02-04%2C_DD_10-12_HDR.JPG/3840px-Salar_de_Uyuni%2C_Bolivia%2C_2016-02-04%2C_DD_10-12_HDR.JPG",
+      "source_dimensions": [
+        8654,
+        4868
+      ],
+      "file": "day-007.jpg",
+      "dimensions": [
+        3840,
+        2160
+      ],
+      "sha256": "a9ba78089bb834e5a3146218f3804e2431d31758af35883cb4954335e4a7ad08",
+      "original_dimensions": [
+        8654,
+        4868
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Parque Nacional dos Lençóis Maranhenses Paulo Cattelan (03).jpg",
+      "location": "Lençóis Maranhenses, Brazil",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "Paulo Cattelan",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Parque_Nacional_dos_Len%C3%A7%C3%B3is_Maranhenses_Paulo_Cattelan_(03).jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/06/Parque_Nacional_dos_Len%C3%A7%C3%B3is_Maranhenses_Paulo_Cattelan_%2803%29.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Parque_Nacional_dos_Len%C3%A7%C3%B3is_Maranhenses_Paulo_Cattelan_%2803%29.jpg/3840px-Parque_Nacional_dos_Len%C3%A7%C3%B3is_Maranhenses_Paulo_Cattelan_%2803%29.jpg",
+      "source_dimensions": [
+        6016,
+        4016
+      ],
+      "file": "day-008.jpg",
+      "dimensions": [
+        3840,
+        2563
+      ],
+      "sha256": "692b8ccae8892f4096c6ddf409d0991232f8f81491a18821bcd2c56ed7e3e9cf",
+      "original_dimensions": [
+        6016,
+        4016
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Parco Naturale Tre Cime horses 3.jpg",
+      "location": "Tre Cime di Lavaredo, Dolomites, Italy",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "kallerna",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Parco_Naturale_Tre_Cime_horses_3.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/7/76/Parco_Naturale_Tre_Cime_horses_3.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Parco_Naturale_Tre_Cime_horses_3.jpg/3840px-Parco_Naturale_Tre_Cime_horses_3.jpg",
+      "source_dimensions": [
+        4200,
+        2800
+      ],
+      "file": "day-009.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "2586edd19a88c9c2af70e85204a6612fc4ea27f751572dcee86dda8b9139acd4",
+      "original_dimensions": [
+        4200,
+        2800
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Lauterbrunnen valley from Wengen.jpg",
+      "location": "Lauterbrunnen Valley, Switzerland",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "Oleg.o.lyamin",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Lauterbrunnen_valley_from_Wengen.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Lauterbrunnen_valley_from_Wengen.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Lauterbrunnen_valley_from_Wengen.jpg/3840px-Lauterbrunnen_valley_from_Wengen.jpg",
+      "source_dimensions": [
+        4272,
+        2403
+      ],
+      "file": "day-010.jpg",
+      "dimensions": [
+        3840,
+        2160
+      ],
+      "sha256": "a23f2077b1aa14ce56c5255b9085bed18fc2d6246b9308a593c1d997cf7d47f5",
+      "original_dimensions": [
+        4272,
+        2403
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Matterhorn reflection in the Riffelsee at sunrise.jpg",
+      "location": "Matterhorn, Swiss Alps",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "Deralpinbergsteiger",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Matterhorn_reflection_in_the_Riffelsee_at_sunrise.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Matterhorn_reflection_in_the_Riffelsee_at_sunrise.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Matterhorn_reflection_in_the_Riffelsee_at_sunrise.jpg/3840px-Matterhorn_reflection_in_the_Riffelsee_at_sunrise.jpg",
+      "source_dimensions": [
+        6000,
+        4000
+      ],
+      "file": "day-011.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "4386eb91c2f955b88b3c5bc3d29df779e5fb07d8f4ddc36c8cd60ee43811fbca",
+      "original_dimensions": [
+        6000,
+        4000
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Geirangerfjord from Ørnesvingen, 2013 June.jpg",
+      "location": "Geirangerfjord, Norway",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "Ximonic (Simo Räsänen)",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Geirangerfjord_from_%C3%98rnesvingen,_2013_June.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Geirangerfjord_from_%C3%98rnesvingen%2C_2013_June.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Geirangerfjord_from_%C3%98rnesvingen%2C_2013_June.jpg/3840px-Geirangerfjord_from_%C3%98rnesvingen%2C_2013_June.jpg",
+      "source_dimensions": [
+        6520,
+        3660
+      ],
+      "file": "day-012.jpg",
+      "dimensions": [
+        3840,
+        2156
+      ],
+      "sha256": "2896b45d3b110a59fc5c272129db573cefcda63a1d903bcd84b2a5cee8124e1a",
+      "original_dimensions": [
+        6520,
+        3660
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Sakrisoy Reine Lofoten tunliweb.jpg",
+      "location": "Sakrisøy, Lofoten, Norway",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "Svein Magne Tunli",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Sakrisoy_Reine_Lofoten_tunliweb.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Sakrisoy_Reine_Lofoten_tunliweb.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Sakrisoy_Reine_Lofoten_tunliweb.jpg/3840px-Sakrisoy_Reine_Lofoten_tunliweb.jpg",
+      "source_dimensions": [
+        6714,
+        4476
+      ],
+      "file": "day-013.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "878f59316024f9ef1014d108e34dcc314c9609e6bc3d6ba54dda06e41dd730b6",
+      "original_dimensions": [
+        6714,
+        4476
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Skógafoss July 2014.JPG",
+      "location": "Skógafoss, Iceland",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "Martin Falbisoner",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Sk%C3%B3gafoss_July_2014.JPG",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/9/98/Sk%C3%B3gafoss_July_2014.JPG",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Sk%C3%B3gafoss_July_2014.JPG/3840px-Sk%C3%B3gafoss_July_2014.JPG",
+      "source_dimensions": [
+        4238,
+        2265
+      ],
+      "file": "day-014.jpg",
+      "dimensions": [
+        3840,
+        2052
+      ],
+      "sha256": "2e1ddd9bf6f32e18a4f3896900f342fa32f150512d2d1eafc423e30b686b7ae4",
+      "original_dimensions": [
+        4238,
+        2265
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Glacier Lagoon With Boaters.jpg",
+      "location": "Jökulsárlón, Iceland",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "Eric Kilby",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Glacier_Lagoon_With_Boaters.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Glacier_Lagoon_With_Boaters.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Glacier_Lagoon_With_Boaters.jpg/3840px-Glacier_Lagoon_With_Boaters.jpg",
+      "source_dimensions": [
+        8126,
+        4325
+      ],
+      "file": "day-015.jpg",
+      "dimensions": [
+        3840,
+        2044
+      ],
+      "sha256": "b3dc93659882c3e101fa772e1c77a9239803e0fb0032fe37700fe00c67cc477a",
+      "original_dimensions": [
+        8126,
+        4325
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Quiraing, Isle of Skye, Scotland - Diliff.jpg",
+      "location": "Quiraing, Isle of Skye, Scotland",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "Diliff",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Quiraing,_Isle_of_Skye,_Scotland_-_Diliff.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/7/72/Quiraing%2C_Isle_of_Skye%2C_Scotland_-_Diliff.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Quiraing%2C_Isle_of_Skye%2C_Scotland_-_Diliff.jpg/3840px-Quiraing%2C_Isle_of_Skye%2C_Scotland_-_Diliff.jpg",
+      "source_dimensions": [
+        6976,
+        3444
+      ],
+      "file": "day-016.jpg",
+      "dimensions": [
+        3840,
+        1896
+      ],
+      "sha256": "cb1077cfa7f51be155a975446f599b95609942debd176a4c711bf2cddb384fca",
+      "original_dimensions": [
+        6976,
+        3444
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Waterfall in Plitvice Lakes National Park. Croatia.jpg",
+      "location": "Plitvice Lakes, Croatia",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "Zysko serhii",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Waterfall_in_Plitvice_Lakes_National_Park._Croatia.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Waterfall_in_Plitvice_Lakes_National_Park._Croatia.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Waterfall_in_Plitvice_Lakes_National_Park._Croatia.jpg",
+      "source_dimensions": [
+        3543,
+        2362
+      ],
+      "file": "day-017.jpg",
+      "dimensions": [
+        3543,
+        2362
+      ],
+      "sha256": "e3424c8ff9a1b8a63dc06d717d1864ade51e1c0c2e5bbc34d00f252a420ee5ce",
+      "original_dimensions": [
+        3543,
+        2362
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Sossusvlei Dune Rippled cropped.jpg",
+      "location": "Sossusvlei, Namibia",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "Daniel Kraft",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Sossusvlei_Dune_Rippled_cropped.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Sossusvlei_Dune_Rippled_cropped.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Sossusvlei_Dune_Rippled_cropped.jpg/3840px-Sossusvlei_Dune_Rippled_cropped.jpg",
+      "source_dimensions": [
+        4600,
+        2746
+      ],
+      "file": "day-018.jpg",
+      "dimensions": [
+        3840,
+        2292
+      ],
+      "sha256": "a88fbd519a461823a65e3ba9f64a8f0fb1bce805eb29cd80196155d775f37152",
+      "original_dimensions": [
+        4600,
+        2746
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Dead Vlei, Sossusvlei, Namibia, 2018-08-06, DD 086.jpg",
+      "location": "Deadvlei, Namibia",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "Diego Delso",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Dead_Vlei,_Sossusvlei,_Namibia,_2018-08-06,_DD_086.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Dead_Vlei%2C_Sossusvlei%2C_Namibia%2C_2018-08-06%2C_DD_086.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Dead_Vlei%2C_Sossusvlei%2C_Namibia%2C_2018-08-06%2C_DD_086.jpg/3840px-Dead_Vlei%2C_Sossusvlei%2C_Namibia%2C_2018-08-06%2C_DD_086.jpg",
+      "source_dimensions": [
+        8078,
+        5399
+      ],
+      "file": "day-019.jpg",
+      "dimensions": [
+        3840,
+        2566
+      ],
+      "sha256": "72af6f2e7ce3aef0920d660228b9f7084954990857cd75098220e9da00808914",
+      "original_dimensions": [
+        8078,
+        5399
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Serengeti-Landscape-2012.JPG",
+      "location": "Serengeti, Tanzania",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "Bjørn Christian Tørrissen",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Serengeti-Landscape-2012.JPG",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Serengeti-Landscape-2012.JPG",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Serengeti-Landscape-2012.JPG/3840px-Serengeti-Landscape-2012.JPG",
+      "source_dimensions": [
+        4589,
+        2643
+      ],
+      "file": "day-020.jpg",
+      "dimensions": [
+        3840,
+        2212
+      ],
+      "sha256": "70fb60653f23edb79d776875a122614f2da9bbc23841149c1e83977491c92781",
+      "original_dimensions": [
+        4589,
+        2643
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Blyde River Canyon Nature Reserve (ZA), Blyde River, Bourke's Luck Potholes, Blyde River Canyon -- 2024 -- 0024.jpg",
+      "location": "Blyde River Canyon, South Africa",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "Dietmar Rabich",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Blyde_River_Canyon_Nature_Reserve_(ZA),_Blyde_River,_Bourke%27s_Luck_Potholes,_Blyde_River_Canyon_--_2024_--_0024.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Blyde_River_Canyon_Nature_Reserve_%28ZA%29%2C_Blyde_River%2C_Bourke%27s_Luck_Potholes%2C_Blyde_River_Canyon_--_2024_--_0024.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Blyde_River_Canyon_Nature_Reserve_%28ZA%29%2C_Blyde_River%2C_Bourke%27s_Luck_Potholes%2C_Blyde_River_Canyon_--_2024_--_0024.jpg/3840px-Blyde_River_Canyon_Nature_Reserve_%28ZA%29%2C_Blyde_River%2C_Bourke%27s_Luck_Potholes%2C_Blyde_River_Canyon_--_2024_--_0024.jpg",
+      "source_dimensions": [
+        6720,
+        4480
+      ],
+      "file": "day-021.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "2b3473439ce42bdd169bbd723685a0aff757da192cfff5d5bb3be1b0defdf7bd",
+      "original_dimensions": [
+        6720,
+        4480
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Nature - Flickr - Le Zenits.jpg",
+      "location": "Zhangjiajie, Hunan, China",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "Le Zenits",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Nature_-_Flickr_-_Le_Zenits.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/04/Nature_-_Flickr_-_Le_Zenits.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Nature_-_Flickr_-_Le_Zenits.jpg/3840px-Nature_-_Flickr_-_Le_Zenits.jpg",
+      "source_dimensions": [
+        5472,
+        3648
+      ],
+      "file": "day-022.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "b4459b2fa7373eb971fdd26313cdb525669bdf453c758ad518bc0aed4e413c63",
+      "original_dimensions": [
+        5472,
+        3648
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "The famous Li River karsts now begin to show (35910345682).jpg",
+      "location": "Li River, Guangxi, China",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "shankar s. from Dubai, united arab emirates",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "page": "https://commons.wikimedia.org/wiki/File:The_famous_Li_River_karsts_now_begin_to_show_(35910345682).jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/The_famous_Li_River_karsts_now_begin_to_show_%2835910345682%29.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/The_famous_Li_River_karsts_now_begin_to_show_%2835910345682%29.jpg/3840px-The_famous_Li_River_karsts_now_begin_to_show_%2835910345682%29.jpg",
+      "source_dimensions": [
+        4928,
+        3264
+      ],
+      "file": "day-023.jpg",
+      "dimensions": [
+        3840,
+        2543
+      ],
+      "sha256": "fd76b54758803ce354c4c89c7348cf7af63c1b94fd412f995b08c3b612a1a6ae",
+      "original_dimensions": [
+        4928,
+        3264
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Mount Fuji from Lake Yamanaka.JPG",
+      "location": "Mount Fuji, Japan",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "Alpsdake",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Mount_Fuji_from_Lake_Yamanaka.JPG",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/3/36/Mount_Fuji_from_Lake_Yamanaka.JPG",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Mount_Fuji_from_Lake_Yamanaka.JPG/3840px-Mount_Fuji_from_Lake_Yamanaka.JPG",
+      "source_dimensions": [
+        5184,
+        3456
+      ],
+      "file": "day-024.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "c071260be0f5e90f8aba8f0513e9809739d4ecaf337c7fb1bc8b620f229ce451",
+      "original_dimensions": [
+        5184,
+        3456
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Milford Sound Mitre Peak.JPG",
+      "location": "Milford Sound, New Zealand",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "MurielBendel",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Milford_Sound_Mitre_Peak.JPG",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Milford_Sound_Mitre_Peak.JPG",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Milford_Sound_Mitre_Peak.JPG/3840px-Milford_Sound_Mitre_Peak.JPG",
+      "source_dimensions": [
+        4500,
+        3182
+      ],
+      "file": "day-025.jpg",
+      "dimensions": [
+        3840,
+        2715
+      ],
+      "sha256": "26f2e059b49114a71e5e422984b8a3a6331ff30cc58409e6a12e1382f9b9931a",
+      "original_dimensions": [
+        4500,
+        3182
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Lake Tekapo 01.jpg",
+      "location": "Lake Tekapo, New Zealand",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "Krzysztof Golik",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Lake_Tekapo_01.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Lake_Tekapo_01.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Lake_Tekapo_01.jpg/3840px-Lake_Tekapo_01.jpg",
+      "source_dimensions": [
+        4568,
+        2886
+      ],
+      "file": "day-026.jpg",
+      "dimensions": [
+        3840,
+        2426
+      ],
+      "sha256": "e5ac982e0da41042956e180da4ab2c96122b42f8b63c71d5eac24a85818db3e6",
+      "original_dimensions": [
+        4568,
+        2886
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Princetown (AU), Port Campbell National Park, Twelve Apostles -- 2019 -- 0969.jpg",
+      "location": "Twelve Apostles, Victoria, Australia",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "Dietmar Rabich",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Princetown_(AU),_Port_Campbell_National_Park,_Twelve_Apostles_--_2019_--_0969.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Princetown_%28AU%29%2C_Port_Campbell_National_Park%2C_Twelve_Apostles_--_2019_--_0969.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Princetown_%28AU%29%2C_Port_Campbell_National_Park%2C_Twelve_Apostles_--_2019_--_0969.jpg/3840px-Princetown_%28AU%29%2C_Port_Campbell_National_Park%2C_Twelve_Apostles_--_2019_--_0969.jpg",
+      "source_dimensions": [
+        6704,
+        4469
+      ],
+      "file": "day-027.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "103b39f1322afd517ea7d4aeb4153e370b63d894a33773e5095662de0fc3759a",
+      "original_dimensions": [
+        6704,
+        4469
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Canal Grande Chiesa della Salute e Dogana dal ponte dell Accademia.jpg",
+      "location": "Grand Canal, Venice, Italy",
+      "category": "city",
+      "period": "day",
+      "story": "",
+      "author": "This Photo was taken by Wolfgang Moroder.  \n\nFeel free to use my photos, but please mention me as the author and send me a  message. \n\n\n\nThis image is not in the public domain. Please respect the copyright protection. It may only be used according to the rules mentioned here. This specifically excludes use in social media, if applicable terms of the licenses listed here are not appropriate.\n\n\n\nPlease do not upload an updated image here without consultation with the Author. The author would like to make corrections only at his own source. This ensures that the changes are preserved.Please if you think that any changes should be required, please inform the author.Otherwise you can upload a new image with a new name. Please use one of the templates derivative or extract.",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Canal_Grande_Chiesa_della_Salute_e_Dogana_dal_ponte_dell_Accademia.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Canal_Grande_Chiesa_della_Salute_e_Dogana_dal_ponte_dell_Accademia.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Canal_Grande_Chiesa_della_Salute_e_Dogana_dal_ponte_dell_Accademia.jpg/3840px-Canal_Grande_Chiesa_della_Salute_e_Dogana_dal_ponte_dell_Accademia.jpg",
+      "source_dimensions": [
+        7307,
+        4912
+      ],
+      "file": "day-028.jpg",
+      "dimensions": [
+        3840,
+        2581
+      ],
+      "sha256": "aa318eb26d29b3c3ddd9dbaceea3afe6c012f37a3fd517cc03d91d59f68c83a0",
+      "original_dimensions": [
+        7307,
+        4912
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Skyline of Florence from Piazzale Michelangelo. Feb. 2016.jpg",
+      "location": "Florence, Italy",
+      "category": "city",
+      "period": "day",
+      "story": "",
+      "author": "Alessandro Bello",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Skyline_of_Florence_from_Piazzale_Michelangelo._Feb._2016.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Skyline_of_Florence_from_Piazzale_Michelangelo._Feb._2016.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Skyline_of_Florence_from_Piazzale_Michelangelo._Feb._2016.jpg",
+      "source_dimensions": [
+        3456,
+        2304
+      ],
+      "file": "day-029.jpg",
+      "dimensions": [
+        3456,
+        2304
+      ],
+      "sha256": "6c4dca18bc53c2107c7a4798d5232285e0f5167bebedcacfdaac46f59c125bbd",
+      "original_dimensions": [
+        3456,
+        2304
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "View of Paris skyline (Unsplash).jpg",
+      "location": "Paris, France",
+      "category": "city",
+      "period": "day",
+      "story": "",
+      "author": "Drew Coffman drewcoffman",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "page": "https://commons.wikimedia.org/wiki/File:View_of_Paris_skyline_(Unsplash).jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/0a/View_of_Paris_skyline_%28Unsplash%29.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/View_of_Paris_skyline_%28Unsplash%29.jpg/3840px-View_of_Paris_skyline_%28Unsplash%29.jpg",
+      "source_dimensions": [
+        4096,
+        2730
+      ],
+      "file": "day-030.jpg",
+      "dimensions": [
+        3840,
+        2559
+      ],
+      "sha256": "43211500ac4e3d7eb3365ee85d6c043abe1ea99e50246ea4c73034ccf25ff8eb",
+      "original_dimensions": [
+        4096,
+        2730
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Fontaine Trevi - Rome.jpg",
+      "location": "Rome, Italy",
+      "category": "city",
+      "period": "day",
+      "story": "",
+      "author": "Wilfredor",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "page": "https://commons.wikimedia.org/wiki/File:Fontaine_Trevi_-_Rome.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/6/66/Fontaine_Trevi_-_Rome.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Fontaine_Trevi_-_Rome.jpg/3840px-Fontaine_Trevi_-_Rome.jpg",
+      "source_dimensions": [
+        11184,
+        6790
+      ],
+      "file": "day-031.jpg",
+      "dimensions": [
+        3840,
+        2331
+      ],
+      "sha256": "fc471723586f1adc2b3e2b39db71597885c5972094e474bd6ff930083b001068",
+      "original_dimensions": [
+        11184,
+        6790
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Amsterdam Canals - July 2006.jpg",
+      "location": "Amsterdam, Netherlands",
+      "category": "city",
+      "period": "day",
+      "story": "",
+      "author": "Diliff",
+      "license": "CC BY 2.5",
+      "license_url": "https://creativecommons.org/licenses/by/2.5",
+      "page": "https://commons.wikimedia.org/wiki/File:Amsterdam_Canals_-_July_2006.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/3/37/Amsterdam_Canals_-_July_2006.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Amsterdam_Canals_-_July_2006.jpg/3840px-Amsterdam_Canals_-_July_2006.jpg",
+      "source_dimensions": [
+        4017,
+        2117
+      ],
+      "file": "day-032.jpg",
+      "dimensions": [
+        3840,
+        2024
+      ],
+      "sha256": "ea00fe86126f99512fc3918cfbd59886974987262a5ae4abc0f9c8264ea873f7",
+      "original_dimensions": [
+        4017,
+        2117
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Žižkov TV Tower.JPG",
+      "location": "Prague, Czechia",
+      "category": "city",
+      "period": "day",
+      "story": "",
+      "author": "David Sedlecký",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:%C5%BDi%C5%BEkov_TV_Tower.JPG",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/8/88/%C5%BDi%C5%BEkov_TV_Tower.JPG",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/%C5%BDi%C5%BEkov_TV_Tower.JPG/3840px-%C5%BDi%C5%BEkov_TV_Tower.JPG",
+      "source_dimensions": [
+        4608,
+        3072
+      ],
+      "file": "day-033.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "2217b3fc08488eb7e4a1a629e4a5e0ce550b0f3dbfd6075f09602822e1fe4041",
+      "original_dimensions": [
+        4608,
+        3072
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "St Peter's Square, Vatican City - April 2007.jpg",
+      "location": "St Peter’s Square, Vatican City",
+      "category": "city",
+      "period": "day",
+      "story": "",
+      "author": "Diliff",
+      "license": "CC BY-SA 3.0",
+      "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "page": "https://commons.wikimedia.org/wiki/File:St_Peter%27s_Square,_Vatican_City_-_April_2007.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d6/St_Peter%27s_Square%2C_Vatican_City_-_April_2007.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/St_Peter%27s_Square%2C_Vatican_City_-_April_2007.jpg/3840px-St_Peter%27s_Square%2C_Vatican_City_-_April_2007.jpg",
+      "source_dimensions": [
+        4200,
+        2359
+      ],
+      "file": "day-034.jpg",
+      "dimensions": [
+        3840,
+        2157
+      ],
+      "sha256": "07d62065a5bf3ef430c83ac95b3334157a535cf420ea11cac71023df936951a0",
+      "original_dimensions": [
+        4200,
+        2359
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "LisbonSkyline.jpg",
+      "location": "Lisbon, Portugal",
+      "category": "city",
+      "period": "day",
+      "story": "",
+      "author": "acediscovery",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:LisbonSkyline.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/LisbonSkyline.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/LisbonSkyline.jpg/3840px-LisbonSkyline.jpg",
+      "source_dimensions": [
+        4000,
+        2175
+      ],
+      "file": "day-035.jpg",
+      "dimensions": [
+        3840,
+        2088
+      ],
+      "sha256": "e5568567224c5c05a6d409d2484bf1e57a51e67e46204f05876f75e6d9563c31",
+      "original_dimensions": [
+        4000,
+        2175
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "A vibrant panorama of Porto, Portugal, showcasing the Douro River, historic Ribeira district, and the Dom Luís I Bridge. (55247151390).jpg",
+      "location": "Porto, Portugal",
+      "category": "city",
+      "period": "day",
+      "story": "",
+      "author": "Michael Gaylard from Horsham, UK",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:A_vibrant_panorama_of_Porto,_Portugal,_showcasing_the_Douro_River,_historic_Ribeira_district,_and_the_Dom_Lu%C3%ADs_I_Bridge._(55247151390).jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/A_vibrant_panorama_of_Porto%2C_Portugal%2C_showcasing_the_Douro_River%2C_historic_Ribeira_district%2C_and_the_Dom_Lu%C3%ADs_I_Bridge._%2855247151390%29.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/A_vibrant_panorama_of_Porto%2C_Portugal%2C_showcasing_the_Douro_River%2C_historic_Ribeira_district%2C_and_the_Dom_Lu%C3%ADs_I_Bridge._%2855247151390%29.jpg/3840px-A_vibrant_panorama_of_Porto%2C_Portugal%2C_showcasing_the_Douro_River%2C_historic_Ribeira_district%2C_and_the_Dom_Lu%C3%ADs_I_Bridge._%2855247151390%29.jpg",
+      "source_dimensions": [
+        6048,
+        4032
+      ],
+      "file": "day-036.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "fc813099c797e90bfe4762b7f6c3342dd59a4c24677723a77f099ab5a39184e4",
+      "original_dimensions": [
+        6048,
+        4032
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Barcelona - Montjuïc - Carretera de Montjuïc - View North towards City Panorama & Telefèric de Montjuïc with focus on Sagrada Família.jpg",
+      "location": "Barcelona, Spain",
+      "category": "city",
+      "period": "day",
+      "story": "",
+      "author": "Txllxt TxllxT",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Barcelona_-_Montju%C3%AFc_-_Carretera_de_Montju%C3%AFc_-_View_North_towards_City_Panorama_%26_Telef%C3%A8ric_de_Montju%C3%AFc_with_focus_on_Sagrada_Fam%C3%ADlia.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Barcelona_-_Montju%C3%AFc_-_Carretera_de_Montju%C3%AFc_-_View_North_towards_City_Panorama_%26_Telef%C3%A8ric_de_Montju%C3%AFc_with_focus_on_Sagrada_Fam%C3%ADlia.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Barcelona_-_Montju%C3%AFc_-_Carretera_de_Montju%C3%AFc_-_View_North_towards_City_Panorama_%26_Telef%C3%A8ric_de_Montju%C3%AFc_with_focus_on_Sagrada_Fam%C3%ADlia.jpg/3840px-Barcelona_-_Montju%C3%AFc_-_Carretera_de_Montju%C3%AFc_-_View_North_towards_City_Panorama_%26_Telef%C3%A8ric_de_Montju%C3%AFc_with_focus_on_Sagrada_Fam%C3%ADlia.jpg",
+      "source_dimensions": [
+        5956,
+        3970
+      ],
+      "file": "day-037.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "61596320e46a4895b0c04c4ced6b3a78c88d7b6483080bd5c804ef06b440ee2c",
+      "original_dimensions": [
+        5956,
+        3970
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Sydney (AU), View from Opera House, Harbour Bridge -- 2019 -- 3070.jpg",
+      "location": "Sydney Harbour, Australia",
+      "category": "city",
+      "period": "day",
+      "story": "",
+      "author": "Dietmar Rabich",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Sydney_(AU),_View_from_Opera_House,_Harbour_Bridge_--_2019_--_3070.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/3/33/Sydney_%28AU%29%2C_View_from_Opera_House%2C_Harbour_Bridge_--_2019_--_3070.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Sydney_%28AU%29%2C_View_from_Opera_House%2C_Harbour_Bridge_--_2019_--_3070.jpg/3840px-Sydney_%28AU%29%2C_View_from_Opera_House%2C_Harbour_Bridge_--_2019_--_3070.jpg",
+      "source_dimensions": [
+        6720,
+        3780
+      ],
+      "file": "day-038.jpg",
+      "dimensions": [
+        3840,
+        2160
+      ],
+      "sha256": "817ea619b9878a78e6648eb02bd7cc5609d1c50964b6ff373ea7da7472d45324",
+      "original_dimensions": [
+        6720,
+        3780
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Sydney (AU), Harbour Bridge -- 2019 -- 2114.jpg",
+      "location": "Sydney Harbour, Australia",
+      "category": "city",
+      "period": "day",
+      "story": "",
+      "author": "Dietmar Rabich",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Sydney_(AU),_Harbour_Bridge_--_2019_--_2114.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Sydney_%28AU%29%2C_Harbour_Bridge_--_2019_--_2114.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Sydney_%28AU%29%2C_Harbour_Bridge_--_2019_--_2114.jpg/3840px-Sydney_%28AU%29%2C_Harbour_Bridge_--_2019_--_2114.jpg",
+      "source_dimensions": [
+        6720,
+        4480
+      ],
+      "file": "day-039.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "d54461796ff7a0b29ca215b6fdb728b4b8a1f731e411af87e150e776c89a5bab",
+      "original_dimensions": [
+        6720,
+        4480
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Skyline de Chicago desde el centro, Illinois, Estados Unidos, 2012-10-20, DD 06.jpg",
+      "location": "Chicago, Illinois, USA",
+      "category": "city",
+      "period": "day",
+      "story": "",
+      "author": "Diego Delso",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Skyline_de_Chicago_desde_el_centro,_Illinois,_Estados_Unidos,_2012-10-20,_DD_06.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Skyline_de_Chicago_desde_el_centro%2C_Illinois%2C_Estados_Unidos%2C_2012-10-20%2C_DD_06.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Skyline_de_Chicago_desde_el_centro%2C_Illinois%2C_Estados_Unidos%2C_2012-10-20%2C_DD_06.jpg/3840px-Skyline_de_Chicago_desde_el_centro%2C_Illinois%2C_Estados_Unidos%2C_2012-10-20%2C_DD_06.jpg",
+      "source_dimensions": [
+        5377,
+        2601
+      ],
+      "file": "day-040.jpg",
+      "dimensions": [
+        3840,
+        1858
+      ],
+      "sha256": "eecca0b4be1b7566cadfdc533fccbe39509ea538684ce5b53c8411c7175a3ac1",
+      "original_dimensions": [
+        5377,
+        2601
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Cape Town (ZA), Table Mountain -- 2024 -- 2762+64+66+68+70+72.jpg",
+      "location": "Cape Town, South Africa",
+      "category": "city",
+      "period": "day",
+      "story": "",
+      "author": "Dietmar Rabich",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Cape_Town_(ZA),_Table_Mountain_--_2024_--_2762%2B64%2B66%2B68%2B70%2B72.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Cape_Town_%28ZA%29%2C_Table_Mountain_--_2024_--_2762%2B64%2B66%2B68%2B70%2B72.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Cape_Town_%28ZA%29%2C_Table_Mountain_--_2024_--_2762%2B64%2B66%2B68%2B70%2B72.jpg/3840px-Cape_Town_%28ZA%29%2C_Table_Mountain_--_2024_--_2762%2B64%2B66%2B68%2B70%2B72.jpg",
+      "source_dimensions": [
+        8616,
+        5791
+      ],
+      "file": "day-041.jpg",
+      "dimensions": [
+        3840,
+        2581
+      ],
+      "sha256": "6c5dbba1d37b4a061aeaab0bafd6f81822de35e7366948085da92302bf6bc43b",
+      "original_dimensions": [
+        8616,
+        5791
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Marina Bays Sands Hotel and skyline of the Central Business District Singapore.jpg",
+      "location": "Marina Bay, Singapore",
+      "category": "city",
+      "period": "day",
+      "story": "",
+      "author": "Basile Morin",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Marina_Bays_Sands_Hotel_and_skyline_of_the_Central_Business_District_Singapore.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Marina_Bays_Sands_Hotel_and_skyline_of_the_Central_Business_District_Singapore.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Marina_Bays_Sands_Hotel_and_skyline_of_the_Central_Business_District_Singapore.jpg/3840px-Marina_Bays_Sands_Hotel_and_skyline_of_the_Central_Business_District_Singapore.jpg",
+      "source_dimensions": [
+        6208,
+        3492
+      ],
+      "file": "day-042.jpg",
+      "dimensions": [
+        3840,
+        2160
+      ],
+      "sha256": "d23ddd7f40d81af5f74bea169312329b37609512153fbf9cb8d79152df3063b3",
+      "original_dimensions": [
+        6208,
+        3492
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Thames and London Eye from Westminster Bridge.jpg",
+      "location": "London, England",
+      "category": "city",
+      "period": "day",
+      "story": "",
+      "author": "Domob",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Thames_and_London_Eye_from_Westminster_Bridge.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/9/90/Thames_and_London_Eye_from_Westminster_Bridge.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Thames_and_London_Eye_from_Westminster_Bridge.jpg/3840px-Thames_and_London_Eye_from_Westminster_Bridge.jpg",
+      "source_dimensions": [
+        7376,
+        4224
+      ],
+      "file": "day-043.jpg",
+      "dimensions": [
+        3840,
+        2199
+      ],
+      "sha256": "43222138543c4a05e56564e80beefc64f034506f4887145bf0ded38e93a47559",
+      "original_dimensions": [
+        7376,
+        4224
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "London - Vauxhall Bridge Road - Panorama View on river Thames, Millbank Tower, London Eye & Duck tours 02.jpg",
+      "location": "London, England",
+      "category": "city",
+      "period": "day",
+      "story": "",
+      "author": "Txllxt TxllxT",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:London_-_Vauxhall_Bridge_Road_-_Panorama_View_on_river_Thames,_Millbank_Tower,_London_Eye_%26_Duck_tours_02.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/a/ae/London_-_Vauxhall_Bridge_Road_-_Panorama_View_on_river_Thames%2C_Millbank_Tower%2C_London_Eye_%26_Duck_tours_02.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/London_-_Vauxhall_Bridge_Road_-_Panorama_View_on_river_Thames%2C_Millbank_Tower%2C_London_Eye_%26_Duck_tours_02.jpg/3840px-London_-_Vauxhall_Bridge_Road_-_Panorama_View_on_river_Thames%2C_Millbank_Tower%2C_London_Eye_%26_Duck_tours_02.jpg",
+      "source_dimensions": [
+        5689,
+        3792
+      ],
+      "file": "day-044.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "4635bf7bb138cefaaac0a109b03be494221b5ed4de75ce4b2b2e61464fee2451",
+      "original_dimensions": [
+        5689,
+        3792
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Grand Canyon Hopi Point with rainbow 2013.jpg",
+      "location": "Grand Canyon, Arizona, USA",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "Tuxyso",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Grand_Canyon_Hopi_Point_with_rainbow_2013.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Grand_Canyon_Hopi_Point_with_rainbow_2013.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Grand_Canyon_Hopi_Point_with_rainbow_2013.jpg/3840px-Grand_Canyon_Hopi_Point_with_rainbow_2013.jpg",
+      "source_dimensions": [
+        4928,
+        3264
+      ],
+      "file": "day-045.jpg",
+      "dimensions": [
+        3840,
+        2543
+      ],
+      "sha256": "1a3d3a14f7379d668464e9929cf95dd76169636e667dd2f825acf6a1b6a3b0f9",
+      "original_dimensions": [
+        4928,
+        3264
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Moraine Lake at evening4.jpg",
+      "location": "Moraine Lake, Alberta, Canada",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "David Zhang",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Moraine_Lake_at_evening4.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Moraine_Lake_at_evening4.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Moraine_Lake_at_evening4.jpg/3840px-Moraine_Lake_at_evening4.jpg",
+      "source_dimensions": [
+        9171,
+        6114
+      ],
+      "file": "day-046.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "7117ca245a68780729ea09426694e56f6d5cabf4c8d21ac4d3ecf4c1f05954e1",
+      "original_dimensions": [
+        9171,
+        6114
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Torres del Paine, guanacos 06.jpg",
+      "location": "Torres del Paine, Chile",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "LBM1948",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Torres_del_Paine,_guanacos_06.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/3/35/Torres_del_Paine%2C_guanacos_06.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Torres_del_Paine%2C_guanacos_06.jpg/3840px-Torres_del_Paine%2C_guanacos_06.jpg",
+      "source_dimensions": [
+        4216,
+        2800
+      ],
+      "file": "day-047.jpg",
+      "dimensions": [
+        3840,
+        2550
+      ],
+      "sha256": "2ac4a9d6b43566164b961896ca14a0789516a28833287ac6ffee73e4906a297f",
+      "original_dimensions": [
+        4216,
+        2800
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Torres Del Paine National Park.jpg",
+      "location": "Torres del Paine, Chile",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "Shiva Shenoy",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Torres_Del_Paine_National_Park.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Torres_Del_Paine_National_Park.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Torres_Del_Paine_National_Park.jpg/3840px-Torres_Del_Paine_National_Park.jpg",
+      "source_dimensions": [
+        5555,
+        3101
+      ],
+      "file": "day-048.jpg",
+      "dimensions": [
+        3840,
+        2144
+      ],
+      "sha256": "ff42f7eb141b743072fc2cc89b19a817886df56af7fbcf0e3a750c8312b36342",
+      "original_dimensions": [
+        5555,
+        3101
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Iguazu Décembre 2007 - Panorama 4.jpg",
+      "location": "Iguazú Falls, Argentina and Brazil",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "Martin St-Amant (S23678)",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Iguazu_D%C3%A9cembre_2007_-_Panorama_4.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Iguazu_D%C3%A9cembre_2007_-_Panorama_4.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Iguazu_D%C3%A9cembre_2007_-_Panorama_4.jpg",
+      "source_dimensions": [
+        2716,
+        1971
+      ],
+      "file": "day-049.jpg",
+      "dimensions": [
+        2716,
+        1971
+      ],
+      "sha256": "cc9cbc371d132c50302e185fc488f5c78daea1e2b8fbcae945231856035904d8",
+      "original_dimensions": [
+        2716,
+        1971
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Isla del Pescado, Salar de Uyuni, Bolivia, 2016-02-04, DD 42.JPG",
+      "location": "Salar de Uyuni, Bolivia",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "Diego Delso",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Isla_del_Pescado,_Salar_de_Uyuni,_Bolivia,_2016-02-04,_DD_42.JPG",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/4/40/Isla_del_Pescado%2C_Salar_de_Uyuni%2C_Bolivia%2C_2016-02-04%2C_DD_42.JPG",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Isla_del_Pescado%2C_Salar_de_Uyuni%2C_Bolivia%2C_2016-02-04%2C_DD_42.JPG/3840px-Isla_del_Pescado%2C_Salar_de_Uyuni%2C_Bolivia%2C_2016-02-04%2C_DD_42.JPG",
+      "source_dimensions": [
+        8687,
+        4644
+      ],
+      "file": "day-050.jpg",
+      "dimensions": [
+        3840,
+        2053
+      ],
+      "sha256": "7594255a4b5674629b73d2f86a090114ea360b008e3e2e4796032957d300c5ae",
+      "original_dimensions": [
+        8687,
+        4644
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Casal de turistas caminha em uma duna, enquanto o dia morre nos Lençóis Maranhenses (edited).jpg",
+      "location": "Lençóis Maranhenses, Brazil",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "Original:  Julio Cesar Goncalves Corrêa\nDerivative work:  Aristeas",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Casal_de_turistas_caminha_em_uma_duna,_enquanto_o_dia_morre_nos_Len%C3%A7%C3%B3is_Maranhenses_(edited).jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Casal_de_turistas_caminha_em_uma_duna%2C_enquanto_o_dia_morre_nos_Len%C3%A7%C3%B3is_Maranhenses_%28edited%29.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Casal_de_turistas_caminha_em_uma_duna%2C_enquanto_o_dia_morre_nos_Len%C3%A7%C3%B3is_Maranhenses_%28edited%29.jpg/3840px-Casal_de_turistas_caminha_em_uma_duna%2C_enquanto_o_dia_morre_nos_Len%C3%A7%C3%B3is_Maranhenses_%28edited%29.jpg",
+      "source_dimensions": [
+        5184,
+        3456
+      ],
+      "file": "day-051.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "01fbb3d9ffa4c036936507c832b8afd7cb02dda29a56013d600510a2e74b16f4",
+      "original_dimensions": [
+        5184,
+        3456
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Drei Zinnen Tre Cime di Lavaredo Dolomites.jpg",
+      "location": "Tre Cime di Lavaredo, Dolomites, Italy",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "This Photo was taken by Wolfgang Moroder.  \n\nFeel free to use my photos, but please mention me as the author and send me a  message. \n\n\n\nThis image is not in the public domain. Please respect the copyright protection. It may only be used according to the rules mentioned here. This specifically excludes use in social media, if applicable terms of the licenses listed here are not appropriate.\n\n\n\nPlease do not upload an updated image here without consultation with the Author. The author would like to make corrections only at his own source. This ensures that the changes are preserved.Please if you think that any changes should be required, please inform the author.Otherwise you can upload a new image with a new name. Please use one of the templates derivative or extract.",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Drei_Zinnen_Tre_Cime_di_Lavaredo_Dolomites.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Drei_Zinnen_Tre_Cime_di_Lavaredo_Dolomites.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Drei_Zinnen_Tre_Cime_di_Lavaredo_Dolomites.jpg/3840px-Drei_Zinnen_Tre_Cime_di_Lavaredo_Dolomites.jpg",
+      "source_dimensions": [
+        8256,
+        5504
+      ],
+      "file": "day-052.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "93b79a9244af744ce4616c70d2a087a714cf5f5d8f375c88dfa5278494b11e2a",
+      "original_dimensions": [
+        8256,
+        5504
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Sunrise over Lauterbrunnen valley, Switzerland.jpg",
+      "location": "Lauterbrunnen Valley, Switzerland",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "Vavaloin",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Sunrise_over_Lauterbrunnen_valley,_Switzerland.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Sunrise_over_Lauterbrunnen_valley%2C_Switzerland.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Sunrise_over_Lauterbrunnen_valley%2C_Switzerland.jpg/3840px-Sunrise_over_Lauterbrunnen_valley%2C_Switzerland.jpg",
+      "source_dimensions": [
+        6000,
+        4000
+      ],
+      "file": "day-053.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "ae05eb1f27b67fc97fa2f0badc25bedc02723b20194bbf77fc16519c158ffa55",
+      "original_dimensions": [
+        6000,
+        4000
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Riffelsee a Matterhorn - panoramio.jpg",
+      "location": "Matterhorn, Swiss Alps",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "Pavel Špindler",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Riffelsee_a_Matterhorn_-_panoramio.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Riffelsee_a_Matterhorn_-_panoramio.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Riffelsee_a_Matterhorn_-_panoramio.jpg/3840px-Riffelsee_a_Matterhorn_-_panoramio.jpg",
+      "source_dimensions": [
+        3872,
+        2592
+      ],
+      "file": "day-054.jpg",
+      "dimensions": [
+        3840,
+        2571
+      ],
+      "sha256": "44b7b83212f291abc65066ef72bdfe3ed06181bfdec182bd0f185d797ec8f0f9",
+      "original_dimensions": [
+        3872,
+        2592
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "View to Geiranger from Flydalsjuvet, 2013 June.jpg",
+      "location": "Geirangerfjord, Norway",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "Ximonic (Simo Räsänen)",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:View_to_Geiranger_from_Flydalsjuvet,_2013_June.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/f/f3/View_to_Geiranger_from_Flydalsjuvet%2C_2013_June.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/f/f3/View_to_Geiranger_from_Flydalsjuvet%2C_2013_June.jpg",
+      "source_dimensions": [
+        3072,
+        1516
+      ],
+      "file": "day-055.jpg",
+      "dimensions": [
+        3072,
+        1516
+      ],
+      "sha256": "3440b452db094ebb9edad1657940f2e9a70fb38851991cd63ea828ddb9ef9baa",
+      "original_dimensions": [
+        3072,
+        1516
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Loaded Drying Racks for Stockfish at Reine, Lofoten, Norway.jpg",
+      "location": "Reine, Lofoten, Norway",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "Christoph Strässler",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Loaded_Drying_Racks_for_Stockfish_at_Reine,_Lofoten,_Norway.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Loaded_Drying_Racks_for_Stockfish_at_Reine%2C_Lofoten%2C_Norway.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Loaded_Drying_Racks_for_Stockfish_at_Reine%2C_Lofoten%2C_Norway.jpg/3840px-Loaded_Drying_Racks_for_Stockfish_at_Reine%2C_Lofoten%2C_Norway.jpg",
+      "source_dimensions": [
+        8151,
+        4585
+      ],
+      "file": "day-056.jpg",
+      "dimensions": [
+        3840,
+        2160
+      ],
+      "sha256": "dafaf922c4c5721dae64b2037ad0197565839f5b898d085d8a61bd7d89b6bc1c",
+      "original_dimensions": [
+        8151,
+        4585
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Skogafoss Closeup.jpg",
+      "location": "Skógafoss, Iceland",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "Eric Kilby",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Skogafoss_Closeup.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Skogafoss_Closeup.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Skogafoss_Closeup.jpg/3840px-Skogafoss_Closeup.jpg",
+      "source_dimensions": [
+        8256,
+        5504
+      ],
+      "file": "day-057.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "f64003fa0edcb0b3825b5c5a5db8c90a6df8e1271daaef0e23b34ccb3ae9be0f",
+      "original_dimensions": [
+        8256,
+        5504
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Warm Skies Over Glacier Lagoon - Iceland.jpg",
+      "location": "Jökulsárlón, Iceland",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "Eric Kilby",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Warm_Skies_Over_Glacier_Lagoon_-_Iceland.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Warm_Skies_Over_Glacier_Lagoon_-_Iceland.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Warm_Skies_Over_Glacier_Lagoon_-_Iceland.jpg/3840px-Warm_Skies_Over_Glacier_Lagoon_-_Iceland.jpg",
+      "source_dimensions": [
+        7559,
+        5039
+      ],
+      "file": "day-058.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "e5e084c3171edf141e738260ddfee0fba34840e124c5da5bb2484ef247016cef",
+      "original_dimensions": [
+        7559,
+        5039
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "South over the Quiraing, Isle of Skye - 2.jpg",
+      "location": "Quiraing, Isle of Skye, Scotland",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "Colin",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:South_over_the_Quiraing,_Isle_of_Skye_-_2.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/South_over_the_Quiraing%2C_Isle_of_Skye_-_2.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/South_over_the_Quiraing%2C_Isle_of_Skye_-_2.jpg/3840px-South_over_the_Quiraing%2C_Isle_of_Skye_-_2.jpg",
+      "source_dimensions": [
+        6000,
+        3000
+      ],
+      "file": "day-059.jpg",
+      "dimensions": [
+        3840,
+        1920
+      ],
+      "sha256": "5e45c04bf1abedb651870625b4c4e111ed55f3beeb6bc89104b794e40e847ba8",
+      "original_dimensions": [
+        6000,
+        3000
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Plitvice Lakes1.jpg",
+      "location": "Plitvice Lakes, Croatia",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "Tesla Delacroix",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Plitvice_Lakes1.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/1/18/Plitvice_Lakes1.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Plitvice_Lakes1.jpg/3840px-Plitvice_Lakes1.jpg",
+      "source_dimensions": [
+        5472,
+        3648
+      ],
+      "file": "day-060.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "1524f281a55ef8cda99e97ae7628035f51d3fcaf908ad9482870d721ca2e1021",
+      "original_dimensions": [
+        5472,
+        3648
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "SOS - Red dunes in the Sossusvlei region, Namibia, 2007.jpg",
+      "location": "Sossusvlei, Namibia",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "Josep M. Gracia",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:SOS_-_Red_dunes_in_the_Sossusvlei_region,_Namibia,_2007.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/SOS_-_Red_dunes_in_the_Sossusvlei_region%2C_Namibia%2C_2007.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/SOS_-_Red_dunes_in_the_Sossusvlei_region%2C_Namibia%2C_2007.jpg",
+      "source_dimensions": [
+        2896,
+        1944
+      ],
+      "file": "day-061.jpg",
+      "dimensions": [
+        2896,
+        1944
+      ],
+      "sha256": "00b508a0b0dd5ad94e4c9ea6839dc26c6320add4943e8f4d227ba57146ec4c1c",
+      "original_dimensions": [
+        2896,
+        1944
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Abgestorbene Akazien (Deadvlei).JPG",
+      "location": "Deadvlei, Namibia",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "Rüdiger Wenzel",
+      "license": "CC BY-SA 3.0 de",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+      "page": "https://commons.wikimedia.org/wiki/File:Abgestorbene_Akazien_(Deadvlei).JPG",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/6/66/Abgestorbene_Akazien_%28Deadvlei%29.JPG",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Abgestorbene_Akazien_%28Deadvlei%29.JPG/3840px-Abgestorbene_Akazien_%28Deadvlei%29.JPG",
+      "source_dimensions": [
+        5760,
+        3840
+      ],
+      "file": "day-062.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "297b539cd52a165f03e91ab6af7da9119cff6d4d4ca695166bc725714585f497",
+      "original_dimensions": [
+        5760,
+        3840
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Serengeti Landscape with dust and tees.jpg",
+      "location": "Serengeti, Tanzania",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "Maximilian Staub",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Serengeti_Landscape_with_dust_and_tees.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Serengeti_Landscape_with_dust_and_tees.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Serengeti_Landscape_with_dust_and_tees.jpg/3840px-Serengeti_Landscape_with_dust_and_tees.jpg",
+      "source_dimensions": [
+        6240,
+        4160
+      ],
+      "file": "day-063.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "cc1ea0a5f263d0158f06ab16164583715f6898a5a1fe5a135f2b41665fbf1820",
+      "original_dimensions": [
+        6240,
+        4160
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Blyde River Canyon Nature Reserve (ZA), Lowveld View, Blyde River -- 2024 -- 9964.jpg",
+      "location": "Blyde River Canyon, South Africa",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "Dietmar Rabich",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Blyde_River_Canyon_Nature_Reserve_(ZA),_Lowveld_View,_Blyde_River_--_2024_--_9964.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/58/Blyde_River_Canyon_Nature_Reserve_%28ZA%29%2C_Lowveld_View%2C_Blyde_River_--_2024_--_9964.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Blyde_River_Canyon_Nature_Reserve_%28ZA%29%2C_Lowveld_View%2C_Blyde_River_--_2024_--_9964.jpg/3840px-Blyde_River_Canyon_Nature_Reserve_%28ZA%29%2C_Lowveld_View%2C_Blyde_River_--_2024_--_9964.jpg",
+      "source_dimensions": [
+        6720,
+        4480
+      ],
+      "file": "day-064.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "9f44f5674c4a480d87127ddead5244214f6f31922ebf04865f12c933e2a0d47d",
+      "original_dimensions": [
+        6720,
+        4480
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "You can see now why this landscape has inspired so many poets and local artists (35689549310).jpg",
+      "location": "Li River, Guangxi, China",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "shankar s. from Dubai, united arab emirates",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "page": "https://commons.wikimedia.org/wiki/File:You_can_see_now_why_this_landscape_has_inspired_so_many_poets_and_local_artists_(35689549310).jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/8/81/You_can_see_now_why_this_landscape_has_inspired_so_many_poets_and_local_artists_%2835689549310%29.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/You_can_see_now_why_this_landscape_has_inspired_so_many_poets_and_local_artists_%2835689549310%29.jpg/3840px-You_can_see_now_why_this_landscape_has_inspired_so_many_poets_and_local_artists_%2835689549310%29.jpg",
+      "source_dimensions": [
+        4928,
+        3264
+      ],
+      "file": "day-065.jpg",
+      "dimensions": [
+        3840,
+        2543
+      ],
+      "sha256": "631a4e45b0c22a2957898771cbfbedb23ab5e06883aac70eb0a21af1d131490e",
+      "original_dimensions": [
+        4928,
+        3264
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Mount Fuji and Fog over Lake Yamanaka.jpg",
+      "location": "Mount Fuji, Japan",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "Alpsdake",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Mount_Fuji_and_Fog_over_Lake_Yamanaka.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Mount_Fuji_and_Fog_over_Lake_Yamanaka.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Mount_Fuji_and_Fog_over_Lake_Yamanaka.jpg/3840px-Mount_Fuji_and_Fog_over_Lake_Yamanaka.jpg",
+      "source_dimensions": [
+        5184,
+        3456
+      ],
+      "file": "day-066.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "21e148cc967e21076403a00f657eff92436490e4d043702583178feabf3046e5",
+      "original_dimensions": [
+        5184,
+        3456
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Peaks and Clouds, Milford Sound (53463609373).jpg",
+      "location": "Milford Sound, New Zealand",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "John D. from Pasadena, USA",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Peaks_and_Clouds,_Milford_Sound_(53463609373).jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/02/Peaks_and_Clouds%2C_Milford_Sound_%2853463609373%29.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Peaks_and_Clouds%2C_Milford_Sound_%2853463609373%29.jpg/3840px-Peaks_and_Clouds%2C_Milford_Sound_%2853463609373%29.jpg",
+      "source_dimensions": [
+        9209,
+        4821
+      ],
+      "file": "day-067.jpg",
+      "dimensions": [
+        3840,
+        2010
+      ],
+      "sha256": "2c419904f540b1c14baa23fb918eae1ede78e770d17945a8c2164187d088aea6",
+      "original_dimensions": [
+        9209,
+        4821
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Snow in Lake Tekapo (4696010212).jpg",
+      "location": "Lake Tekapo, New Zealand",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "edwin.11",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Snow_in_Lake_Tekapo_(4696010212).jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Snow_in_Lake_Tekapo_%284696010212%29.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Snow_in_Lake_Tekapo_%284696010212%29.jpg",
+      "source_dimensions": [
+        3008,
+        2000
+      ],
+      "file": "day-068.jpg",
+      "dimensions": [
+        3008,
+        2000
+      ],
+      "sha256": "fe1a08deb746842704a494c228da830286fb037f727ae3f7192496029c836be8",
+      "original_dimensions": [
+        3008,
+        2000
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Princetown (AU), Port Campbell National Park, Twelve Apostles -- 2019 -- 0930.jpg",
+      "location": "Twelve Apostles, Victoria, Australia",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "Dietmar Rabich",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Princetown_(AU),_Port_Campbell_National_Park,_Twelve_Apostles_--_2019_--_0930.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Princetown_%28AU%29%2C_Port_Campbell_National_Park%2C_Twelve_Apostles_--_2019_--_0930.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Princetown_%28AU%29%2C_Port_Campbell_National_Park%2C_Twelve_Apostles_--_2019_--_0930.jpg/3840px-Princetown_%28AU%29%2C_Port_Campbell_National_Park%2C_Twelve_Apostles_--_2019_--_0930.jpg",
+      "source_dimensions": [
+        6687,
+        4458
+      ],
+      "file": "day-069.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "fefb6e181eb16b5ce3375e5b127fda4191243f49498e254abe80def5a9aa4ff4",
+      "original_dimensions": [
+        6687,
+        4458
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "(Venice) Hotel Principe - Facade on Grand Canal.jpg",
+      "location": "Grand Canal, Venice, Italy",
+      "category": "city",
+      "period": "day",
+      "story": "",
+      "author": "Didier Descouens",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:(Venice)_Hotel_Principe_-_Facade_on_Grand_Canal.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/51/%28Venice%29_Hotel_Principe_-_Facade_on_Grand_Canal.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/%28Venice%29_Hotel_Principe_-_Facade_on_Grand_Canal.jpg/3840px-%28Venice%29_Hotel_Principe_-_Facade_on_Grand_Canal.jpg",
+      "source_dimensions": [
+        10517,
+        5401
+      ],
+      "file": "day-070.jpg",
+      "dimensions": [
+        3840,
+        1972
+      ],
+      "sha256": "b5d8690e5e931249e18b9541db4cddad45ed10a08f9d26542387956841e1c7a6",
+      "original_dimensions": [
+        10517,
+        5401
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Amsterdam, nábřeží kanálu.jpg",
+      "location": "Amsterdam, Netherlands",
+      "category": "city",
+      "period": "day",
+      "story": "",
+      "author": "I would appreciate being notified if you use my work outside Wikimedia.\nMore of my work can be found in my personal gallery.",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Amsterdam,_n%C3%A1b%C5%99e%C5%BE%C3%AD_kan%C3%A1lu.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/7/70/Amsterdam%2C_n%C3%A1b%C5%99e%C5%BE%C3%AD_kan%C3%A1lu.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Amsterdam%2C_n%C3%A1b%C5%99e%C5%BE%C3%AD_kan%C3%A1lu.jpg/3840px-Amsterdam%2C_n%C3%A1b%C5%99e%C5%BE%C3%AD_kan%C3%A1lu.jpg",
+      "source_dimensions": [
+        11828,
+        5818
+      ],
+      "file": "day-071.jpg",
+      "dimensions": [
+        3840,
+        1889
+      ],
+      "sha256": "1092fb894e96c60203316d874a8e9bee17040614af019ec25240804a7b513179",
+      "original_dimensions": [
+        11828,
+        5818
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Budapest Panorama R01.jpg",
+      "location": "Budapest, Hungary",
+      "category": "city",
+      "period": "day",
+      "story": "",
+      "author": "Marc Ryckaert (MJJR)",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Budapest_Panorama_R01.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/55/Budapest_Panorama_R01.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/5/55/Budapest_Panorama_R01.jpg",
+      "source_dimensions": [
+        3216,
+        2136
+      ],
+      "file": "day-072.jpg",
+      "dimensions": [
+        3216,
+        2136
+      ],
+      "sha256": "42d36c3b0977cbe1bb48307e7381044be1e109e397b9abae4e9e6b1568984ed4",
+      "original_dimensions": [
+        3216,
+        2136
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Alfama Rooftops and Tagus River View, Lisbon (54733828355).jpg",
+      "location": "Lisbon, Portugal",
+      "category": "city",
+      "period": "day",
+      "story": "",
+      "author": "Dale Cruse - 10M views from San Francisco, CA, USA",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Alfama_Rooftops_and_Tagus_River_View,_Lisbon_(54733828355).jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Alfama_Rooftops_and_Tagus_River_View%2C_Lisbon_%2854733828355%29.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Alfama_Rooftops_and_Tagus_River_View%2C_Lisbon_%2854733828355%29.jpg/3840px-Alfama_Rooftops_and_Tagus_River_View%2C_Lisbon_%2854733828355%29.jpg",
+      "source_dimensions": [
+        11656,
+        6556
+      ],
+      "file": "day-073.jpg",
+      "dimensions": [
+        3840,
+        2160
+      ],
+      "sha256": "0df00c4ac69138b318b542d4b285053e0e325fc0a29a9b08d99662c5bb0cf1da",
+      "original_dimensions": [
+        11656,
+        6556
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "The Lake and Central Park West skyline, Central Park, Manhattan, New York.jpg",
+      "location": "Manhattan, New York City, USA",
+      "category": "city",
+      "period": "day",
+      "story": "",
+      "author": "Christian David",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:The_Lake_and_Central_Park_West_skyline,_Central_Park,_Manhattan,_New_York.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/The_Lake_and_Central_Park_West_skyline%2C_Central_Park%2C_Manhattan%2C_New_York.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/The_Lake_and_Central_Park_West_skyline%2C_Central_Park%2C_Manhattan%2C_New_York.jpg/3840px-The_Lake_and_Central_Park_West_skyline%2C_Central_Park%2C_Manhattan%2C_New_York.jpg",
+      "source_dimensions": [
+        7200,
+        4800
+      ],
+      "file": "day-074.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "ce5c47e6a5d29ee960e4aeaf3e09c9cfab00f494262938e6eb500ef0baf932ce",
+      "original_dimensions": [
+        7200,
+        4800
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Grant Park, Chicago, Illinois, Estados Unidos, 2012-10-20, DD 03.jpg",
+      "location": "Chicago, Illinois, USA",
+      "category": "city",
+      "period": "day",
+      "story": "",
+      "author": "Diego Delso",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Grant_Park,_Chicago,_Illinois,_Estados_Unidos,_2012-10-20,_DD_03.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/de/Grant_Park%2C_Chicago%2C_Illinois%2C_Estados_Unidos%2C_2012-10-20%2C_DD_03.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Grant_Park%2C_Chicago%2C_Illinois%2C_Estados_Unidos%2C_2012-10-20%2C_DD_03.jpg/3840px-Grant_Park%2C_Chicago%2C_Illinois%2C_Estados_Unidos%2C_2012-10-20%2C_DD_03.jpg",
+      "source_dimensions": [
+        4677,
+        2985
+      ],
+      "file": "day-075.jpg",
+      "dimensions": [
+        3840,
+        2451
+      ],
+      "sha256": "832f05636e2552e36a4a9228985219e645f703d87628d62fb19ba0fd7a841de6",
+      "original_dimensions": [
+        4677,
+        2985
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Lake Pukaki by Hoarfroster.jpg",
+      "location": "Lake Pukaki, New Zealand",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "HoarfrostFeather",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Lake_Pukaki_by_Hoarfroster.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Lake_Pukaki_by_Hoarfroster.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Lake_Pukaki_by_Hoarfroster.jpg/3840px-Lake_Pukaki_by_Hoarfroster.jpg",
+      "source_dimensions": [
+        6000,
+        4000
+      ],
+      "file": "day-076.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "4c0583d161b819ea1988788f15c2f07749098c91bec79005590b61341f452a58",
+      "original_dimensions": [
+        6000,
+        4000
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Blue Ice Cave - Flickr - Eric Kilby.jpg",
+      "location": "Ice cave near Jökulsárlón, Iceland",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "Eric Kilby from Somerville, MA, USA",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Blue_Ice_Cave_-_Flickr_-_Eric_Kilby.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Blue_Ice_Cave_-_Flickr_-_Eric_Kilby.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Blue_Ice_Cave_-_Flickr_-_Eric_Kilby.jpg/3840px-Blue_Ice_Cave_-_Flickr_-_Eric_Kilby.jpg",
+      "source_dimensions": [
+        8224,
+        5483
+      ],
+      "file": "day-077.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "55cdeb6f11870db77d8d418b72bc0a51e3a45e93c03e2320f3fdfb1546bb8dd4",
+      "original_dimensions": [
+        8224,
+        5483
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Kowloon Waterfront, Hong Kong, 2013-08-09, DD 05.jpg",
+      "location": "Hong Kong, China",
+      "category": "city",
+      "period": "day",
+      "story": "",
+      "author": "Diego Delso",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Kowloon_Waterfront,_Hong_Kong,_2013-08-09,_DD_05.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Kowloon_Waterfront%2C_Hong_Kong%2C_2013-08-09%2C_DD_05.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Kowloon_Waterfront%2C_Hong_Kong%2C_2013-08-09%2C_DD_05.jpg/3840px-Kowloon_Waterfront%2C_Hong_Kong%2C_2013-08-09%2C_DD_05.jpg",
+      "source_dimensions": [
+        5261,
+        3446
+      ],
+      "file": "day-078.jpg",
+      "dimensions": [
+        3840,
+        2515
+      ],
+      "sha256": "d6111e1f3939993894cb8f58485b11e70f55ffc73244ccf675c4270acd1fff08",
+      "original_dimensions": [
+        5261,
+        3446
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Yosemite National Park (California, USA), Yosemite Valley (Yosemite Tunnel) -- 2012 -- 4628.jpg",
+      "location": "Yosemite Valley, California, USA",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "Dietmar Rabich",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Yosemite_National_Park_(California,_USA),_Yosemite_Valley_(Yosemite_Tunnel)_--_2012_--_4628.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Yosemite_National_Park_%28California%2C_USA%29%2C_Yosemite_Valley_%28Yosemite_Tunnel%29_--_2012_--_4628.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Yosemite_National_Park_%28California%2C_USA%29%2C_Yosemite_Valley_%28Yosemite_Tunnel%29_--_2012_--_4628.jpg/3840px-Yosemite_National_Park_%28California%2C_USA%29%2C_Yosemite_Valley_%28Yosemite_Tunnel%29_--_2012_--_4628.jpg",
+      "source_dimensions": [
+        5184,
+        3456
+      ],
+      "file": "day-079.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "5a565d26ec3c5e367d5acb6235c9ce36184241c4d0a3b75e00f1b8ab32e92cd8",
+      "original_dimensions": [
+        5184,
+        3456
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "title": "Grand Canyon Horse Shoe Bend MC.jpg",
+      "location": "Horseshoe Bend, Page, Arizona, USA",
+      "category": "nature",
+      "period": "day",
+      "story": "",
+      "author": "Christian Mehlführer, User:Chmehl",
+      "license": "CC BY 2.5",
+      "license_url": "https://creativecommons.org/licenses/by/2.5",
+      "page": "https://commons.wikimedia.org/wiki/File:Grand_Canyon_Horse_Shoe_Bend_MC.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Grand_Canyon_Horse_Shoe_Bend_MC.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Grand_Canyon_Horse_Shoe_Bend_MC.jpg/3840px-Grand_Canyon_Horse_Shoe_Bend_MC.jpg",
+      "source_dimensions": [
+        5000,
+        2462
+      ],
+      "file": "day-080.jpg",
+      "dimensions": [
+        3840,
+        1891
+      ],
+      "sha256": "60b3ccc6e95edbcc93674548aaaa82f30cb653d2c2d958e4441b39e1ef4ef1bb",
+      "original_dimensions": [
+        5000,
+        2462
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
     {
       "file": "001.jpg",
       "page": "https://commons.wikimedia.org/wiki/File:Karst_mountains_colorful_clouds_and_mist_at_sunrise_from_the_top_of_Mount_Nam_Xay_Vang_Vieng_Laos.jpg",
@@ -19,7 +2342,17 @@
       ],
       "format": "JPEG",
       "bytes": 1830283,
-      "sha256": "e7548e1e53a36d7c4ebf386eb101c4fc967e08d40eb0d8262a068b8f974228ae"
+      "sha256": "e7548e1e53a36d7c4ebf386eb101c4fc967e08d40eb0d8262a068b8f974228ae",
+      "title": "Karst mountains colorful clouds and mist at sunrise from the top of Mount Nam Xay Vang Vieng Laos.jpg",
+      "author": "Basile Morin",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "location": "Vang Vieng, Laos",
+      "category": "nature",
+      "story": "",
+      "download_verified": true,
+      "period": "day",
+      "validation": "Pillow-verified downloaded dimensions"
     },
     {
       "file": "002.jpg",
@@ -36,7 +2369,17 @@
       ],
       "format": "JPEG",
       "bytes": 4252179,
-      "sha256": "44e548d1747ced93bc8881734c1fbac0f074b3e368ae8b619030fb44caa2cd74"
+      "sha256": "44e548d1747ced93bc8881734c1fbac0f074b3e368ae8b619030fb44caa2cd74",
+      "title": "Foggy Reflections - Loch Tummel.jpg",
+      "author": "Eric Kilby",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "location": "Loch Tummel, Scotland",
+      "category": "nature",
+      "story": "",
+      "download_verified": true,
+      "period": "day",
+      "validation": "Pillow-verified downloaded dimensions"
     },
     {
       "file": "003.jpg",
@@ -53,7 +2396,17 @@
       ],
       "format": "JPEG",
       "bytes": 2307544,
-      "sha256": "141f814cdc22d505b02184517e1b81cb9b9071e939438c594a562a7c7327bc22"
+      "sha256": "141f814cdc22d505b02184517e1b81cb9b9071e939438c594a562a7c7327bc22",
+      "title": "Morning at Tham Sakoen.jpg",
+      "author": "BerryJ",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "location": "Tham Sakoen, Thailand",
+      "category": "nature",
+      "story": "",
+      "download_verified": true,
+      "period": "day",
+      "validation": "Pillow-verified downloaded dimensions"
     },
     {
       "file": "004.jpg",
@@ -70,7 +2423,17 @@
       ],
       "format": "JPEG",
       "bytes": 2058623,
-      "sha256": "0c3126a61f2067d13446b03dcb238ad95fbbf6335f5d491285981653639a198b"
+      "sha256": "0c3126a61f2067d13446b03dcb238ad95fbbf6335f5d491285981653639a198b",
+      "title": "Lake Mystery, Canterbury, New Zealand 05.jpg",
+      "author": "Michal Klajban",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "location": "Lake Mystery, New Zealand",
+      "category": "nature",
+      "story": "",
+      "download_verified": true,
+      "period": "day",
+      "validation": "Pillow-verified downloaded dimensions"
     },
     {
       "file": "005.jpg",
@@ -87,7 +2450,17 @@
       ],
       "format": "JPEG",
       "bytes": 2176657,
-      "sha256": "5229d5fcfe95f1db098b05b515e03e8b3be550bc25e587fb0e22ccbde0f7017f"
+      "sha256": "5229d5fcfe95f1db098b05b515e03e8b3be550bc25e587fb0e22ccbde0f7017f",
+      "title": "Pryor's Wood Bluebells 2017-04-26-4.jpg",
+      "author": "Colin",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "location": "Pryor's Wood, England",
+      "category": "nature",
+      "story": "",
+      "download_verified": true,
+      "period": "day",
+      "validation": "Pillow-verified downloaded dimensions"
     },
     {
       "file": "006.jpg",
@@ -104,7 +2477,17 @@
       ],
       "format": "JPEG",
       "bytes": 859298,
-      "sha256": "739767828058e26d7ceaa45ab084c001b08e504a819d659ac1137693ecfbaf0b"
+      "sha256": "739767828058e26d7ceaa45ab084c001b08e504a819d659ac1137693ecfbaf0b",
+      "title": "Steindorf am Ossiacher See Sankt Urban Ossiacher See und Dobratsch 04112015 2185.jpg",
+      "author": "Johann Jaritz",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "location": "Lake Ossiach, Austria",
+      "category": "nature",
+      "story": "",
+      "download_verified": true,
+      "period": "day",
+      "validation": "Pillow-verified downloaded dimensions"
     },
     {
       "file": "007.jpg",
@@ -121,7 +2504,17 @@
       ],
       "format": "JPEG",
       "bytes": 3973731,
-      "sha256": "6948c2282022c1f825b07e7bddec124f91cc3d9f15874695810840db13a49688"
+      "sha256": "6948c2282022c1f825b07e7bddec124f91cc3d9f15874695810840db13a49688",
+      "title": "Karula vaade.jpg",
+      "author": "Amadvr",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "location": "Karula, Estonia",
+      "category": "nature",
+      "story": "",
+      "download_verified": true,
+      "period": "day",
+      "validation": "Pillow-verified downloaded dimensions"
     },
     {
       "file": "008.jpg",
@@ -138,7 +2531,17 @@
       ],
       "format": "JPEG",
       "bytes": 3285502,
-      "sha256": "971452ca02a27698303753726d5f5fdb0b8ec3989fc26ae5b0bf832e676f9cc3"
+      "sha256": "971452ca02a27698303753726d5f5fdb0b8ec3989fc26ae5b0bf832e676f9cc3",
+      "title": "Dülmen, Rorup, NSG Roruper Holz -- 2021 -- 8187-91.jpg",
+      "author": "Dietmar Rabich",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "location": "Roruper Holz, Germany",
+      "category": "nature",
+      "story": "",
+      "download_verified": true,
+      "period": "day",
+      "validation": "Pillow-verified downloaded dimensions"
     },
     {
       "file": "009.jpg",
@@ -155,7 +2558,17 @@
       ],
       "format": "JPEG",
       "bytes": 4249497,
-      "sha256": "3f6b3a0d35f203b9c20b357bf07a5cf554c1d3114199c2fb4ea52aab04c4d4ae"
+      "sha256": "3f6b3a0d35f203b9c20b357bf07a5cf554c1d3114199c2fb4ea52aab04c4d4ae",
+      "title": "Mossy forest in Lierneux (DSC01260).jpg",
+      "author": "Trougnouf",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "location": "Lierneux, Belgium",
+      "category": "nature",
+      "story": "",
+      "download_verified": true,
+      "period": "day",
+      "validation": "Pillow-verified downloaded dimensions"
     },
     {
       "file": "010.jpg",
@@ -172,7 +2585,17 @@
       ],
       "format": "JPEG",
       "bytes": 1531530,
-      "sha256": "bbda4040b560c99ccbce6994c3e48613c80ca0c016b0e5544a0d0f2b731e96e7"
+      "sha256": "bbda4040b560c99ccbce6994c3e48613c80ca0c016b0e5544a0d0f2b731e96e7",
+      "title": "Cheow Lan Lake, Rainforest, Khao Sok, Thailand.jpg",
+      "author": "Vyacheslav Argenberg",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "location": "Cheow Lan Lake, Thailand",
+      "category": "nature",
+      "story": "",
+      "download_verified": true,
+      "period": "day",
+      "validation": "Pillow-verified downloaded dimensions"
     },
     {
       "file": "011.jpg",
@@ -189,7 +2612,17 @@
       ],
       "format": "JPEG",
       "bytes": 965423,
-      "sha256": "93ed1f20b9923a65324be5bada71c876d077705ea7e4bbd3e44aedbeed264b46"
+      "sha256": "93ed1f20b9923a65324be5bada71c876d077705ea7e4bbd3e44aedbeed264b46",
+      "title": "Тарасів обрій. Світанок (edited).jpg",
+      "author": "Oleksandr Malyon adapted by Radomianin",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "location": "Ukraine",
+      "category": "nature",
+      "story": "",
+      "download_verified": true,
+      "period": "day",
+      "validation": "Pillow-verified downloaded dimensions"
     },
     {
       "file": "012.jpg",
@@ -206,8 +2639,409 @@
       ],
       "format": "JPEG",
       "bytes": 3466959,
-      "sha256": "92e1021c4fb25fe18c19de0162fc2559f31120978cf2bc44aabd9cb1d896f065"
+      "sha256": "92e1021c4fb25fe18c19de0162fc2559f31120978cf2bc44aabd9cb1d896f065",
+      "title": "Kuang Si Falls and a turquoise water pool in Luang Prabang province Laos.jpg",
+      "author": "Basile Morin",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "location": "Kuang Si Falls, Laos",
+      "category": "nature",
+      "story": "",
+      "download_verified": true,
+      "period": "day",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "culture-003.jpg",
+      "title": "Elton John in the Alps",
+      "location": "Ischgl, Austria",
+      "story": "Elton John’s concert in the Alpine resort of Ischgl, photographed on 3 May 2008.",
+      "story_source": "https://commons.wikimedia.org/wiki/File:Elton_John_Ischgl.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Elton_John_Ischgl.jpg",
+      "author": "Tomtom80  Thomas Waleczka",
+      "license": "Public domain",
+      "license_url": "https://commons.wikimedia.org/wiki/File:Elton_John_Ischgl.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/01/Elton_John_Ischgl.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/0/01/Elton_John_Ischgl.jpg",
+      "dimensions": [
+        3072,
+        2304
+      ],
+      "width": 3072,
+      "height": 2304,
+      "sha256": "1fa7d1d3dc950cebde30a0727c78882d0a276a3ed0e0fa207f419d806d471428",
+      "category": "music",
+      "period": "day",
+      "original_dimensions": [
+        3072,
+        2304
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "culture-005.jpg",
+      "title": "Duke Ellington and friends, 1941",
+      "location": "William P. Gottlieb’s home, Maryland, USA",
+      "story": "An informal 1941 portrait brings together Duke Ellington, Ahmet and Nesuhi Ertegun, William Gottlieb and Dave Stewart.",
+      "story_source": "https://commons.wikimedia.org/wiki/File:(Portrait_of_Ahmet_M._Ertegun,_Duke_Ellington,_William_P._Gottlieb,_Nesuhi_Ertegun,_and_Dave_Stewart,_William_P._Gottlieb%27s_home,_Maryland,_1941)_(LOC)_(4843127219).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:(Portrait_of_Ahmet_M._Ertegun,_Duke_Ellington,_William_P._Gottlieb,_Nesuhi_Ertegun,_and_Dave_Stewart,_William_P._Gottlieb%27s_home,_Maryland,_1941)_(LOC)_(4843127219).jpg",
+      "author": "Delia Potofsky Gottlieb / Library of Congress",
+      "license": "Public domain",
+      "license_url": "https://commons.wikimedia.org/wiki/File:(Portrait_of_Ahmet_M._Ertegun,_Duke_Ellington,_William_P._Gottlieb,_Nesuhi_Ertegun,_and_Dave_Stewart,_William_P._Gottlieb%27s_home,_Maryland,_1941)_(LOC)_(4843127219).jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/8/84/%28Portrait_of_Ahmet_M._Ertegun%2C_Duke_Ellington%2C_William_P._Gottlieb%2C_Nesuhi_Ertegun%2C_and_Dave_Stewart%2C_William_P._Gottlieb%27s_home%2C_Maryland%2C_1941%29_%28LOC%29_%284843127219%29.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/%28Portrait_of_Ahmet_M._Ertegun%2C_Duke_Ellington%2C_William_P._Gottlieb%2C_Nesuhi_Ertegun%2C_and_Dave_Stewart%2C_William_P._Gottlieb%27s_home%2C_Maryland%2C_1941%29_%28LOC%29_%284843127219%29.jpg/3840px-%28Portrait_of_Ahmet_M._Ertegun%2C_Duke_Ellington%2C_William_P._Gottlieb%2C_Nesuhi_Ertegun%2C_and_Dave_Stewart%2C_William_P._Gottlieb%27s_home%2C_Maryland%2C_1941%29_%28LOC%29_%284843127219%29.jpg",
+      "dimensions": [
+        3840,
+        3039
+      ],
+      "width": 3840,
+      "height": 3039,
+      "sha256": "029e9e99db7b7cc8489278d81efe02173e2a3ac5250400bdef6f2c617d0e54a5",
+      "category": "music",
+      "period": "day",
+      "original_dimensions": [
+        4934,
+        3905
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "culture-006.jpg",
+      "title": "Billie Holiday and Mister",
+      "location": "New York City, USA; probably the Downbeat",
+      "story": "Billie Holiday with her dog Mister backstage around June 1946; the archive identifies the venue only as probably the Downbeat.",
+      "story_source": "https://commons.wikimedia.org/wiki/File:Billie_Holiday_and_Mister,_New_York,_N.Y.,_ca._June_1946_(William_P._Gottlieb_04271).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Billie_Holiday_and_Mister,_New_York,_N.Y.,_ca._June_1946_(William_P._Gottlieb_04271).jpg",
+      "author": "William P. Gottlieb",
+      "license": "Public domain",
+      "license_url": "https://commons.wikimedia.org/wiki/File:Billie_Holiday_and_Mister,_New_York,_N.Y.,_ca._June_1946_(William_P._Gottlieb_04271).jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Billie_Holiday_and_Mister%2C_New_York%2C_N.Y.%2C_ca._June_1946_%28William_P._Gottlieb_04271%29.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Billie_Holiday_and_Mister%2C_New_York%2C_N.Y.%2C_ca._June_1946_%28William_P._Gottlieb_04271%29.jpg/3840px-Billie_Holiday_and_Mister%2C_New_York%2C_N.Y.%2C_ca._June_1946_%28William_P._Gottlieb_04271%29.jpg",
+      "dimensions": [
+        3840,
+        2881
+      ],
+      "width": 3840,
+      "height": 2881,
+      "sha256": "8275573792fd18e304c1e61aedb841933da66c3d38e06fda19f1540eac4425f2",
+      "category": "music",
+      "period": "day",
+      "original_dimensions": [
+        4833,
+        3626
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "culture-007.jpg",
+      "title": "Bebop at the Three Deuces",
+      "location": "Three Deuces, New York City, USA",
+      "story": "Charlie Parker, Tommy Potter, Miles Davis, Duke Jordan and Max Roach share the Three Deuces stage in Gottlieb’s jazz-era photograph.",
+      "story_source": "https://commons.wikimedia.org/wiki/File:Charlie_Parker,_Tommy_Potter,_Miles_Davis,_Duke_Jordan,_Max_Roach_(Gottlieb_06851).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Charlie_Parker,_Tommy_Potter,_Miles_Davis,_Duke_Jordan,_Max_Roach_(Gottlieb_06851).jpg",
+      "author": "William P. Gottlieb",
+      "license": "Public domain",
+      "license_url": "https://commons.wikimedia.org/wiki/File:Charlie_Parker,_Tommy_Potter,_Miles_Davis,_Duke_Jordan,_Max_Roach_(Gottlieb_06851).jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/9/99/Charlie_Parker%2C_Tommy_Potter%2C_Miles_Davis%2C_Duke_Jordan%2C_Max_Roach_%28Gottlieb_06851%29.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Charlie_Parker%2C_Tommy_Potter%2C_Miles_Davis%2C_Duke_Jordan%2C_Max_Roach_%28Gottlieb_06851%29.jpg/3840px-Charlie_Parker%2C_Tommy_Potter%2C_Miles_Davis%2C_Duke_Jordan%2C_Max_Roach_%28Gottlieb_06851%29.jpg",
+      "dimensions": [
+        3840,
+        2883
+      ],
+      "width": 3840,
+      "height": 2883,
+      "sha256": "e039f98ed1a79473b9f07fb31e05a595f2e641b086a7e2383feb21ddbc04eccf",
+      "category": "music",
+      "period": "day",
+      "original_dimensions": [
+        4813,
+        3613
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "culture-009.jpg",
+      "title": "Dizzy Gillespie, 1946–1948",
+      "location": "New York City, USA",
+      "story": "William P. Gottlieb’s portrait of Dizzy Gillespie is dated by the archive to between 1946 and 1948.",
+      "story_source": "https://commons.wikimedia.org/wiki/File:(Portrait_of_Dizzy_Gillespie,_New_York,_N.Y.,_between_1946_and_1948)_(LOC)_(4976469817).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:(Portrait_of_Dizzy_Gillespie,_New_York,_N.Y.,_between_1946_and_1948)_(LOC)_(4976469817).jpg",
+      "author": "William P. Gottlieb / Library of Congress",
+      "license": "Public domain",
+      "license_url": "https://commons.wikimedia.org/wiki/File:(Portrait_of_Dizzy_Gillespie,_New_York,_N.Y.,_between_1946_and_1948)_(LOC)_(4976469817).jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/f/f7/%28Portrait_of_Dizzy_Gillespie%2C_New_York%2C_N.Y.%2C_between_1946_and_1948%29_%28LOC%29_%284976469817%29.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/%28Portrait_of_Dizzy_Gillespie%2C_New_York%2C_N.Y.%2C_between_1946_and_1948%29_%28LOC%29_%284976469817%29.jpg/3840px-%28Portrait_of_Dizzy_Gillespie%2C_New_York%2C_N.Y.%2C_between_1946_and_1948%29_%28LOC%29_%284976469817%29.jpg",
+      "dimensions": [
+        3840,
+        2872
+      ],
+      "width": 3840,
+      "height": 2872,
+      "sha256": "87efd4c23053b951ea42c78f25200741926a0d559f50acac6f2574cbbe387509",
+      "category": "music",
+      "period": "day",
+      "original_dimensions": [
+        5034,
+        3765
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "culture-010.jpg",
+      "title": "Benny Goodman and fellow musicians",
+      "location": "New York City, USA; possibly 400 Restaurant",
+      "story": "Benny Goodman, Sid Catlett and Vido Musso, photographed between 1946 and 1948; the venue attribution is uncertain.",
+      "story_source": "https://commons.wikimedia.org/wiki/File:(Portrait_of_Benny_Goodman,_Sid_Catlett,_and_Vido_Musso,_400_Restaurant(%3F),_New_York,_N.Y.,_between_1946_and_1948)_(LOC)_(4843744540).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:(Portrait_of_Benny_Goodman,_Sid_Catlett,_and_Vido_Musso,_400_Restaurant(%3F),_New_York,_N.Y.,_between_1946_and_1948)_(LOC)_(4843744540).jpg",
+      "author": "William P. Gottlieb / Library of Congress",
+      "license": "Public domain",
+      "license_url": "https://commons.wikimedia.org/wiki/File:(Portrait_of_Benny_Goodman,_Sid_Catlett,_and_Vido_Musso,_400_Restaurant(%3F),_New_York,_N.Y.,_between_1946_and_1948)_(LOC)_(4843744540).jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/56/%28Portrait_of_Benny_Goodman%2C_Sid_Catlett%2C_and_Vido_Musso%2C_400_Restaurant%28%3F%29%2C_New_York%2C_N.Y.%2C_between_1946_and_1948%29_%28LOC%29_%284843744540%29.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/%28Portrait_of_Benny_Goodman%2C_Sid_Catlett%2C_and_Vido_Musso%2C_400_Restaurant%28%3F%29%2C_New_York%2C_N.Y.%2C_between_1946_and_1948%29_%28LOC%29_%284843744540%29.jpg/3840px-%28Portrait_of_Benny_Goodman%2C_Sid_Catlett%2C_and_Vido_Musso%2C_400_Restaurant%28%3F%29%2C_New_York%2C_N.Y.%2C_between_1946_and_1948%29_%28LOC%29_%284843744540%29.jpg",
+      "dimensions": [
+        3840,
+        2866
+      ],
+      "width": 3840,
+      "height": 2866,
+      "sha256": "6e830c98625108ebf25b74a596e158bd28529f912fe26d601df6ff2986371b86",
+      "category": "music",
+      "period": "day",
+      "original_dimensions": [
+        5213,
+        3891
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "culture-011.jpg",
+      "title": "The Beatles with Jimmie Nicol",
+      "location": "Treslong, Hillegom, Netherlands",
+      "story": "During these Dutch television recordings, Jimmie Nicol stood in for Ringo Starr on drums.",
+      "story_source": "https://commons.wikimedia.org/wiki/File:The_Beatles_with_Jimmie_Nicol_916-5098.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:The_Beatles_with_Jimmie_Nicol_916-5098.jpg",
+      "author": "Eric Koch  for  Anefo  , Nationaal Archief, Den Haag, Rijksfotoarchief: Fotocollectie Algemeen Nederlands Fotopersbureau (ANEFO), 1945-1989 - negatiefstroken zwart/wit, nummer toegang 2.24.01.05, bestanddeelnummer 916-5098",
+      "license": "CC BY-SA 3.0 nl",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/nl/deed.en",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/The_Beatles_with_Jimmie_Nicol_916-5098.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/The_Beatles_with_Jimmie_Nicol_916-5098.jpg",
+      "dimensions": [
+        3648,
+        2406
+      ],
+      "width": 3648,
+      "height": 2406,
+      "sha256": "56df866b74c250e2c0f0d9995f2450a1f0af5c283d45c642da372b06fdea544e",
+      "category": "music",
+      "period": "day",
+      "original_dimensions": [
+        3648,
+        2406
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "culture-015.jpg",
+      "title": "The Wright brothers’ first flight",
+      "location": "Kill Devil Hills, North Carolina, USA",
+      "story": "On 17 December 1903, Orville Wright flew 120 feet in 12 seconds while Wilbur watched beside the aircraft.",
+      "story_source": "https://commons.wikimedia.org/wiki/File:First_flight2.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:First_flight2.jpg",
+      "author": "John T. Daniels",
+      "license": "Public domain",
+      "license_url": "https://commons.wikimedia.org/wiki/File:First_flight2.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/8/86/First_flight2.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/First_flight2.jpg/3840px-First_flight2.jpg",
+      "dimensions": [
+        3840,
+        2489
+      ],
+      "width": 3840,
+      "height": 2489,
+      "sha256": "b70e85c2e0e4deab092261ea5972320619c561cb317aa3658922b49c638fe626",
+      "category": "history",
+      "period": "day",
+      "original_dimensions": [
+        6603,
+        4280
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "culture-017.jpg",
+      "title": "Nina Simone at the Hollywood Bowl",
+      "location": "Hollywood Bowl, Los Angeles, USA",
+      "story": "Nina Simone at the piano during the Playboy Jazz Festival on 15 June 1986.",
+      "story_source": "https://commons.wikimedia.org/wiki/File:NinaSimone_PlayboyJazzFestival1986.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:NinaSimone_PlayboyJazzFestival1986.jpg",
+      "author": "Jose Galvez, Los Angeles Times",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/9/93/NinaSimone_PlayboyJazzFestival1986.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/9/93/NinaSimone_PlayboyJazzFestival1986.jpg",
+      "dimensions": [
+        3408,
+        2248
+      ],
+      "width": 3408,
+      "height": 2248,
+      "sha256": "9e52282e5775e0f10a7776af9301a125ca6f615603cdde9a3e4a79d92c31c57a",
+      "category": "music",
+      "period": "day",
+      "original_dimensions": [
+        3408,
+        2248
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "culture-018.jpg",
+      "title": "Jimi Hendrix in Rotterdam",
+      "location": "Ahoy, Rotterdam, Netherlands",
+      "story": "Jimi Hendrix performing at the Hippy Happy youth event at Ahoy.",
+      "story_source": "https://commons.wikimedia.org/wiki/File:Popartiest_Jimi_Hendrix_op_Hippy_Happy_beurs_voor_jongeren_in_Ahoy.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Popartiest_Jimi_Hendrix_op_Hippy_Happy_beurs_voor_jongeren_in_Ahoy.jpg",
+      "author": "Photographer: Ary Groeneveld (?) ; Auteursrechthouder: Gemeente Rotterdam (Stadsarchief) CC-0",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/01/Popartiest_Jimi_Hendrix_op_Hippy_Happy_beurs_voor_jongeren_in_Ahoy.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/0/01/Popartiest_Jimi_Hendrix_op_Hippy_Happy_beurs_voor_jongeren_in_Ahoy.jpg",
+      "dimensions": [
+        2953,
+        1970
+      ],
+      "width": 2953,
+      "height": 1970,
+      "sha256": "f4ce030dcce9f83711d8317fc98148cd99df8edc0090405ab4a0e756f29c516a",
+      "category": "music",
+      "period": "day",
+      "original_dimensions": [
+        2953,
+        1970
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "culture-019.jpg",
+      "title": "Louis Armstrong, 1953",
+      "location": "Location not recorded in source",
+      "story": "A restored historical photograph of Louis Armstrong from 1953.",
+      "story_source": "https://commons.wikimedia.org/wiki/File:Louis_Armstrong_restored.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Louis_Armstrong_restored.jpg",
+      "author": "World-Telegram staff photographer",
+      "license": "Public domain",
+      "license_url": "https://commons.wikimedia.org/wiki/File:Louis_Armstrong_restored.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Louis_Armstrong_restored.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Louis_Armstrong_restored.jpg",
+      "dimensions": [
+        3738,
+        2912
+      ],
+      "width": 3738,
+      "height": 2912,
+      "sha256": "9d5b7a07dd56ab5bbafb57ac6bbedeb2834c186758adf93c74119be9306bf3c3",
+      "category": "music",
+      "period": "day",
+      "original_dimensions": [
+        3738,
+        2912
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "culture-020.jpg",
+      "title": "Louis Armstrong arrives at Schiphol",
+      "location": "Schiphol Airport, Netherlands",
+      "story": "Louis Armstrong arriving with his wife Lucille on 26 May 1965, documented by the Dutch national archive.",
+      "story_source": "https://commons.wikimedia.org/wiki/File:Aankomst_Louis_Armstrong_met_zijn_vrouw_Lucille_op_Schiphol,_Louis_Armstrong,_Bestanddeelnr_917-8158.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Aankomst_Louis_Armstrong_met_zijn_vrouw_Lucille_op_Schiphol,_Louis_Armstrong,_Bestanddeelnr_917-8158.jpg",
+      "author": "Joost Evers / Anefo",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/6/66/Aankomst_Louis_Armstrong_met_zijn_vrouw_Lucille_op_Schiphol%2C_Louis_Armstrong%2C_Bestanddeelnr_917-8158.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/6/66/Aankomst_Louis_Armstrong_met_zijn_vrouw_Lucille_op_Schiphol%2C_Louis_Armstrong%2C_Bestanddeelnr_917-8158.jpg",
+      "dimensions": [
+        3648,
+        2406
+      ],
+      "width": 3648,
+      "height": 2406,
+      "sha256": "654a161c7b98bd192e8c342cc245432777785c58e87d19492b1f78ea3cf7b678",
+      "category": "music",
+      "period": "day",
+      "original_dimensions": [
+        3648,
+        2406
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "culture-021.jpg",
+      "title": "Louis Armstrong in colour, 1947",
+      "location": "Location not recorded in source",
+      "story": "Harry Warnecke and Gus Schoenbaechler photographed Louis Armstrong playing trumpet in 1947.",
+      "story_source": "https://commons.wikimedia.org/wiki/File:Louis_Armstrong_in_Color_(restored).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Louis_Armstrong_in_Color_(restored).jpg",
+      "author": "Harry Warnecke    /    Gus Schoenbaechler",
+      "license": "Public domain",
+      "license_url": "https://commons.wikimedia.org/wiki/File:Louis_Armstrong_in_Color_(restored).jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/1/16/Louis_Armstrong_in_Color_%28restored%29.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Louis_Armstrong_in_Color_%28restored%29.jpg/3840px-Louis_Armstrong_in_Color_%28restored%29.jpg",
+      "dimensions": [
+        3840,
+        2838
+      ],
+      "width": 3840,
+      "height": 2838,
+      "sha256": "fbb76bceda6c1544acfe301431142e6f9bbf1bbd73bf49ebe17c66c608a165cc",
+      "category": "music",
+      "period": "day",
+      "original_dimensions": [
+        6067,
+        4484
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "culture-022.jpg",
+      "title": "Ella Fitzgerald and Count Basie",
+      "location": "Schiphol Airport, Netherlands",
+      "story": "Ella Fitzgerald and Count Basie arriving at Schiphol on 4 October 1975.",
+      "story_source": "https://commons.wikimedia.org/wiki/File:Ella_Fitzgeralt_en_Count_Basie_op_Schiphol,_Bestanddeelnr_928-1863.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Ella_Fitzgeralt_en_Count_Basie_op_Schiphol,_Bestanddeelnr_928-1863.jpg",
+      "author": "Rob Mieremet / Anefo",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Ella_Fitzgeralt_en_Count_Basie_op_Schiphol%2C_Bestanddeelnr_928-1863.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Ella_Fitzgeralt_en_Count_Basie_op_Schiphol%2C_Bestanddeelnr_928-1863.jpg",
+      "dimensions": [
+        3680,
+        2441
+      ],
+      "width": 3680,
+      "height": 2441,
+      "sha256": "a977eeb745319e452be1a1c239f52a8b83d76487263ff35af99fcc740b6ad8c1",
+      "category": "music",
+      "period": "day",
+      "original_dimensions": [
+        3680,
+        2441
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
     }
-  ],
-  "total_bytes": 30957226
+  ]
 }

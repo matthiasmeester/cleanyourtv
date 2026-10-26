@@ -1,0 +1,220 @@
+day-001.jpg	Yosemite Valley, California, USA
+day-002.jpg	Grand Canyon, Arizona, USA
+day-003.jpg	Moraine Lake, Alberta, Canada
+day-004.jpg	Peyto Lake, Alberta, Canada
+day-005.jpg	Torres del Paine, Chile
+day-006.jpg	Iguazú Falls, Argentina and Brazil
+day-007.jpg	Salar de Uyuni, Bolivia
+day-008.jpg	Lençóis Maranhenses, Brazil
+day-009.jpg	Tre Cime di Lavaredo, Dolomites, Italy
+day-010.jpg	Lauterbrunnen Valley, Switzerland
+day-011.jpg	Matterhorn, Swiss Alps
+day-012.jpg	Geirangerfjord, Norway
+day-013.jpg	Sakrisøy, Lofoten, Norway
+day-014.jpg	Skógafoss, Iceland
+day-015.jpg	Jökulsárlón, Iceland
+day-016.jpg	Quiraing, Isle of Skye, Scotland
+day-017.jpg	Plitvice Lakes, Croatia
+day-018.jpg	Sossusvlei, Namibia
+day-019.jpg	Deadvlei, Namibia
+day-020.jpg	Serengeti, Tanzania
+day-021.jpg	Blyde River Canyon, South Africa
+day-022.jpg	Zhangjiajie, Hunan, China
+day-023.jpg	Li River, Guangxi, China
+day-024.jpg	Mount Fuji, Japan
+day-025.jpg	Milford Sound, New Zealand
+day-026.jpg	Lake Tekapo, New Zealand
+day-027.jpg	Twelve Apostles, Victoria, Australia
+day-028.jpg	Grand Canal, Venice, Italy
+day-029.jpg	Florence, Italy
+day-030.jpg	Paris, France
+day-031.jpg	Rome, Italy
+day-032.jpg	Amsterdam, Netherlands
+day-033.jpg	Prague, Czechia
+day-034.jpg	St Peter’s Square, Vatican City
+day-035.jpg	Lisbon, Portugal
+day-036.jpg	Porto, Portugal
+day-037.jpg	Barcelona, Spain
+day-038.jpg	Sydney Harbour, Australia
+day-039.jpg	Sydney Harbour, Australia
+day-040.jpg	Chicago, Illinois, USA
+day-041.jpg	Cape Town, South Africa
+day-042.jpg	Marina Bay, Singapore
+day-043.jpg	London, England
+day-044.jpg	London, England
+day-045.jpg	Grand Canyon, Arizona, USA
+day-046.jpg	Moraine Lake, Alberta, Canada
+day-047.jpg	Torres del Paine, Chile
+day-048.jpg	Torres del Paine, Chile
+day-049.jpg	Iguazú Falls, Argentina and Brazil
+day-050.jpg	Salar de Uyuni, Bolivia
+day-051.jpg	Lençóis Maranhenses, Brazil
+day-052.jpg	Tre Cime di Lavaredo, Dolomites, Italy
+day-053.jpg	Lauterbrunnen Valley, Switzerland
+day-054.jpg	Matterhorn, Swiss Alps
+day-055.jpg	Geirangerfjord, Norway
+day-056.jpg	Reine, Lofoten, Norway
+day-057.jpg	Skógafoss, Iceland
+day-058.jpg	Jökulsárlón, Iceland
+day-059.jpg	Quiraing, Isle of Skye, Scotland
+day-060.jpg	Plitvice Lakes, Croatia
+day-061.jpg	Sossusvlei, Namibia
+day-062.jpg	Deadvlei, Namibia
+day-063.jpg	Serengeti, Tanzania
+day-064.jpg	Blyde River Canyon, South Africa
+day-065.jpg	Li River, Guangxi, China
+day-066.jpg	Mount Fuji, Japan
+day-067.jpg	Milford Sound, New Zealand
+day-068.jpg	Lake Tekapo, New Zealand
+day-069.jpg	Twelve Apostles, Victoria, Australia
+day-070.jpg	Grand Canal, Venice, Italy
+day-071.jpg	Amsterdam, Netherlands
+day-072.jpg	Budapest, Hungary
+day-073.jpg	Lisbon, Portugal
+day-074.jpg	Manhattan, New York City, USA
+day-075.jpg	Chicago, Illinois, USA
+day-076.jpg	Lake Pukaki, New Zealand
+day-077.jpg	Ice cave near Jökulsárlón, Iceland
+day-078.jpg	Hong Kong, China
+day-079.jpg	Yosemite Valley, California, USA
+day-080.jpg	Horseshoe Bend, Page, Arizona, USA
+001.jpg	Vang Vieng, Laos
+002.jpg	Loch Tummel, Scotland
+003.jpg	Tham Sakoen, Thailand
+004.jpg	Lake Mystery, New Zealand
+005.jpg	Pryor's Wood, England
+006.jpg	Lake Ossiach, Austria
+007.jpg	Karula, Estonia
+008.jpg	Roruper Holz, Germany
+009.jpg	Lierneux, Belgium
+010.jpg	Cheow Lan Lake, Thailand
+011.jpg	Ukraine
+012.jpg	Kuang Si Falls, Laos
+culture-003.jpg	Ischgl, Austria
+culture-005.jpg	William P. Gottlieb’s home, Maryland, USA
+culture-006.jpg	New York City, USA; probably the Downbeat
+culture-007.jpg	Three Deuces, New York City, USA
+culture-009.jpg	New York City, USA
+culture-010.jpg	New York City, USA; possibly 400 Restaurant
+culture-011.jpg	Treslong, Hillegom, Netherlands
+culture-015.jpg	Kill Devil Hills, North Carolina, USA
+culture-017.jpg	Hollywood Bowl, Los Angeles, USA
+culture-018.jpg	Ahoy, Rotterdam, Netherlands
+culture-019.jpg	Location not recorded in source
+culture-020.jpg	Schiphol Airport, Netherlands
+culture-021.jpg	Location not recorded in source
+culture-022.jpg	Schiphol Airport, Netherlands
+night-001.jpg	Berlin, Germany
+night-002.jpg	Klodzko, Poland
+night-003.jpg	Copenhagen, Denmark
+night-004.jpg	Salzburg, Austria
+night-005.jpg	Vienna, Austria
+night-006.jpg	Dinan, France
+night-007.jpg	Segovia, Spain
+night-008.jpg	Singapore
+night-009.jpg	Champs-Elysees, Paris, France
+night-010.jpg	Islamabad, Pakistan
+night-011.jpg	Istanbul, Turkey
+night-012.jpg	Miami Beach, Florida, USA
+night-013.jpg	New York City, USA
+night-014.jpg	Shinjuku, Tokyo, Japan
+night-016.jpg	Christchurch, New Zealand
+night-017.jpg	Rhodes, Greece
+night-018.jpg	Rome, Italy
+night-019.jpg	Chicago, Illinois, USA
+night-020.jpg	Darwin, Australia
+night-021.jpg	Valencia, Spain
+night-022.jpg	Espoo, Finland
+night-023.jpg	Esztergom, Hungary
+night-024.jpg	Champasak, Laos
+night-025.jpg	Frankfurt, Germany
+night-026.jpg	Ljubljana, Slovenia
+night-027.jpg	Brussels, Belgium
+night-028.jpg	Gatineau, Quebec, Canada
+night-029.jpg	Graz, Austria
+night-030.jpg	Seattle, Washington, USA
+night-031.jpg	Rochester, New York, USA
+night-032.jpg	Luang Prabang, Laos
+night-033.jpg	Budapest, Hungary
+night-034.jpg	Vientiane, Laos
+night-036.jpg	Zakopane, Poland
+night-037.jpg	Amsterdam, Netherlands
+night-038.jpg	Portland, Oregon, USA
+night-039.jpg	Kyoto, Japan
+night-040.jpg	Las Vegas, Nevada, USA
+night-041.jpg	London, England
+night-042.jpg	Gramado, Brazil
+night-044.jpg	Nimes, France
+night-045.jpg	Kobe, Japan
+night-046.jpg	Delhi, India
+night-047.jpg	Opole, Poland
+night-048.jpg	Perth, Australia
+night-049.jpg	Berlin, Germany
+night-050.jpg	Fortaleza, Brazil
+night-052.jpg	Shanghai, China
+night-053.jpg	Porto, Portugal
+night-054.jpg	Montmartre, Paris, France
+night-055.jpg	San Sebastian, Spain
+night-056.jpg	Sellin, Germany
+night-058.jpg	St Louis, Missouri, USA
+night-059.jpg	Bandar Seri Begawan, Brunei
+night-060.jpg	Guilin, China
+night-061.jpg	Sydney, Australia
+night-062.jpg	Tainan, Taiwan
+night-064.jpg	Toulouse, France
+night-065.jpg	Kolkata, India
+night-066.jpg	Ho Chi Minh City, Vietnam
+night-067.jpg	Hong Kong
+night-068.jpg	Vitoria, Brazil
+night-069.jpg	Wattens, Austria
+night-070.jpg	Lviv, Ukraine
+night-071.jpg	Lake Geneva, Switzerland
+night-072.jpg	Oeschinensee, Switzerland
+night-073.jpg	Salbert, Belfort, France
+night-074.jpg	Tuntorp, Sweden
+night-076.jpg	Serra da Capivara National Park, Brazil
+night-077.jpg	Savault, Morvan, France
+night-078.jpg	Meteora, Greece
+night-079.jpg	Myvatn, Iceland
+night-080.jpg	Alaska, USA
+night-081.jpg	Tuntorp, Sweden
+night-082.jpg	Lofoten, Norway
+night-083.jpg	Maardu, Estonia
+night-084.jpg	Estonia
+night-085.jpg	Estonia
+night-086.jpg	Andaman Islands, India
+night-087.jpg	Egyptian Desert, Egypt
+night-088.jpg	Mount Bromo, Indonesia
+night-089.jpg	Cotija, Mexico
+night-090.jpg	Shiraz, Iran
+night-091.jpg	Hailuoto, Finland
+night-093.jpg	Kanha National Park, India
+night-094.jpg	Monterosso, Italy
+night-095.jpg	Persepolis, Iran
+night-097.jpg	Sirjan, Iran
+night-098.jpg	Spis Castle, Slovakia
+night-099.jpg	Hebei, China
+night-100.jpg	Rishikesh, India
+night-101.jpg	Araku, India
+night-102.jpg	Mount Batur, Bali, Indonesia
+night-103.jpg	Langtang National Park, Nepal
+night-104.jpg	Mount Merapi, Indonesia
+night-105.jpg	White Desert, Egypt
+night-106.jpg	Wadi Al-Hitan, Egypt
+night-107.jpg	Tuotuo River, Tibet, China
+night-108.jpg	Pacific Ocean southeast of Japan, from orbit
+night-109.jpg	Indonesia from the International Space Station
+night-110.jpg	Kennedy Space Center, Florida, USA
+night-111.jpg	Kennedy Space Center, Florida, USA
+night-112.jpg	Victoria Harbour, Hong Kong
+night-113.jpg	Stanford, California, USA
+night-114.jpg	Cambridge, Massachusetts, USA
+night-115.jpg	Porto Alegre, Brazil
+013.jpg	Skrova, Norway
+culture-001.jpg	Eurockeennes festival, France
+culture-002.jpg	Eurockeennes festival, France
+culture-004.jpg	Expo 2016, Antalya, Turkey
+culture-008.jpg	52nd Street, New York City, USA
+culture-012.jpg	Washington Coliseum, Washington, DC, USA
+culture-014.jpg	Lunar orbit, looking toward Earth
+culture-016.jpg	Morlaix, Brittany, France

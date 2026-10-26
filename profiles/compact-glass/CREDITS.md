@@ -1,38 +1,19 @@
-The fourteen wallpaper photos are from Wikimedia Commons and retain their individual licences below, separate from the repository's MIT licence.
+# Photograph credits
 
-These files are official Wikimedia derivatives at 3840 pixels wide, except 007.jpg (the 3557-pixel original) and 013.jpg (the 3840-pixel original). No local pixel editing, JPEG recompression, or baked-in darkening was applied. The launcher crops and dims only while rendering. Exact download URLs, dimensions, sizes, and SHA-256 hashes are recorded in wallpapers.sources.json and night-wallpapers.sources.json. The night group contains separate photographs taken at night, not generated or darkened variants of the daytime scenes.
+The collection contains 220 distinct photographs: 106 day and 114 night. Each photograph keeps its individual licence, separate from the repository's MIT licence.
 
-- 001.jpg: "Karst mountains colorful clouds and mist at sunrise from the top of Mount Nam Xay Vang Vieng Laos.jpg" by Basile Morin, CC BY-SA 4.0
-  https://commons.wikimedia.org/wiki/File:Karst_mountains_colorful_clouds_and_mist_at_sunrise_from_the_top_of_Mount_Nam_Xay_Vang_Vieng_Laos.jpg
-- 002.jpg: "Foggy Reflections - Loch Tummel.jpg" by Eric Kilby, CC BY-SA 4.0
-  https://commons.wikimedia.org/wiki/File:Foggy_Reflections_-_Loch_Tummel.jpg
-- 003.jpg: "Morning at Tham Sakoen.jpg" by BerryJ, CC BY-SA 4.0
-  https://commons.wikimedia.org/wiki/File:Morning_at_Tham_Sakoen.jpg
-- 004.jpg: "Lake Mystery, Canterbury, New Zealand 05.jpg" by Michal Klajban, CC BY-SA 4.0
-  https://commons.wikimedia.org/wiki/File:Lake_Mystery,_Canterbury,_New_Zealand_05.jpg
-- 005.jpg: "Pryor's Wood Bluebells 2017-04-26-4.jpg" by Colin, CC BY-SA 4.0
-  https://commons.wikimedia.org/wiki/File:Pryor%27s_Wood_Bluebells_2017-04-26-4.jpg
-- 006.jpg: "Steindorf am Ossiacher See Sankt Urban Ossiacher See und Dobratsch 04112015 2185.jpg" by Johann Jaritz, CC BY-SA 4.0
-  https://commons.wikimedia.org/wiki/File:Steindorf_am_Ossiacher_See_Sankt_Urban_Ossiacher_See_und_Dobratsch_04112015_2185.jpg
-- 007.jpg: "Karula vaade.jpg" by Amadvr, CC BY-SA 3.0
-  https://commons.wikimedia.org/wiki/File:Karula_vaade.jpg
-- 008.jpg: "Dülmen, Rorup, NSG Roruper Holz -- 2021 -- 8187-91.jpg" by Dietmar Rabich, CC BY-SA 4.0
-  https://commons.wikimedia.org/wiki/File:D%C3%BClmen,_Rorup,_NSG_Roruper_Holz_--_2021_--_8187-91.jpg
-- 009.jpg: "Mossy forest in Lierneux (DSC01260).jpg" by Trougnouf, CC BY 4.0
-  https://commons.wikimedia.org/wiki/File:Mossy_forest_in_Lierneux_(DSC01260).jpg
-- 010.jpg: "Cheow Lan Lake, Rainforest, Khao Sok, Thailand.jpg" by Vyacheslav Argenberg, CC BY 4.0
-  https://commons.wikimedia.org/wiki/File:Cheow_Lan_Lake,_Rainforest,_Khao_Sok,_Thailand.jpg
-- 011.jpg: "Тарасів обрій. Світанок (edited).jpg" by Oleksandr Malyon adapted by Radomianin, CC BY-SA 4.0
-  https://commons.wikimedia.org/wiki/File:%D0%A2%D0%B0%D1%80%D0%B0%D1%81%D1%96%D0%B2_%D0%BE%D0%B1%D1%80%D1%96%D0%B9._%D0%A1%D0%B2%D1%96%D1%82%D0%B0%D0%BD%D0%BE%D0%BA_(edited).jpg
-- 012.jpg: "Kuang Si Falls and a turquoise water pool in Luang Prabang province Laos.jpg" by Basile Morin, CC BY-SA 4.0
-  https://commons.wikimedia.org/wiki/File:Kuang_Si_Falls_and_a_turquoise_water_pool_in_Luang_Prabang_province_Laos.jpg
+Complete attribution, source-page URLs, image URLs, locations and available stories are recorded in:
 
-- 013.jpg: "Aurora Borealis Skrova-1.jpg" by Birgit Fostervold, CC BY-SA 4.0
-  https://commons.wikimedia.org/wiki/File:Aurora_Borealis_Skrova-1.jpg
-- 014.jpg: "Milky Way over Rocky Mountain National Park (26367276674).jpg" by NPS/Jeremy M. White, public domain (United States federal government work)
-  https://commons.wikimedia.org/wiki/File:Milky_Way_over_Rocky_Mountain_National_Park_(26367276674).jpg
+- [Day source manifest](wallpapers.sources.json)
+- [Night source manifest](night-wallpapers.sources.json)
+- [Illustrated online catalogue](catalog.html)
+- [CSV catalogue](catalog.csv)
+- [On-TV More-menu credits](wallpapers/credits.txt)
 
-Licences: CC BY 4.0 https://creativecommons.org/licenses/by/4.0/ , CC BY-SA 4.0 https://creativecommons.org/licenses/by-sa/4.0/ ,
-CC BY-SA 3.0 https://creativecommons.org/licenses/by-sa/3.0/
+Photographs come from Wikimedia Commons and its attributed photographers, archives and public-domain sources. The collection accepts only CC BY, CC BY-SA, CC0 or public-domain material. Non-commercial and no-derivatives licences are not accepted. A Commons hosting page is not itself a blanket licence: use the per-image author, licence and licence URL in the manifests when redistributing any photograph.
 
-The YouTube tile banner is the artwork from the installed YouTube TV application; the YouTube name and logo belong to Google and are not covered by this repository's MIT licence. The PS5 shortcut's simple vector banner is included in its source.
+No local upscaling, image generation, pixel editing, recompression or baked-in darkening was applied. Downloads use original files or official source derivatives. The launcher may crop and dim at rendering time. Original and display-source dimensions are at least 2560 × 1440. Source-reported, not yet downloaded entries are explicitly marked metadata-only; verified downloads have SHA-256 hashes. The old 014.jpg panorama is no longer eligible because its height was below 1440 pixels.
+
+The full collection is an online catalogue, not a bundled image archive. The small offline seed list is in [manifest.json](manifest.json); downloaded TV image storage is capped at 100,000,000 bytes. Opening the illustrated catalogue loads external Wikimedia images. That browser traffic is separate from the TV's cache.
+
+The YouTube tile banner is artwork from the installed YouTube TV application. The YouTube name and logo belong to Google and are not covered by the repository's MIT licence. The PS5 shortcut's simple vector banner is included in its source. Campfire-media credits remain in [media/CREDITS.md](media/CREDITS.md); personal clips are not published.

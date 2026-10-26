@@ -1069,13 +1069,13 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
         }
         if (showStats) startStats();
         sky.update();
-        wallpaperPlayer.start();
         if (nowPlayingBadge == null) nowPlayingBadge = new NowPlayingBadge(this, root);
         nowPlayingBadge.start();
         if (campfirePlayer == null) campfirePlayer = new CampfirePlayer(this, root);
         campfireEnabled = getSharedPreferences("ambient_mode", MODE_PRIVATE).getBoolean("campfire", false);
         restoreCampfireUi();
         if (campfireEnabled) { wallpaperPlayer.stop(); campfirePlayer.start(); }
+        else wallpaperPlayer.start();
         setAppsCollapsed(false);
         restartAppIdle();
         handler.postDelayed(minuteTick, MINUTE_MS);

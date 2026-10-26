@@ -3,8 +3,6 @@ package com.gathin.tvhome;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -36,10 +34,15 @@ final class WallpaperPlayer {
     private final ImageView image;
     private final int backgroundColor;
     private final List<File> files;
+    private final WallpaperRemote remote;
+    private final boolean online;
     private final long interval;
     private final String order;
     private final SharedPreferences preferences;
-    private final ExecutorService decoder = Executors.newSingleThreadExecutor();
+    private final ExecutorService decoder = Executors.newSingleThreadExecutor(task -> new Thread(() -> {
+        android.os.Process.setThreadPriority(android.os.Process.THREAD_PRIORITY_BACKGROUND);
+        task.run();
+    }, "WallpaperIO"));
     private final Random random = new Random();
     private final int width;
     /** config wallpaper_true_color: ARGB_8888 instead of RGB_565. */
@@ -52,6 +55,8 @@ final class WallpaperPlayer {
     private boolean active;
     private boolean closed;
     private boolean loading;
+    private long retryAfter;
+    private final Runnable retry = this::update;
     private String displayed = "";
     /** wallpaper_captions: the shown picture's name from wallpapers/captions.txt; null when off or there are none. */
     private final TextView caption;
@@ -70,7 +75,11 @@ final class WallpaperPlayer {
     WallpaperPlayer(Context context, FrameLayout root, Config config) {
         this.root = root;
         backgroundColor = config.backgroundColor;
-        files = new ArrayList<>(config.wallpapers);
+        remote = new WallpaperRemote(Config.dir(context));
+        online = config.wallpaperEnabled && remote.enabled()
+                && context.getSharedPreferences(Config.SETTINGS_NAME, Context.MODE_PRIVATE)
+                .getString(Config.WALLPAPER_CHOICE_KEY, null) == null;
+        files = new ArrayList<>(online ? remote.files() : config.wallpapers);
         interval = config.wallpaperRotationMinutes * 60_000L;
         bitmapConfig = config.wallpaperTrueColor ? Bitmap.Config.ARGB_8888 : Bitmap.Config.RGB_565;
         // The dim is painted into the picture (decode), so no full-screen shade layer is drawn on every frame.
@@ -82,7 +91,8 @@ final class WallpaperPlayer {
         longitude = moods.isEmpty() ? "" : context.getString(R.string.longitude);
         // Playback state belongs to one collection. Changing the collection starts from its first
         // picture instead of resuming a filename that belonged to the previous one.
-        String collection = collectionKey(files);
+        File catalogue = new File(new File(Config.dir(context), "wallpapers"), "catalog.tsv");
+        String collection = online ? "online:" + catalogue.length() + ":" + catalogue.lastModified() : collectionKey(files);
         if (!collection.equals(preferences.getString("collection", ""))) {
             preferences.edit().putString("collection", collection)
                     .remove("image").remove("changed").apply();
@@ -102,59 +112,37 @@ final class WallpaperPlayer {
         }
         briefCaption = context.getResources().getBoolean(R.bool.brief_wallpaper_location);
         names = briefCaption ? new HashMap<>() : config.wallpaperCaptions && config.wallpaperEnabled && !files.isEmpty()
-                ? WallpaperCaptions.read(files.get(0).getParentFile()) : Collections.emptyMap();
+                ? WallpaperCaptions.read(online ? new File(Config.dir(context), "wallpapers")
+                        : files.get(0).getParentFile()) : Collections.emptyMap();
         if (briefCaption) {
             for (String entry : context.getResources().getStringArray(R.array.wallpaper_locations)) {
                 int split = entry.indexOf('=');
                 if (split > 0) names.put(entry.substring(0, split), entry.substring(split + 1));
             }
         }
+        if (!files.isEmpty()) {
+            File folder = online ? new File(Config.dir(context), "wallpapers") : files.get(0).getParentFile();
+            sources.putAll(WallpaperCaptions.readCredits(folder));
+            if (briefCaption) names.putAll(WallpaperCaptions.read(folder));
+        }
         caption = names.isEmpty() ? null : makeCaption(context, root, briefCaption);
         if (config.wallpaperEnabled && !files.isEmpty()) {
             root.addView(image, 0, new FrameLayout.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-            showFirst();
-        }
-    }
-
-    /**
-     * The picture Home opens with is decoded right here, on the main thread, as the single wallpaper always was:
-     * Home's first frame already has it instead of drawing the plain colour and the picture popping in later.
-     * Only the later changes of a rotation decode in the background.
-     */
-    private void showFirst() {
-        String previous = preferences.getString("image", "");
-        List<File> playable = playable();
-        File first = WallpaperRotation.find(playable, previous);
-        if (first == null) first = WallpaperRotation.pick(playable, previous, order, random);
-        while (first != null) {
-            Bitmap bitmap = decode(first);
-            if (bitmap != null) {
-                show(bitmap);
-                // The picture covers the whole screen: the root's plain colour under it is overdraw.
-                root.setBackground(null);
-                displayed = first.getName();
-                showCaption(false);
-                if (!displayed.equals(previous)) {
-                    preferences.edit().putString("image", displayed)
-                            .putLong("changed", System.currentTimeMillis()).apply();
-                }
-                return;
-            }
-            files.remove(first);   // unreadable or over 4K: try another, or keep the plain colour
-            playable = playable();
-            first = WallpaperRotation.pick(playable, previous, order, random);
         }
     }
 
     void start() {
         active = true;
+        image.setVisibility(View.VISIBLE);
         if (briefCaption) showCaption(false);
         update();
     }
 
     void stop() {
         active = false;
+        image.setVisibility(View.INVISIBLE);
+        root.removeCallbacks(retry);
         root.removeCallbacks(hideLocation);
         if (briefCaption && caption != null) { caption.animate().cancel(); caption.setAlpha(0f); }
     }
@@ -192,13 +180,15 @@ final class WallpaperPlayer {
 
     void close() {
         root.removeCallbacks(hideLocation);
+        root.removeCallbacks(retry);
         active = false;
         closed = true;
+        remote.close();
         decoder.shutdownNow();
     }
 
     void update() {
-        if (!active || closed || loading || files.isEmpty()) return;
+        if (!active || closed || loading || files.isEmpty() || System.currentTimeMillis() < retryAfter) return;
         String previous = preferences.getString("image", "");
         // A picture outside the time of day's group (the group changed) is replaced at once, not after the interval.
         List<File> playable = playable();
@@ -209,9 +199,22 @@ final class WallpaperPlayer {
         }
         if (selected == null || selected.getName().equals(displayed)) return;
         File next = selected;
+        String pinned = displayed;
         loading = true;
         decoder.execute(() -> {
-            Bitmap bitmap = decode(next);
+            // On a cold start, show a cached photo of this mood first. Neither disk decoding nor
+            // hashing/network I/O blocks the first UI frame. Never fetch the whole catalogue.
+            File actual = null;
+            if (online && pinned.isEmpty()) {
+                List<File> cached = remote.cachedFiles();
+                cached.removeIf(file -> WallpaperRotation.find(playable, file.getName()) == null);
+                actual = WallpaperRotation.find(cached, previous);
+                if (actual == null) actual = WallpaperRotation.pick(cached, "", order, random);
+                if (actual != null) actual = remote.resolve(actual, pinned);
+            }
+            if (actual == null) actual = online ? remote.resolve(next, pinned) : next;
+            Bitmap bitmap = actual == null ? null : decode(actual);
+            String nextName = actual == null ? next.getName() : actual.getName();
             root.post(() -> {
                 loading = false;
                 if (closed || !active) {
@@ -219,13 +222,23 @@ final class WallpaperPlayer {
                     return;
                 }
                 if (bitmap == null) {
-                    files.remove(next);
-                    Log.w("TvHome.Wallpaper", "Skipping unreadable image: " + next.getName());
-                    update();
+                    if (online) {
+                        // Keep the current picture on network failure; try later, never spin or
+                        // replace a working background with a blank/network-error screen.
+                        retryAfter = System.currentTimeMillis() + 60_000L;
+                        root.postDelayed(retry, 60_100L);
+                    } else {
+                        files.remove(next);
+                        Log.w("TvHome.Wallpaper", "Skipping unreadable image: " + next.getName());
+                        update();
+                    }
                     return;
                 }
+                boolean preserveFrame = nextName.startsWith("culture-");
+                image.setScaleType(preserveFrame ? ImageView.ScaleType.FIT_CENTER : ImageView.ScaleType.CENTER_CROP);
+                image.setBackgroundColor(preserveFrame ? android.graphics.Color.BLACK : android.graphics.Color.TRANSPARENT);
                 show(bitmap);
-                displayed = next.getName();
+                displayed = nextName;
                 showCaption(true);
                 if (!displayed.equals(previous) || changed == 0) {
                     preferences.edit().putString("image", displayed)
@@ -316,35 +329,7 @@ final class WallpaperPlayer {
     }
 
     private Bitmap decode(File file) {
-        try {
-            BitmapFactory.Options options = new BitmapFactory.Options();
-            options.inJustDecodeBounds = true;
-            BitmapFactory.decodeFile(file.getPath(), options);
-            int width = options.outWidth, height = options.outHeight;
-            if (width <= 0 || height <= 0) return null;
-            int sample = WallpaperSize.sampleSize(width, height, this.width, this.height);
-            if (!WallpaperSize.accepted(width / sample, height / sample)) return null;
-            options.inJustDecodeBounds = false;
-            options.inSampleSize = sample;
-            int[] scale = WallpaperSize.coverScale(width / sample, height / sample, this.width, this.height);
-            if (scale != null) {
-                options.inScaled = true;
-                options.inDensity = scale[0];
-                options.inTargetDensity = scale[1];
-            }
-            options.inPreferredConfig = bitmapConfig;
-            options.inMutable = dimColor != 0;
-            Bitmap decoded = BitmapFactory.decodeFile(file.getPath(), options);
-            if (decoded == null) return null;
-            if (dimColor != 0) new Canvas(decoded).drawColor(dimColor);
-            // One copy in GPU memory instead of a software bitmap plus its texture; the decode stays off the UI
-            // thread for rotations, and Home's return no longer uploads 4-8 MB to the GPU.
-            Bitmap gpu = decoded.copy(Bitmap.Config.HARDWARE, false);
-            if (gpu == null) return decoded;
-            decoded.recycle();
-            return gpu;
-        } catch (Exception | OutOfMemoryError failure) {
-            return null;
-        }
+        return WallpaperDecode.decode(file, width, height, bitmapConfig, dimColor,
+                file.getName().startsWith("culture-"));
     }
 }

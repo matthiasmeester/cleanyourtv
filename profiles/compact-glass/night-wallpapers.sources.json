@@ -1,34 +1,2990 @@
 {
-  "collection": "compact-glass-night",
-  "source": "Wikimedia Commons",
-  "retrieved": "2026-10-26",
-  "changes": "Original photograph or official Wikimedia derivative; no local pixel editing, recompression, or artificial night conversion.",
+  "collection": "compact-glass",
+  "period": "night",
+  "minimum_dimensions": [
+    2560,
+    1440
+  ],
+  "storage": "Online catalogue; bounded on-device cache, not a bundled full collection",
   "images": [
+    {
+      "file": "night-001.jpg",
+      "title": "141227 Berliner Dom.jpg",
+      "location": "Berlin, Germany",
+      "story": "",
+      "author": "Ansgar Koreng / CC BY 3.0 (DE)",
+      "license": "CC BY 3.0 de",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/de/deed.en",
+      "page": "https://commons.wikimedia.org/wiki/File:141227_Berliner_Dom.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/8/84/141227_Berliner_Dom.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/141227_Berliner_Dom.jpg/3840px-141227_Berliner_Dom.jpg",
+      "dimensions": [
+        3840,
+        2689
+      ],
+      "sha256": "861d4e85689cdef15f81f017e89fb7fe12f2634f42348b3fb9a98187637cbf58",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        4182,
+        2928
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-002.jpg",
+      "title": "2014 Kłodzko, starówka 12.jpg",
+      "location": "Klodzko, Poland",
+      "story": "",
+      "author": "Jacek Halicki",
+      "license": "CC BY-SA 3.0 pl",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/pl/deed.en",
+      "page": "https://commons.wikimedia.org/wiki/File:2014_K%C5%82odzko,_star%C3%B3wka_12.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/2014_K%C5%82odzko%2C_star%C3%B3wka_12.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/2014_K%C5%82odzko%2C_star%C3%B3wka_12.jpg",
+      "dimensions": [
+        3770,
+        2130
+      ],
+      "sha256": "d65f6a19afdc8e16cd9e4085980ca87852edaa1877453d0da35ec875eea743e4",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        3770,
+        2130
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-003.jpg",
+      "title": "2018 - Christiansborg from the Marble Bridge.jpg",
+      "location": "Copenhagen, Denmark",
+      "story": "",
+      "author": "Moahim",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:2018_-_Christiansborg_from_the_Marble_Bridge.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/1/15/2018_-_Christiansborg_from_the_Marble_Bridge.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/2018_-_Christiansborg_from_the_Marble_Bridge.jpg/3840px-2018_-_Christiansborg_from_the_Marble_Bridge.jpg",
+      "dimensions": [
+        3840,
+        2535
+      ],
+      "sha256": "97ed40ab364f96cdacb0728b9766378e3cff338cbf19fddd3b18ce5ff7ad870f",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        4545,
+        3000
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-004.jpg",
+      "title": "2018 - May - Salzach River at night in Salzburg.jpg",
+      "location": "Salzburg, Austria",
+      "story": "",
+      "author": "Max Dawncat",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "page": "https://commons.wikimedia.org/wiki/File:2018_-_May_-_Salzach_River_at_night_in_Salzburg.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/2018_-_May_-_Salzach_River_at_night_in_Salzburg.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/2018_-_May_-_Salzach_River_at_night_in_Salzburg.jpg/3840px-2018_-_May_-_Salzach_River_at_night_in_Salzburg.jpg",
+      "dimensions": [
+        3840,
+        2160
+      ],
+      "sha256": "eb644b8b3ef25d1dee7c14207e4a26c9eb41b6d5227e765eddce4c028a78babd",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        5257,
+        2957
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-005.jpg",
+      "title": "2019 - Wiener Karlskirche mit Teich und \"Hill Arches\" Skulptur am Abend.jpg",
+      "location": "Vienna, Austria",
+      "story": "",
+      "author": "Moahim",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:2019_-_Wiener_Karlskirche_mit_Teich_und_%22Hill_Arches%22_Skulptur_am_Abend.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/3/36/2019_-_Wiener_Karlskirche_mit_Teich_und_%22Hill_Arches%22_Skulptur_am_Abend.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/2019_-_Wiener_Karlskirche_mit_Teich_und_%22Hill_Arches%22_Skulptur_am_Abend.jpg/3840px-2019_-_Wiener_Karlskirche_mit_Teich_und_%22Hill_Arches%22_Skulptur_am_Abend.jpg",
+      "dimensions": [
+        3840,
+        2528
+      ],
+      "sha256": "d258df2cd05b44809cb0f514cf3e35ae179889fe2c47b3caa7e5a4af68985c86",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        4916,
+        3236
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-006.jpg",
+      "title": "2025-07-28-rue du Petit-Fort (Dinan)-4472.jpg",
+      "location": "Dinan, France",
+      "story": "",
+      "author": "Superbass",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:2025-07-28-rue_du_Petit-Fort_(Dinan)-4472.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/e/ec/2025-07-28-rue_du_Petit-Fort_%28Dinan%29-4472.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/2025-07-28-rue_du_Petit-Fort_%28Dinan%29-4472.jpg/3840px-2025-07-28-rue_du_Petit-Fort_%28Dinan%29-4472.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "055890c4f5a5576d835c5d1a8a9f35a9fce02cda985454d0fe0ee8c50afd72b7",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        6703,
+        4469
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-007.jpg",
+      "title": "Acueducto de Segovia 01.jpg",
+      "location": "Segovia, Spain",
+      "story": "",
+      "author": "David Corral Gadea",
+      "license": "CC BY-SA 3.0 es",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/es/deed.en",
+      "page": "https://commons.wikimedia.org/wiki/File:Acueducto_de_Segovia_01.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/1/19/Acueducto_de_Segovia_01.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Acueducto_de_Segovia_01.jpg/3840px-Acueducto_de_Segovia_01.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "6d671439678501495c8fcf262ec6f1f8f70b1f022cabb3a1f4f6a6e8d8663390",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        20736,
+        13824
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-008.jpg",
+      "title": "Aerial photographs of The Fullerton Hotel of Singapore at night.jpg",
+      "location": "Singapore",
+      "story": "",
+      "author": "Basile Morin",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Aerial_photographs_of_The_Fullerton_Hotel_of_Singapore_at_night.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Aerial_photographs_of_The_Fullerton_Hotel_of_Singapore_at_night.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Aerial_photographs_of_The_Fullerton_Hotel_of_Singapore_at_night.jpg/3840px-Aerial_photographs_of_The_Fullerton_Hotel_of_Singapore_at_night.jpg",
+      "dimensions": [
+        3840,
+        2160
+      ],
+      "sha256": "97bb5e5b0aefa6d067669ad9ee4c274d0ab3256ddcbb4c4585a8065a62d499b7",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        6107,
+        3435
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-009.jpg",
+      "title": "Auto's op de Champs-Elysées, met op de achtergrond de verlichte showroom van Cit, Bestanddeelnr 191-0378.jpg",
+      "location": "Champs-Elysees, Paris, France",
+      "story": "Vintage cars pass the illuminated Citroen showroom on the Champs-Elysees, photographed by Willem van de Poll.",
+      "author": "Willem van de Poll",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "page": "https://commons.wikimedia.org/wiki/File:Auto%27s_op_de_Champs-Elys%C3%A9es,_met_op_de_achtergrond_de_verlichte_showroom_van_Cit,_Bestanddeelnr_191-0378.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/3/34/Auto%27s_op_de_Champs-Elys%C3%A9es%2C_met_op_de_achtergrond_de_verlichte_showroom_van_Cit%2C_Bestanddeelnr_191-0378.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/3/34/Auto%27s_op_de_Champs-Elys%C3%A9es%2C_met_op_de_achtergrond_de_verlichte_showroom_van_Cit%2C_Bestanddeelnr_191-0378.jpg",
+      "dimensions": [
+        3476,
+        2548
+      ],
+      "sha256": "1fd0317275a4feca7a36738db4023d55439d7a53fddb9c9294fbdd14a41f1915",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        3476,
+        2548
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-010.jpg",
+      "title": "Blue Hour at Pakistan Monument.jpg",
+      "location": "Islamabad, Pakistan",
+      "story": "",
+      "author": "Muhammad Ashar",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Blue_Hour_at_Pakistan_Monument.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Blue_Hour_at_Pakistan_Monument.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Blue_Hour_at_Pakistan_Monument.jpg/3840px-Blue_Hour_at_Pakistan_Monument.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "e8e0a22d760060be57503df435d94697f20254e5f29d7d0cdb11f095f53644bc",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        6000,
+        4000
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-011.jpg",
+      "title": "Blue Mosque Courtyard Dusk Wikimedia Commons.jpg",
+      "location": "Istanbul, Turkey",
+      "story": "",
+      "author": "Benh LIEU SONG ( Flickr )",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Blue_Mosque_Courtyard_Dusk_Wikimedia_Commons.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/7/77/Blue_Mosque_Courtyard_Dusk_Wikimedia_Commons.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Blue_Mosque_Courtyard_Dusk_Wikimedia_Commons.jpg/3840px-Blue_Mosque_Courtyard_Dusk_Wikimedia_Commons.jpg",
+      "dimensions": [
+        3840,
+        2700
+      ],
+      "sha256": "d8cbe0ee9e4ebc8f540e0d47b8e76e5aded0d5cdd2ffc86ead1a45ae20b522fb",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        7937,
+        5580
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-012.jpg",
+      "title": "Boulevard Hotel (Neon sign), Miami Beach.jpg",
+      "location": "Miami Beach, Florida, USA",
+      "story": "",
+      "author": "© Radomianin / Wikimedia Commons / CC BY-SA 4.0",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Boulevard_Hotel_(Neon_sign),_Miami_Beach.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Boulevard_Hotel_%28Neon_sign%29%2C_Miami_Beach.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Boulevard_Hotel_%28Neon_sign%29%2C_Miami_Beach.jpg",
+      "dimensions": [
+        3372,
+        2250
+      ],
+      "sha256": "61960d6e861de00b4757b001d00e84d8320fb27da9cc6e6b0ec35f0590b1f15d",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        3372,
+        2250
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-013.jpg",
+      "title": "Brooklyn Diner, New York City (2024)-L1006207.jpg",
+      "location": "New York City, USA",
+      "story": "",
+      "author": "Frank Schulenburg",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Brooklyn_Diner,_New_York_City_(2024)-L1006207.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Brooklyn_Diner%2C_New_York_City_%282024%29-L1006207.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Brooklyn_Diner%2C_New_York_City_%282024%29-L1006207.jpg/3840px-Brooklyn_Diner%2C_New_York_City_%282024%29-L1006207.jpg",
+      "dimensions": [
+        3840,
+        2160
+      ],
+      "sha256": "07aafc0cf4a0f8f380adca9f1800d6e4cdcce5c654b974beafd90003202d4ee3",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        8426,
+        4739
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-014.jpg",
+      "title": "Buildings with colorful neon street signs at blue hour, Shinjuku, Tokyo.jpg",
+      "location": "Shinjuku, Tokyo, Japan",
+      "story": "",
+      "author": "Basile Morin",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Buildings_with_colorful_neon_street_signs_at_blue_hour,_Shinjuku,_Tokyo.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Buildings_with_colorful_neon_street_signs_at_blue_hour%2C_Shinjuku%2C_Tokyo.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Buildings_with_colorful_neon_street_signs_at_blue_hour%2C_Shinjuku%2C_Tokyo.jpg/3840px-Buildings_with_colorful_neon_street_signs_at_blue_hour%2C_Shinjuku%2C_Tokyo.jpg",
+      "dimensions": [
+        3840,
+        3072
+      ],
+      "sha256": "3511f341636af135daeba98266e4e4368b910650d95ffba757d359ecc7dc9f68",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        4662,
+        3730
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-016.jpg",
+      "title": "Christchurch Town Hall of the Performing Arts, New Zealand.jpg",
+      "location": "Christchurch, New Zealand",
+      "story": "",
+      "author": "Michal Klajban",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Christchurch_Town_Hall_of_the_Performing_Arts,_New_Zealand.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Christchurch_Town_Hall_of_the_Performing_Arts%2C_New_Zealand.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Christchurch_Town_Hall_of_the_Performing_Arts%2C_New_Zealand.jpg/3840px-Christchurch_Town_Hall_of_the_Performing_Arts%2C_New_Zealand.jpg",
+      "dimensions": [
+        3840,
+        2504
+      ],
+      "sha256": "8b85ec3e8f762ef50046f8b47aa72d75af29074f0e0ebd1741f97732eaf3be41",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        5421,
+        3535
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-017.jpg",
+      "title": "Church of the virgin of the burgh Rhodes 14th century night.jpg",
+      "location": "Rhodes, Greece",
+      "story": "",
+      "author": "Jebulon",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "page": "https://commons.wikimedia.org/wiki/File:Church_of_the_virgin_of_the_burgh_Rhodes_14th_century_night.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Church_of_the_virgin_of_the_burgh_Rhodes_14th_century_night.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Church_of_the_virgin_of_the_burgh_Rhodes_14th_century_night.jpg",
+      "dimensions": [
+        3595,
+        2566
+      ],
+      "sha256": "2c8b20d0300d8d0fa98b9b5e6c4f0291eab6bd27f03f24fd03aca5aadf8cf77f",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        3595,
+        2566
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-018.jpg",
+      "title": "Colosseum in Rome-April 2007-1- copie 2B.jpg",
+      "location": "Rome, Italy",
+      "story": "",
+      "author": "Diliff",
+      "license": "CC BY-SA 2.5",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.5",
+      "page": "https://commons.wikimedia.org/wiki/File:Colosseum_in_Rome-April_2007-1-_copie_2B.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Colosseum_in_Rome-April_2007-1-_copie_2B.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Colosseum_in_Rome-April_2007-1-_copie_2B.jpg/3840px-Colosseum_in_Rome-April_2007-1-_copie_2B.jpg",
+      "dimensions": [
+        3840,
+        2254
+      ],
+      "sha256": "96ac42accc99921d68b663b132066618d0afcd98cdcd036197c024df6ade8fb3",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        4827,
+        2833
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-019.jpg",
+      "title": "CTA Night.jpg",
+      "location": "Chicago, Illinois, USA",
+      "story": "",
+      "author": "Daniel Schwen",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:CTA_Night.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/1/12/CTA_Night.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/CTA_Night.jpg/3840px-CTA_Night.jpg",
+      "dimensions": [
+        3840,
+        2537
+      ],
+      "sha256": "47e76533d34817ea91bf70b60330c6f19a8a63ba42faf31f06f253381d8ff0ef",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        4421,
+        2921
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-020.jpg",
+      "title": "Darwin (AU), Darwin Waterfront -- 2019 -- 4423-5.jpg",
+      "location": "Darwin, Australia",
+      "story": "",
+      "author": "Dietmar Rabich",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Darwin_(AU),_Darwin_Waterfront_--_2019_--_4423-5.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Darwin_%28AU%29%2C_Darwin_Waterfront_--_2019_--_4423-5.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Darwin_%28AU%29%2C_Darwin_Waterfront_--_2019_--_4423-5.jpg/3840px-Darwin_%28AU%29%2C_Darwin_Waterfront_--_2019_--_4423-5.jpg",
+      "dimensions": [
+        3840,
+        2160
+      ],
+      "sha256": "fbdf23f2deb3f7c18f5b3ec17ca42b4bb20023d5117043c21b5a4ea2ca1796f2",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        6043,
+        3399
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-021.jpg",
+      "title": "El Palau de les Arts Reina Sofía, Valencia - Jan 2007.jpg",
+      "location": "Valencia, Spain",
+      "story": "",
+      "author": "Diliff",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:El_Palau_de_les_Arts_Reina_Sof%C3%ADa,_Valencia_-_Jan_2007.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/El_Palau_de_les_Arts_Reina_Sof%C3%ADa%2C_Valencia_-_Jan_2007.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/El_Palau_de_les_Arts_Reina_Sof%C3%ADa%2C_Valencia_-_Jan_2007.jpg/3840px-El_Palau_de_les_Arts_Reina_Sof%C3%ADa%2C_Valencia_-_Jan_2007.jpg",
+      "dimensions": [
+        3840,
+        2207
+      ],
+      "sha256": "2d45d0e05107321f0f129bd37fe19d9f261bfd8f0933a241b02594fa56e64df3",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        7815,
+        4492
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-022.jpg",
+      "title": "Espoo Cultural Centre (December 2018).jpg",
+      "location": "Espoo, Finland",
+      "story": "",
+      "author": "Markus Säynevirta",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Espoo_Cultural_Centre_(December_2018).jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Espoo_Cultural_Centre_%28December_2018%29.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Espoo_Cultural_Centre_%28December_2018%29.jpg/3840px-Espoo_Cultural_Centre_%28December_2018%29.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "d8579e145a65d4cc303818a89493c33a6502dfa421de70e2dd9b4b0e50253ec9",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        4908,
+        3272
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-023.jpg",
+      "title": "Esztergom by night 01 - Simor János utca.jpg",
+      "location": "Esztergom, Hungary",
+      "story": "",
+      "author": "Pudelek",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Esztergom_by_night_01_-_Simor_J%C3%A1nos_utca.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Esztergom_by_night_01_-_Simor_J%C3%A1nos_utca.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Esztergom_by_night_01_-_Simor_J%C3%A1nos_utca.jpg",
+      "dimensions": [
+        3387,
+        2294
+      ],
+      "sha256": "b8befb74f5181f176dceb22b5d754dd189785a9200f73dd4d0ff7237df2ed8fc",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        3387,
+        2294
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-024.jpg",
+      "title": "Exterior facade of Residence Bassac at blue hour, town of Champasak, Laos.jpg",
+      "location": "Champasak, Laos",
+      "story": "",
+      "author": "Basile Morin",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Exterior_facade_of_Residence_Bassac_at_blue_hour,_town_of_Champasak,_Laos.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Exterior_facade_of_Residence_Bassac_at_blue_hour%2C_town_of_Champasak%2C_Laos.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Exterior_facade_of_Residence_Bassac_at_blue_hour%2C_town_of_Champasak%2C_Laos.jpg/3840px-Exterior_facade_of_Residence_Bassac_at_blue_hour%2C_town_of_Champasak%2C_Laos.jpg",
+      "dimensions": [
+        3840,
+        2223
+      ],
+      "sha256": "0a46f77ebce9648329992112551a1b647a63e398af204bb3f51e974cca9bd9fd",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        5950,
+        3444
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-025.jpg",
+      "title": "Frankfurt Skyline 2022 bei Nacht.jpg",
+      "location": "Frankfurt, Germany",
+      "story": "",
+      "author": "Jörg Braukmann",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Frankfurt_Skyline_2022_bei_Nacht.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Frankfurt_Skyline_2022_bei_Nacht.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Frankfurt_Skyline_2022_bei_Nacht.jpg/3840px-Frankfurt_Skyline_2022_bei_Nacht.jpg",
+      "dimensions": [
+        3840,
+        2469
+      ],
+      "sha256": "e3245451467d6be335955600c58d82f7a4394a8f3f2b1de666c230abb2ddb44a",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        6221,
+        4000
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-026.jpg",
+      "title": "Fuente de la Plaza Nueva, Liubliana, Eslovenia, 2017-04-14, DD 50-52 HDR.jpg",
+      "location": "Ljubljana, Slovenia",
+      "story": "",
+      "author": "Diego Delso",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Fuente_de_la_Plaza_Nueva,_Liubliana,_Eslovenia,_2017-04-14,_DD_50-52_HDR.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Fuente_de_la_Plaza_Nueva%2C_Liubliana%2C_Eslovenia%2C_2017-04-14%2C_DD_50-52_HDR.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Fuente_de_la_Plaza_Nueva%2C_Liubliana%2C_Eslovenia%2C_2017-04-14%2C_DD_50-52_HDR.jpg/3840px-Fuente_de_la_Plaza_Nueva%2C_Liubliana%2C_Eslovenia%2C_2017-04-14%2C_DD_50-52_HDR.jpg",
+      "dimensions": [
+        3840,
+        2382
+      ],
+      "sha256": "dc675cb7ab41412443b1d0b42c15c920dea40aa99d327d936b0ddaf188b1f923",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        7861,
+        4876
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-027.jpg",
+      "title": "Garden of Kunstberg viewed from Mont des Arts during nautical twilight (DSCF1028).jpg",
+      "location": "Brussels, Belgium",
+      "story": "",
+      "author": "Trougnouf (Benoit Brummer)",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Garden_of_Kunstberg_viewed_from_Mont_des_Arts_during_nautical_twilight_(DSCF1028).jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Garden_of_Kunstberg_viewed_from_Mont_des_Arts_during_nautical_twilight_%28DSCF1028%29.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Garden_of_Kunstberg_viewed_from_Mont_des_Arts_during_nautical_twilight_%28DSCF1028%29.jpg/3840px-Garden_of_Kunstberg_viewed_from_Mont_des_Arts_during_nautical_twilight_%28DSCF1028%29.jpg",
+      "dimensions": [
+        3840,
+        2566
+      ],
+      "sha256": "7ba8832146f0c78af175460a474dd315b6b50b0f0a7118922578b3ce4a6475b5",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        4848,
+        3239
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-028.jpg",
+      "title": "Gatineau - QC - Museum of Civilisation.jpg",
+      "location": "Gatineau, Quebec, Canada",
+      "story": "",
+      "author": "Wladyslaw",
+      "license": "CC BY-SA 3.0",
+      "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "page": "https://commons.wikimedia.org/wiki/File:Gatineau_-_QC_-_Museum_of_Civilisation.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/9/99/Gatineau_-_QC_-_Museum_of_Civilisation.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/9/99/Gatineau_-_QC_-_Museum_of_Civilisation.jpg",
+      "dimensions": [
+        3662,
+        2497
+      ],
+      "sha256": "15fa5958f28d351f472ad00b679f8da3682cc9d85673ef840c7bed894b4bea11",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        3662,
+        2497
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-029.jpg",
+      "title": "GrazerRathaus-edit.jpg",
+      "location": "Graz, Austria",
+      "story": "",
+      "author": "Tamirhassan~commonswiki",
+      "license": "CC BY-SA 3.0",
+      "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "page": "https://commons.wikimedia.org/wiki/File:GrazerRathaus-edit.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/GrazerRathaus-edit.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/GrazerRathaus-edit.jpg",
+      "dimensions": [
+        3000,
+        1980
+      ],
+      "sha256": "ee732e630164ece6f493867207fb9883955b07cec7c029f32be4966d32eddc16",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        3000,
+        1980
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-030.jpg",
+      "title": "High rise view of Capitol Hill at night, looking east from Pine and 9th.jpg",
+      "location": "Seattle, Washington, USA",
+      "story": "",
+      "author": "Dllu",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:High_rise_view_of_Capitol_Hill_at_night,_looking_east_from_Pine_and_9th.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/High_rise_view_of_Capitol_Hill_at_night%2C_looking_east_from_Pine_and_9th.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/High_rise_view_of_Capitol_Hill_at_night%2C_looking_east_from_Pine_and_9th.jpg/3840px-High_rise_view_of_Capitol_Hill_at_night%2C_looking_east_from_Pine_and_9th.jpg",
+      "dimensions": [
+        3840,
+        2556
+      ],
+      "sha256": "c81eb1522b7f6106a63af616f148cac2188384d7d0ce282cb7f05c32314475c1",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        7358,
+        4898
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-031.jpg",
+      "title": "Highfallsrochester.jpg",
+      "location": "Rochester, New York, USA",
+      "story": "",
+      "author": "Evilarry",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Highfallsrochester.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Highfallsrochester.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Highfallsrochester.jpg/3840px-Highfallsrochester.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "8d3a8ed0bae265a4785edde77ada4ba24c8aeae088f0403bfdca7bde622f7eac",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        4752,
+        3168
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-032.jpg",
+      "title": "Hotel 3 Nagas with old red Citroen at blue hour in Luang Prabang.jpg",
+      "location": "Luang Prabang, Laos",
+      "story": "",
+      "author": "Basile Morin",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Hotel_3_Nagas_with_old_red_Citroen_at_blue_hour_in_Luang_Prabang.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Hotel_3_Nagas_with_old_red_Citroen_at_blue_hour_in_Luang_Prabang.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Hotel_3_Nagas_with_old_red_Citroen_at_blue_hour_in_Luang_Prabang.jpg/3840px-Hotel_3_Nagas_with_old_red_Citroen_at_blue_hour_in_Luang_Prabang.jpg",
+      "dimensions": [
+        3840,
+        1920
+      ],
+      "sha256": "986cda05700644af605f09ec81693514e536a94045f783a14d6fdad2628f6506",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        6168,
+        3084
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-033.jpg",
+      "title": "Hungarian Parliament Building 2023-9.jpg",
+      "location": "Budapest, Hungary",
+      "story": "",
+      "author": "Pierre Blaché",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "page": "https://commons.wikimedia.org/wiki/File:Hungarian_Parliament_Building_2023-9.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/6/65/Hungarian_Parliament_Building_2023-9.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Hungarian_Parliament_Building_2023-9.jpg/3840px-Hungarian_Parliament_Building_2023-9.jpg",
+      "dimensions": [
+        3840,
+        2160
+      ],
+      "sha256": "78a243daeb1f89471967cfd8f793cf5f441dcea8a36caacf45a57c015654ddf5",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        5078,
+        2856
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-034.jpg",
+      "title": "Illuminated Ferris wheel, bouncing castle and carousel at night in a funfair in Vientiane, Laos.jpg",
+      "location": "Vientiane, Laos",
+      "story": "",
+      "author": "Basile Morin",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Illuminated_Ferris_wheel,_bouncing_castle_and_carousel_at_night_in_a_funfair_in_Vientiane,_Laos.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/4/43/Illuminated_Ferris_wheel%2C_bouncing_castle_and_carousel_at_night_in_a_funfair_in_Vientiane%2C_Laos.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Illuminated_Ferris_wheel%2C_bouncing_castle_and_carousel_at_night_in_a_funfair_in_Vientiane%2C_Laos.jpg/3840px-Illuminated_Ferris_wheel%2C_bouncing_castle_and_carousel_at_night_in_a_funfair_in_Vientiane%2C_Laos.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "dadd9e7020c26e8091681ebb97942e968ad0bc2d94e6446dc0812d63cfc4b60c",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        6171,
+        4114
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-036.jpg",
+      "title": "Jaszczurówka at Winter.jpg",
+      "location": "Zakopane, Poland",
+      "story": "",
+      "author": "Jakub T. Jankiewicz",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Jaszczur%C3%B3wka_at_Winter.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/52/Jaszczur%C3%B3wka_at_Winter.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Jaszczur%C3%B3wka_at_Winter.jpg/3840px-Jaszczur%C3%B3wka_at_Winter.jpg",
+      "dimensions": [
+        3840,
+        2567
+      ],
+      "sha256": "6dcdf588ebf9ab36c3a9ec401f0ee60b674a6f8ddf4f26377eb2a3a2157939e8",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        6032,
+        4032
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-037.jpg",
+      "title": "KeizersgrachtReguliersgrachtAmsterdam.jpg",
+      "location": "Amsterdam, Netherlands",
+      "story": "",
+      "author": "Massimo Catarinella",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:KeizersgrachtReguliersgrachtAmsterdam.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/b/be/KeizersgrachtReguliersgrachtAmsterdam.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/b/be/KeizersgrachtReguliersgrachtAmsterdam.jpg",
+      "dimensions": [
+        3456,
+        2304
+      ],
+      "sha256": "f5e6a23b413e673aa7eba85ebb91ec44bce4a733d8bbf85fcec9967a88e03bf5",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        3456,
+        2304
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-038.jpg",
+      "title": "Kelly’s Olympian Bar & Diner, Portland (2024)-L1006267.jpg",
+      "location": "Portland, Oregon, USA",
+      "story": "",
+      "author": "Frank Schulenburg",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Kelly%E2%80%99s_Olympian_Bar_%26_Diner,_Portland_(2024)-L1006267.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Kelly%E2%80%99s_Olympian_Bar_%26_Diner%2C_Portland_%282024%29-L1006267.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Kelly%E2%80%99s_Olympian_Bar_%26_Diner%2C_Portland_%282024%29-L1006267.jpg/3840px-Kelly%E2%80%99s_Olympian_Bar_%26_Diner%2C_Portland_%282024%29-L1006267.jpg",
+      "dimensions": [
+        3840,
+        2400
+      ],
+      "sha256": "85744b7283446df30b7ba6ed1eacbff16bdcbfb95175ec6370c495acb2c4d933",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        8354,
+        5221
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-039.jpg",
+      "title": "Kimono Forest at night, Arashiyama Station, Arashiyama, Kyoto, Japan.jpg",
+      "location": "Kyoto, Japan",
+      "story": "",
+      "author": "Yasumichi Morita (designer) Basile Morin (photographer)",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Kimono_Forest_at_night,_Arashiyama_Station,_Arashiyama,_Kyoto,_Japan.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/54/Kimono_Forest_at_night%2C_Arashiyama_Station%2C_Arashiyama%2C_Kyoto%2C_Japan.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Kimono_Forest_at_night%2C_Arashiyama_Station%2C_Arashiyama%2C_Kyoto%2C_Japan.jpg/3840px-Kimono_Forest_at_night%2C_Arashiyama_Station%2C_Arashiyama%2C_Kyoto%2C_Japan.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "9c5b0b2f789f837439459776ad1e4f4bd3e3fced07167f811477410843cc0dba",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        6585,
+        4390
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-040.jpg",
+      "title": "Las Vegas (Nevada, USA), The Strip -- 2012 -- 6232.jpg",
+      "location": "Las Vegas, Nevada, USA",
+      "story": "",
+      "author": "Dietmar Rabich",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Las_Vegas_(Nevada,_USA),_The_Strip_--_2012_--_6232.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Las_Vegas_%28Nevada%2C_USA%29%2C_The_Strip_--_2012_--_6232.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Las_Vegas_%28Nevada%2C_USA%29%2C_The_Strip_--_2012_--_6232.jpg/3840px-Las_Vegas_%28Nevada%2C_USA%29%2C_The_Strip_--_2012_--_6232.jpg",
+      "dimensions": [
+        3840,
+        2643
+      ],
+      "sha256": "590837fa0dfb0c369e2d7966f97832038607b81a49a768a33aab0530a54800c1",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        4860,
+        3345
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-041.jpg",
+      "title": "Leadenhall Market In London - Feb 2006 rotated.jpg",
+      "location": "London, England",
+      "story": "",
+      "author": "Diliff",
+      "license": "CC BY-SA 3.0",
+      "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "page": "https://commons.wikimedia.org/wiki/File:Leadenhall_Market_In_London_-_Feb_2006_rotated.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/4/46/Leadenhall_Market_In_London_-_Feb_2006_rotated.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/4/46/Leadenhall_Market_In_London_-_Feb_2006_rotated.jpg",
+      "dimensions": [
+        2645,
+        1792
+      ],
+      "sha256": "dd607a37b77d628c40a8c6e4baf1ceda2250fd99ee3fd29e02e3e0d61969daff",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        2645,
+        1792
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-042.jpg",
+      "title": "Light trails in Centro de Gramado at night (25415341663).jpg",
+      "location": "Gramado, Brazil",
+      "story": "",
+      "author": "Felipe Valduga from Porto Alegre, Brazil",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Light_trails_in_Centro_de_Gramado_at_night_(25415341663).jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/6/65/Light_trails_in_Centro_de_Gramado_at_night_%2825415341663%29.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Light_trails_in_Centro_de_Gramado_at_night_%2825415341663%29.jpg/3840px-Light_trails_in_Centro_de_Gramado_at_night_%2825415341663%29.jpg",
+      "dimensions": [
+        3840,
+        2589
+      ],
+      "sha256": "d6043d657f80970b3f4d99be031c77b1c2f30cf967a551fe933156115d57371e",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        5588,
+        3768
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-044.jpg",
+      "title": "Maison Carree in Nimes (16).jpg",
+      "location": "Nimes, France",
+      "story": "",
+      "author": "Krzysztof Golik",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Maison_Carree_in_Nimes_(16).jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Maison_Carree_in_Nimes_%2816%29.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Maison_Carree_in_Nimes_%2816%29.jpg/3840px-Maison_Carree_in_Nimes_%2816%29.jpg",
+      "dimensions": [
+        3840,
+        2696
+      ],
+      "sha256": "4960985a23fb8c47b165cbdc25634fc7677adfe30271bc606630e72055eeac01",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        4626,
+        3248
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-045.jpg",
+      "title": "Night view of Rokkō Island and Higashinada-ku, Kobe, Japan.jpg",
+      "location": "Kobe, Japan",
+      "story": "",
+      "author": "Laitr Keiows",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Night_view_of_Rokk%C5%8D_Island_and_Higashinada-ku,_Kobe,_Japan.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/54/Night_view_of_Rokk%C5%8D_Island_and_Higashinada-ku%2C_Kobe%2C_Japan.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Night_view_of_Rokk%C5%8D_Island_and_Higashinada-ku%2C_Kobe%2C_Japan.jpg/3840px-Night_view_of_Rokk%C5%8D_Island_and_Higashinada-ku%2C_Kobe%2C_Japan.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "88105b0fc2aae6a528eeefcf67ce6fc88f69db04c5c9c28b9d92322b4204a6e0",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        5616,
+        3744
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-046.jpg",
+      "title": "Night view of Safdurjung's Tomb.jpg",
+      "location": "Delhi, India",
+      "story": "",
+      "author": "Arjunfotografer",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Night_view_of_Safdurjung%27s_Tomb.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Night_view_of_Safdurjung%27s_Tomb.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Night_view_of_Safdurjung%27s_Tomb.jpg/3840px-Night_view_of_Safdurjung%27s_Tomb.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "67ee38f64940ecc37fa4118f745fe801d5805ca89a5e16743e503edaf62a4e30",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        6000,
+        4000
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-047.jpg",
+      "title": "Oppeln by night1.jpg",
+      "location": "Opole, Poland",
+      "story": "",
+      "author": "Pudelek (Marcin Szala)",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Oppeln_by_night1.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Oppeln_by_night1.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Oppeln_by_night1.jpg",
+      "dimensions": [
+        2655,
+        1483
+      ],
+      "sha256": "9cc52c4ff9483df18f00775a57ccc1faee55ed3c0e100e63fbfc7f2ab70813e2",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        2655,
+        1483
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-048.jpg",
+      "title": "Perth (AU), Elizabeth Quay Bridge -- 2019 -- 0346-8 (crop 2).jpg",
+      "location": "Perth, Australia",
+      "story": "",
+      "author": "Dietmar Rabich",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Perth_(AU),_Elizabeth_Quay_Bridge_--_2019_--_0346-8_(crop_2).jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/6/66/Perth_%28AU%29%2C_Elizabeth_Quay_Bridge_--_2019_--_0346-8_%28crop_2%29.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Perth_%28AU%29%2C_Elizabeth_Quay_Bridge_--_2019_--_0346-8_%28crop_2%29.jpg/3840px-Perth_%28AU%29%2C_Elizabeth_Quay_Bridge_--_2019_--_0346-8_%28crop_2%29.jpg",
+      "dimensions": [
+        3840,
+        1921
+      ],
+      "sha256": "8373f60d5b0a62f900ec48a1759bdc4ba4526e6e660232800c43b3c492ae69cb",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        5866,
+        2935
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-049.jpg",
+      "title": "Philharmonie, Berlin, 170518, ako.jpg",
+      "location": "Berlin, Germany",
+      "story": "",
+      "author": "Ansgar Koreng / CC BY-SA 4.0",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Philharmonie,_Berlin,_170518,_ako.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Philharmonie%2C_Berlin%2C_170518%2C_ako.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Philharmonie%2C_Berlin%2C_170518%2C_ako.jpg/3840px-Philharmonie%2C_Berlin%2C_170518%2C_ako.jpg",
+      "dimensions": [
+        3840,
+        2160
+      ],
+      "sha256": "b7b961fd57f739f636178090d1e8140b5c8c994d58db8b9662ae4654bbd87fa1",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        10000,
+        5625
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-050.jpg",
+      "title": "Ponte dos Ingleses, também conhecida como Ponte Metálica.jpg",
+      "location": "Fortaleza, Brazil",
+      "story": "",
+      "author": "Claudney Neves",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Ponte_dos_Ingleses,_tamb%C3%A9m_conhecida_como_Ponte_Met%C3%A1lica.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Ponte_dos_Ingleses%2C_tamb%C3%A9m_conhecida_como_Ponte_Met%C3%A1lica.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Ponte_dos_Ingleses%2C_tamb%C3%A9m_conhecida_como_Ponte_Met%C3%A1lica.jpg/3840px-Ponte_dos_Ingleses%2C_tamb%C3%A9m_conhecida_como_Ponte_Met%C3%A1lica.jpg",
+      "dimensions": [
+        3840,
+        2160
+      ],
+      "sha256": "87d1a4a2bc168f39e52558dd77bc0859860c9065211ef0a011fe79e5d4b68de4",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        5436,
+        3058
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-052.jpg",
+      "title": "Pudong Shanghai November 2017 HDR panorama.jpg",
+      "location": "Shanghai, China",
+      "story": "",
+      "author": "King of Hearts",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Pudong_Shanghai_November_2017_HDR_panorama.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Pudong_Shanghai_November_2017_HDR_panorama.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Pudong_Shanghai_November_2017_HDR_panorama.jpg/3840px-Pudong_Shanghai_November_2017_HDR_panorama.jpg",
+      "dimensions": [
+        3840,
+        1920
+      ],
+      "sha256": "be9687c7630d4eca53b65bc99005ca0f721eedd274652abcd138ea0d44723305",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        10200,
+        5100
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-053.jpg",
+      "title": "Puente de Don Luis I, Oporto, Portugal, 2019-06-02, DD 29-31 HDR.jpg",
+      "location": "Porto, Portugal",
+      "story": "",
+      "author": "Diego Delso",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Puente_de_Don_Luis_I,_Oporto,_Portugal,_2019-06-02,_DD_29-31_HDR.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Puente_de_Don_Luis_I%2C_Oporto%2C_Portugal%2C_2019-06-02%2C_DD_29-31_HDR.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Puente_de_Don_Luis_I%2C_Oporto%2C_Portugal%2C_2019-06-02%2C_DD_29-31_HDR.jpg/3840px-Puente_de_Don_Luis_I%2C_Oporto%2C_Portugal%2C_2019-06-02%2C_DD_29-31_HDR.jpg",
+      "dimensions": [
+        3840,
+        1914
+      ],
+      "sha256": "e7499e40e3d032d913502e35683bb7dba828202970298bebac182b3a11d85283",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        7741,
+        3859
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-054.jpg",
+      "title": "Restaurants, Place du Tertre, Paris 30 September 2019.jpg",
+      "location": "Montmartre, Paris, France",
+      "story": "",
+      "author": "Pierre Blaché from Paris, France",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "page": "https://commons.wikimedia.org/wiki/File:Restaurants,_Place_du_Tertre,_Paris_30_September_2019.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Restaurants%2C_Place_du_Tertre%2C_Paris_30_September_2019.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Restaurants%2C_Place_du_Tertre%2C_Paris_30_September_2019.jpg/3840px-Restaurants%2C_Place_du_Tertre%2C_Paris_30_September_2019.jpg",
+      "dimensions": [
+        3840,
+        2160
+      ],
+      "sha256": "ce1360a757939bf9bd4ed6471ca61eb4762fb7705fade9a90f374805f5833baf",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        6000,
+        3375
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-055.jpg",
+      "title": "San Sebastian at night from Monte Urgull.jpg",
+      "location": "San Sebastian, Spain",
+      "story": "",
+      "author": "Phillip Maiwald ( Nikopol )",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:San_Sebastian_at_night_from_Monte_Urgull.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/San_Sebastian_at_night_from_Monte_Urgull.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/San_Sebastian_at_night_from_Monte_Urgull.jpg/3840px-San_Sebastian_at_night_from_Monte_Urgull.jpg",
+      "dimensions": [
+        3840,
+        2207
+      ],
+      "sha256": "b4ac8d6b9082d3034e675ffbc4fcbe00ea08b0d58f53b1be74de58359bd5a14e",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        3897,
+        2240
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-056.jpg",
+      "title": "Seebrücke Sellin nordöstlicher Teil.jpg",
+      "location": "Sellin, Germany",
+      "story": "",
+      "author": "Thomas Wolf , www.foto-tw.de",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Seebr%C3%BCcke_Sellin_nord%C3%B6stlicher_Teil.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/3/30/Seebr%C3%BCcke_Sellin_nord%C3%B6stlicher_Teil.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Seebr%C3%BCcke_Sellin_nord%C3%B6stlicher_Teil.jpg/3840px-Seebr%C3%BCcke_Sellin_nord%C3%B6stlicher_Teil.jpg",
+      "dimensions": [
+        3840,
+        2518
+      ],
+      "sha256": "20c576d454f633a04523a32176c0147d9118973d5c41bc8dd5d6ea469ff24a81",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        5567,
+        3651
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-058.jpg",
+      "title": "St Louis night expblend.jpg",
+      "location": "St Louis, Missouri, USA",
+      "story": "",
+      "author": "Daniel Schwen",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:St_Louis_night_expblend.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/de/St_Louis_night_expblend.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/d/de/St_Louis_night_expblend.jpg",
+      "dimensions": [
+        3000,
+        1929
+      ],
+      "sha256": "4f716ae463ea703d40e740acf7e37625dcf1f963ad96450d209e1cba20d95181",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        3000,
+        1929
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-059.jpg",
+      "title": "Sultan Omar Ali Saifuddin Mosque 02.jpg",
+      "location": "Bandar Seri Begawan, Brunei",
+      "story": "",
+      "author": "sam garza from Los Angeles, USA",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Sultan_Omar_Ali_Saifuddin_Mosque_02.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/59/Sultan_Omar_Ali_Saifuddin_Mosque_02.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Sultan_Omar_Ali_Saifuddin_Mosque_02.jpg/3840px-Sultan_Omar_Ali_Saifuddin_Mosque_02.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "173223802dc4765f5c41c87e403ba53ea18acba61dd6b06581a84521a4034f6a",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        3933,
+        2622
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-060.jpg",
+      "title": "Sun and Moon Pagodas Guilin November 2017 HDR.jpg",
+      "location": "Guilin, China",
+      "story": "",
+      "author": "King of Hearts",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Sun_and_Moon_Pagodas_Guilin_November_2017_HDR.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Sun_and_Moon_Pagodas_Guilin_November_2017_HDR.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Sun_and_Moon_Pagodas_Guilin_November_2017_HDR.jpg/3840px-Sun_and_Moon_Pagodas_Guilin_November_2017_HDR.jpg",
+      "dimensions": [
+        3840,
+        2563
+      ],
+      "sha256": "7b98027213fc08951b5fa923075ca63406994389c6fe3a1100bc4e3070ed4569",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        6016,
+        4016
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-061.jpg",
+      "title": "Sydney (AU), Darling Harbour -- 2019 -- 3193-5.jpg",
+      "location": "Sydney, Australia",
+      "story": "",
+      "author": "Dietmar Rabich",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Sydney_(AU),_Darling_Harbour_--_2019_--_3193-5.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Sydney_%28AU%29%2C_Darling_Harbour_--_2019_--_3193-5.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Sydney_%28AU%29%2C_Darling_Harbour_--_2019_--_3193-5.jpg/3840px-Sydney_%28AU%29%2C_Darling_Harbour_--_2019_--_3193-5.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "bacad276955f265655cb01f0a02dd9ea4b3b700cda91182fbe5a7b112dad8b67",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        6700,
+        4467
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-062.jpg",
+      "title": "Tainan Streetscene amk.jpg",
+      "location": "Tainan, Taiwan",
+      "story": "",
+      "author": "AngMoKio",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Tainan_Streetscene_amk.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Tainan_Streetscene_amk.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Tainan_Streetscene_amk.jpg",
+      "dimensions": [
+        3105,
+        1932
+      ],
+      "sha256": null,
+      "download_verified": false,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        3105,
+        1932
+      ],
+      "visual_review": "Commons category thumbnail and source-page review",
+      "validation": "Source metadata only; validate actual bytes before display"
+    },
+    {
+      "file": "night-064.jpg",
+      "title": "Toulouse Capitole Night Wikimedia Commons.jpg",
+      "location": "Toulouse, France",
+      "story": "",
+      "author": "Benh LIEU SONG",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Toulouse_Capitole_Night_Wikimedia_Commons.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Toulouse_Capitole_Night_Wikimedia_Commons.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Toulouse_Capitole_Night_Wikimedia_Commons.jpg/3840px-Toulouse_Capitole_Night_Wikimedia_Commons.jpg",
+      "dimensions": [
+        3840,
+        2308
+      ],
+      "sha256": "5fe651abab23de760138fb220c818e1f8ffb6ab1bb5c008b9992d84222f549b3",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        5067,
+        3046
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-065.jpg",
+      "title": "Victoria Memorial Kolkata at night.jpg",
+      "location": "Kolkata, India",
+      "story": "",
+      "author": "DeepanjanGhosh",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Victoria_Memorial_Kolkata_at_night.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Victoria_Memorial_Kolkata_at_night.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Victoria_Memorial_Kolkata_at_night.jpg/3840px-Victoria_Memorial_Kolkata_at_night.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "6479d053d487e997935a0198d6cf61abdbb55a1c5304cd93563383a17f117734",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        6681,
+        4454
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-066.jpg",
+      "title": "Vista de Ciudad Ho Chi Minh desde Bitexco Financial Tower, Vietnam, 2013-08-14, DD 13.JPG",
+      "location": "Ho Chi Minh City, Vietnam",
+      "story": "",
+      "author": "Diego Delso",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Vista_de_Ciudad_Ho_Chi_Minh_desde_Bitexco_Financial_Tower,_Vietnam,_2013-08-14,_DD_13.JPG",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Vista_de_Ciudad_Ho_Chi_Minh_desde_Bitexco_Financial_Tower%2C_Vietnam%2C_2013-08-14%2C_DD_13.JPG",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Vista_de_Ciudad_Ho_Chi_Minh_desde_Bitexco_Financial_Tower%2C_Vietnam%2C_2013-08-14%2C_DD_13.JPG/3840px-Vista_de_Ciudad_Ho_Chi_Minh_desde_Bitexco_Financial_Tower%2C_Vietnam%2C_2013-08-14%2C_DD_13.JPG",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "0607d8c48457e7a3a5af79ae0d5f677e8a77facc0251fd456a0e37e1c7916938",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        5042,
+        3361
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-067.jpg",
+      "title": "Vista del Puerto de Victoria desde Sky100, Hong Kong, 2013-08-09, DD 10.JPG",
+      "location": "Hong Kong",
+      "story": "",
+      "author": "Diego Delso",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Vista_del_Puerto_de_Victoria_desde_Sky100,_Hong_Kong,_2013-08-09,_DD_10.JPG",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Vista_del_Puerto_de_Victoria_desde_Sky100%2C_Hong_Kong%2C_2013-08-09%2C_DD_10.JPG",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Vista_del_Puerto_de_Victoria_desde_Sky100%2C_Hong_Kong%2C_2013-08-09%2C_DD_10.JPG/3840px-Vista_del_Puerto_de_Victoria_desde_Sky100%2C_Hong_Kong%2C_2013-08-09%2C_DD_10.JPG",
+      "dimensions": [
+        3840,
+        2549
+      ],
+      "sha256": "01a6995a1e0fd22225807082cd282e6f589e4eb351a57bb417197c7974787b4d",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        5011,
+        3326
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-068.jpg",
+      "title": "VitorJubini TerceiraPonte Vitoria ES (27121005458).jpg",
+      "location": "Vitoria, Brazil",
+      "story": "",
+      "author": "Vitor Jubini/MTur",
+      "license": "Public domain",
+      "license_url": "https://commons.wikimedia.org/wiki/File:VitorJubini_TerceiraPonte_Vitoria_ES_(27121005458).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:VitorJubini_TerceiraPonte_Vitoria_ES_(27121005458).jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/4/46/VitorJubini_TerceiraPonte_Vitoria_ES_%2827121005458%29.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/VitorJubini_TerceiraPonte_Vitoria_ES_%2827121005458%29.jpg/3840px-VitorJubini_TerceiraPonte_Vitoria_ES_%2827121005458%29.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "17ed0ec3218f1edada50781e5aae2a80fcc824601e68f3c9e6c821396b9956d6",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        4960,
+        3307
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-069.jpg",
+      "title": "WattensWikipedia.jpg",
+      "location": "Wattens, Austria",
+      "story": "",
+      "author": "Martin Hirtreiter",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:WattensWikipedia.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/9/99/WattensWikipedia.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/WattensWikipedia.jpg/3840px-WattensWikipedia.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "ed05031c26bdd86a2d2381ee6b448e50101de2e26f767342e9b477f6b4abe00e",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        4082,
+        2721
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-070.jpg",
+      "title": "Львівська ратуша вночі.jpg",
+      "location": "Lviv, Ukraine",
+      "story": "",
+      "author": "Vian",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:%D0%9B%D1%8C%D0%B2%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B0_%D1%80%D0%B0%D1%82%D1%83%D1%88%D0%B0_%D0%B2%D0%BD%D0%BE%D1%87%D1%96.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/4/48/%D0%9B%D1%8C%D0%B2%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B0_%D1%80%D0%B0%D1%82%D1%83%D1%88%D0%B0_%D0%B2%D0%BD%D0%BE%D1%87%D1%96.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/%D0%9B%D1%8C%D0%B2%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B0_%D1%80%D0%B0%D1%82%D1%83%D1%88%D0%B0_%D0%B2%D0%BD%D0%BE%D1%87%D1%96.jpg/3840px-%D0%9B%D1%8C%D0%B2%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B0_%D1%80%D0%B0%D1%82%D1%83%D1%88%D0%B0_%D0%B2%D0%BD%D0%BE%D1%87%D1%96.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "560f4f83d0dd79880cc2db65f6f45fea284ce7440896d20b1a55811d36e4f4ab",
+      "download_verified": true,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        6001,
+        4000
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-071.jpg",
+      "title": "001 Chateau de Chillon and Dents du Midi Photo by Giles Laurent.jpg",
+      "location": "Lake Geneva, Switzerland",
+      "story": "",
+      "author": "© Giles Laurent , gileslaurent.com , License CC BY-SA",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:001_Chateau_de_Chillon_and_Dents_du_Midi_Photo_by_Giles_Laurent.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/4/48/001_Chateau_de_Chillon_and_Dents_du_Midi_Photo_by_Giles_Laurent.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/001_Chateau_de_Chillon_and_Dents_du_Midi_Photo_by_Giles_Laurent.jpg/3840px-001_Chateau_de_Chillon_and_Dents_du_Midi_Photo_by_Giles_Laurent.jpg",
+      "dimensions": [
+        3840,
+        2561
+      ],
+      "sha256": "8edfe2f079dec155d76234bb339ecb407e192648fa480ec293d4bc95caf5cb86",
+      "download_verified": true,
+      "category": "nature",
+      "period": "night",
+      "original_dimensions": [
+        7952,
+        5304
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-072.jpg",
+      "title": "018 Human looking at the stars during Perseids with the Milky Way in the background Photo by Giles Laurent.jpg",
+      "location": "Oeschinensee, Switzerland",
+      "story": "A stargazer at Oeschinensee waits for Perseid meteors beneath the Milky Way.",
+      "author": "© Giles Laurent , gileslaurent.com , License CC BY-SA",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:018_Human_looking_at_the_stars_during_Perseids_with_the_Milky_Way_in_the_background_Photo_by_Giles_Laurent.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/2/23/018_Human_looking_at_the_stars_during_Perseids_with_the_Milky_Way_in_the_background_Photo_by_Giles_Laurent.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/018_Human_looking_at_the_stars_during_Perseids_with_the_Milky_Way_in_the_background_Photo_by_Giles_Laurent.jpg/3840px-018_Human_looking_at_the_stars_during_Perseids_with_the_Milky_Way_in_the_background_Photo_by_Giles_Laurent.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "89e7c45d1a7825cd5afd43c8034f49b42fef377b37db27fb19356ff1e20b21bc",
+      "download_verified": true,
+      "category": "nature",
+      "period": "night",
+      "original_dimensions": [
+        7612,
+        5075
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-073.jpg",
+      "title": "2012-02-03 20-34-32-salbert-moonlight.jpg",
+      "location": "Salbert, Belfort, France",
+      "story": "",
+      "author": "Thomas Bresson",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:2012-02-03_20-34-32-salbert-moonlight.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/e/e4/2012-02-03_20-34-32-salbert-moonlight.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/2012-02-03_20-34-32-salbert-moonlight.jpg/3840px-2012-02-03_20-34-32-salbert-moonlight.jpg",
+      "dimensions": [
+        3840,
+        2475
+      ],
+      "sha256": "2e11bb91cdc075a18b340c0fa66659b3861c9dc083e3cd7133b6e99902037fbf",
+      "download_verified": true,
+      "category": "nature",
+      "period": "night",
+      "original_dimensions": [
+        4040,
+        2604
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-074.jpg",
+      "title": "Comet Tsuchinshan–ATLAS, in the night sky over Tuntorp 3.jpg",
+      "location": "Tuntorp, Sweden",
+      "story": "",
+      "author": "W.carter",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Comet_Tsuchinshan%E2%80%93ATLAS,_in_the_night_sky_over_Tuntorp_3.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Comet_Tsuchinshan%E2%80%93ATLAS%2C_in_the_night_sky_over_Tuntorp_3.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Comet_Tsuchinshan%E2%80%93ATLAS%2C_in_the_night_sky_over_Tuntorp_3.jpg/3840px-Comet_Tsuchinshan%E2%80%93ATLAS%2C_in_the_night_sky_over_Tuntorp_3.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "4e32111a2bfdff088600a0fb128fb008ff903d5d9dfa02d01a737bc19669fc4d",
+      "download_verified": true,
+      "category": "nature",
+      "period": "night",
+      "original_dimensions": [
+        5071,
+        3381
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-076.jpg",
+      "title": "Parque nacional serra da capivara-THIAGO CAMPI-03.jpg",
+      "location": "Serra da Capivara National Park, Brazil",
+      "story": "",
+      "author": "Thiagomarcelcampi",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Parque_nacional_serra_da_capivara-THIAGO_CAMPI-03.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Parque_nacional_serra_da_capivara-THIAGO_CAMPI-03.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Parque_nacional_serra_da_capivara-THIAGO_CAMPI-03.jpg/3840px-Parque_nacional_serra_da_capivara-THIAGO_CAMPI-03.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "5bb1b02eda50aa88b4e3375543b9e9d66989d61a463ef351304099a9a930774e",
+      "download_verified": true,
+      "category": "nature",
+      "period": "night",
+      "original_dimensions": [
+        6448,
+        4299
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-077.jpg",
+      "title": "Savault Chapel Under Milky Way BLS.jpg",
+      "location": "Savault, Morvan, France",
+      "story": "",
+      "author": "Benh LIEU SONG",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Savault_Chapel_Under_Milky_Way_BLS.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Savault_Chapel_Under_Milky_Way_BLS.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Savault_Chapel_Under_Milky_Way_BLS.jpg/3840px-Savault_Chapel_Under_Milky_Way_BLS.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "15039b5fff91babec8dcc6242bc2d51737644315d8263cc4bd689eb3cfec32c3",
+      "download_verified": true,
+      "category": "nature",
+      "period": "night",
+      "original_dimensions": [
+        4896,
+        3264
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-078.jpg",
+      "title": "Μετεωρα by night.jpg",
+      "location": "Meteora, Greece",
+      "story": "",
+      "author": "Argiriskaramouzas",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:%CE%9C%CE%B5%CF%84%CE%B5%CF%89%CF%81%CE%B1_by_night.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/%CE%9C%CE%B5%CF%84%CE%B5%CF%89%CF%81%CE%B1_by_night.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/%CE%9C%CE%B5%CF%84%CE%B5%CF%89%CF%81%CE%B1_by_night.jpg/3840px-%CE%9C%CE%B5%CF%84%CE%B5%CF%89%CF%81%CE%B1_by_night.jpg",
+      "dimensions": [
+        3840,
+        2778
+      ],
+      "sha256": "5929676ca7a5ba39a842989fc0fdfaa3fcfe72c701d8b74615ca6a7ac2929eb4",
+      "download_verified": true,
+      "category": "nature",
+      "period": "night",
+      "original_dimensions": [
+        4760,
+        3444
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-079.jpg",
+      "title": "039 Northern lights over Mývatn (Iceland) Photo by Giles Laurent.jpg",
+      "location": "Myvatn, Iceland",
+      "story": "",
+      "author": "© Giles Laurent , gileslaurent.com , License CC BY-SA",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:039_Northern_lights_over_M%C3%BDvatn_(Iceland)_Photo_by_Giles_Laurent.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/9/99/039_Northern_lights_over_M%C3%BDvatn_%28Iceland%29_Photo_by_Giles_Laurent.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/039_Northern_lights_over_M%C3%BDvatn_%28Iceland%29_Photo_by_Giles_Laurent.jpg/3840px-039_Northern_lights_over_M%C3%BDvatn_%28Iceland%29_Photo_by_Giles_Laurent.jpg",
+      "dimensions": [
+        3840,
+        2561
+      ],
+      "sha256": "32cc358a54d65219eb03e1bfa406f87cfea2db89b26a05196f5cce355a938769",
+      "download_verified": true,
+      "category": "nature",
+      "period": "night",
+      "original_dimensions": [
+        6837,
+        4560
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-080.jpg",
+      "title": "Aurora borealis over Eielson Air Force Base, Alaska.jpg",
+      "location": "Alaska, USA",
+      "story": "",
+      "author": "United States Air Force photo by Senior Airman Joshua Strang",
+      "license": "Public domain",
+      "license_url": "https://commons.wikimedia.org/wiki/File:Aurora_borealis_over_Eielson_Air_Force_Base,_Alaska.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Aurora_borealis_over_Eielson_Air_Force_Base,_Alaska.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Aurora_borealis_over_Eielson_Air_Force_Base%2C_Alaska.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Aurora_borealis_over_Eielson_Air_Force_Base%2C_Alaska.jpg",
+      "dimensions": [
+        3008,
+        1960
+      ],
+      "sha256": null,
+      "download_verified": false,
+      "category": "nature",
+      "period": "night",
+      "original_dimensions": [
+        3008,
+        1960
+      ],
+      "visual_review": "Commons category thumbnail and source-page review",
+      "validation": "Source metadata only; validate actual bytes before display"
+    },
+    {
+      "file": "night-081.jpg",
+      "title": "G5 aurora over Tuntorp, Lysekil Municipality 15.jpg",
+      "location": "Tuntorp, Sweden",
+      "story": "",
+      "author": "W.carter",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:G5_aurora_over_Tuntorp,_Lysekil_Municipality_15.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/G5_aurora_over_Tuntorp%2C_Lysekil_Municipality_15.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/G5_aurora_over_Tuntorp%2C_Lysekil_Municipality_15.jpg/3840px-G5_aurora_over_Tuntorp%2C_Lysekil_Municipality_15.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "23b091bbadd992e24ba6cd145cd3fa7c113e61ad95b76ebc8c79ad0434f2f956",
+      "download_verified": true,
+      "category": "nature",
+      "period": "night",
+      "original_dimensions": [
+        5184,
+        3456
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-082.jpg",
+      "title": "Lofoten, Norway (Unsplash).jpg",
+      "location": "Lofoten, Norway",
+      "story": "",
+      "author": "Johannes Groll followhansi",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "page": "https://commons.wikimedia.org/wiki/File:Lofoten,_Norway_(Unsplash).jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/8/86/Lofoten%2C_Norway_%28Unsplash%29.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Lofoten%2C_Norway_%28Unsplash%29.jpg/3840px-Lofoten%2C_Norway_%28Unsplash%29.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "dc243ab56b2960cff4acd596437628212d01772cbff655e694fa95e814a3125d",
+      "download_verified": true,
+      "category": "nature",
+      "period": "night",
+      "original_dimensions": [
+        5059,
+        3373
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-083.jpg",
+      "title": "Maardu Northern lights — Estonia, 2022.jpg",
+      "location": "Maardu, Estonia",
+      "story": "",
+      "author": "Maxim Bilovitskiy",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Maardu_Northern_lights_%E2%80%94_Estonia,_2022.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Maardu_Northern_lights_%E2%80%94_Estonia%2C_2022.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Maardu_Northern_lights_%E2%80%94_Estonia%2C_2022.jpg/3840px-Maardu_Northern_lights_%E2%80%94_Estonia%2C_2022.jpg",
+      "dimensions": [
+        3840,
+        1737
+      ],
+      "sha256": "c3c9132b209080b219059d722644e8b5b56003b6ecde7cf86d2710dae252920b",
+      "download_verified": true,
+      "category": "nature",
+      "period": "night",
+      "original_dimensions": [
+        8095,
+        3662
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-084.jpg",
+      "title": "Virmalised 15.09.2017 - Aurora Borealis 15.09.2017 copy.jpg",
+      "location": "Estonia",
+      "story": "",
+      "author": "Kristian Pikner",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Virmalised_15.09.2017_-_Aurora_Borealis_15.09.2017_copy.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/8/86/Virmalised_15.09.2017_-_Aurora_Borealis_15.09.2017_copy.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Virmalised_15.09.2017_-_Aurora_Borealis_15.09.2017_copy.jpg/3840px-Virmalised_15.09.2017_-_Aurora_Borealis_15.09.2017_copy.jpg",
+      "dimensions": [
+        3840,
+        2257
+      ],
+      "sha256": "ffb3b930ec43f1daf6da0d8ed10d0cbc424fe76d52ebaf4b5b3e06a214051892",
+      "download_verified": true,
+      "category": "nature",
+      "period": "night",
+      "original_dimensions": [
+        4000,
+        2351
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-085.jpg",
+      "title": "Virmalised 18.03.15 (2).jpg",
+      "location": "Estonia",
+      "story": "",
+      "author": "Kristian Pikner",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Virmalised_18.03.15_(2).jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Virmalised_18.03.15_%282%29.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Virmalised_18.03.15_%282%29.jpg/3840px-Virmalised_18.03.15_%282%29.jpg",
+      "dimensions": [
+        3840,
+        2413
+      ],
+      "sha256": "47cd13c8713e64138afe724bcf596929eab0fbc0e619752ccf14da5482051d9a",
+      "download_verified": true,
+      "category": "nature",
+      "period": "night",
+      "original_dimensions": [
+        5000,
+        3142
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-086.jpg",
+      "title": "Andaman Islands, Trees by the sea at night, Full moon night.jpg",
+      "location": "Andaman Islands, India",
+      "story": "",
+      "author": "© Vyacheslav Argenberg",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Andaman_Islands,_Trees_by_the_sea_at_night,_Full_moon_night.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Andaman_Islands%2C_Trees_by_the_sea_at_night%2C_Full_moon_night.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Andaman_Islands%2C_Trees_by_the_sea_at_night%2C_Full_moon_night.jpg/3840px-Andaman_Islands%2C_Trees_by_the_sea_at_night%2C_Full_moon_night.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": "2f0e44dd862757d296777f17fe84c6d521638043c2967d076710aa027342f732",
+      "download_verified": true,
+      "category": "nature",
+      "period": "night",
+      "original_dimensions": [
+        4032,
+        2688
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-087.jpg",
+      "title": "A night in Egyptian desert.jpg",
+      "location": "Egyptian Desert, Egypt",
+      "story": "",
+      "author": "Esraa Farahat",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:A_night_in_Egyptian_desert.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d7/A_night_in_Egyptian_desert.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/A_night_in_Egyptian_desert.jpg/3840px-A_night_in_Egyptian_desert.jpg",
+      "dimensions": [
+        3840,
+        2156
+      ],
+      "sha256": "f43203729f15e5cff16652dee44a4dc7f44fb284ad726c6d08d6877c43e9bfa8",
+      "download_verified": true,
+      "category": "nature",
+      "period": "night",
+      "original_dimensions": [
+        5184,
+        2911
+      ],
+      "visual_review": "full-resolution contact sheet",
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "night-088.jpg",
+      "title": "Bromo Star Trail.jpg",
+      "location": "Mount Bromo, Indonesia",
+      "story": "",
+      "author": "Zexsen Xie",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Bromo_Star_Trail.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Bromo_Star_Trail.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Bromo_Star_Trail.jpg/3840px-Bromo_Star_Trail.jpg",
+      "dimensions": [
+        3840,
+        2563
+      ],
+      "sha256": null,
+      "download_verified": false,
+      "category": "nature",
+      "period": "night",
+      "original_dimensions": [
+        6016,
+        4016
+      ],
+      "visual_review": "Commons category thumbnail and source-page review",
+      "validation": "Source metadata only; validate actual bytes before display"
+    },
+    {
+      "file": "night-089.jpg",
+      "title": "Cotija Star Trails.jpg",
+      "location": "Cotija, Mexico",
+      "story": "",
+      "author": "LML Capture",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Cotija_Star_Trails.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Cotija_Star_Trails.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Cotija_Star_Trails.jpg/3840px-Cotija_Star_Trails.jpg",
+      "dimensions": [
+        3840,
+        2563
+      ],
+      "sha256": null,
+      "download_verified": false,
+      "category": "nature",
+      "period": "night",
+      "original_dimensions": [
+        6016,
+        4016
+      ],
+      "visual_review": "Commons category thumbnail and source-page review",
+      "validation": "Source metadata only; validate actual bytes before display"
+    },
+    {
+      "file": "night-090.jpg",
+      "title": "Hafez StarTrail 2.jpg",
+      "location": "Shiraz, Iran",
+      "story": "",
+      "author": "Mshayati",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Hafez_StarTrail_2.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/08/Hafez_StarTrail_2.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Hafez_StarTrail_2.jpg/3840px-Hafez_StarTrail_2.jpg",
+      "dimensions": [
+        3840,
+        2563
+      ],
+      "sha256": null,
+      "download_verified": false,
+      "category": "nature",
+      "period": "night",
+      "original_dimensions": [
+        6016,
+        4016
+      ],
+      "visual_review": "Commons category thumbnail and source-page review",
+      "validation": "Source metadata only; validate actual bytes before display"
+    },
+    {
+      "file": "night-091.jpg",
+      "title": "Hailuoto Camping.jpg",
+      "location": "Hailuoto, Finland",
+      "story": "",
+      "author": "Hteink.min",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Hailuoto_Camping.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Hailuoto_Camping.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Hailuoto_Camping.jpg/3840px-Hailuoto_Camping.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": null,
+      "download_verified": false,
+      "category": "nature",
+      "period": "night",
+      "original_dimensions": [
+        5184,
+        3456
+      ],
+      "visual_review": "Commons category thumbnail and source-page review",
+      "validation": "Source metadata only; validate actual bytes before display"
+    },
+    {
+      "file": "night-093.jpg",
+      "title": "Mars star trail - Kanha National Park.jpg",
+      "location": "Kanha National Park, India",
+      "story": "",
+      "author": "Ashishmahaur",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Mars_star_trail_-_Kanha_National_Park.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Mars_star_trail_-_Kanha_National_Park.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Mars_star_trail_-_Kanha_National_Park.jpg/3840px-Mars_star_trail_-_Kanha_National_Park.jpg",
+      "dimensions": [
+        3840,
+        2553
+      ],
+      "sha256": null,
+      "download_verified": false,
+      "category": "nature",
+      "period": "night",
+      "original_dimensions": [
+        6016,
+        4000
+      ],
+      "visual_review": "Commons category thumbnail and source-page review",
+      "validation": "Source metadata only; validate actual bytes before display"
+    },
+    {
+      "file": "night-094.jpg",
+      "title": "Monterosso star-biss-k.jpg",
+      "location": "Monterosso, Italy",
+      "story": "",
+      "author": "Sabrinamusante",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Monterosso_star-biss-k.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Monterosso_star-biss-k.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Monterosso_star-biss-k.jpg/3840px-Monterosso_star-biss-k.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": null,
+      "download_verified": false,
+      "category": "nature",
+      "period": "night",
+      "original_dimensions": [
+        4512,
+        3008
+      ],
+      "visual_review": "Commons category thumbnail and source-page review",
+      "validation": "Source metadata only; validate actual bytes before display"
+    },
+    {
+      "file": "night-095.jpg",
+      "title": "Persepolis Startrail 2.jpg",
+      "location": "Persepolis, Iran",
+      "story": "",
+      "author": "Mshayati",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Persepolis_Startrail_2.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/8/82/Persepolis_Startrail_2.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Persepolis_Startrail_2.jpg/3840px-Persepolis_Startrail_2.jpg",
+      "dimensions": [
+        3840,
+        2446
+      ],
+      "sha256": null,
+      "download_verified": false,
+      "category": "nature",
+      "period": "night",
+      "original_dimensions": [
+        5868,
+        3738
+      ],
+      "visual_review": "Commons category thumbnail and source-page review",
+      "validation": "Source metadata only; validate actual bytes before display"
+    },
+    {
+      "file": "night-097.jpg",
+      "title": "Shah Firouz Sirjan . This Image was taken by Movahed Movahedi Parizi in Sirjan,Kerman,Iran.jpg",
+      "location": "Sirjan, Iran",
+      "story": "",
+      "author": "Movahed Movahedi Parizi",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Shah_Firouz_Sirjan_._This_Image_was_taken_by_Movahed_Movahedi_Parizi_in_Sirjan,Kerman,Iran.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Shah_Firouz_Sirjan_._This_Image_was_taken_by_Movahed_Movahedi_Parizi_in_Sirjan%2CKerman%2CIran.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Shah_Firouz_Sirjan_._This_Image_was_taken_by_Movahed_Movahedi_Parizi_in_Sirjan%2CKerman%2CIran.jpg/3840px-Shah_Firouz_Sirjan_._This_Image_was_taken_by_Movahed_Movahedi_Parizi_in_Sirjan%2CKerman%2CIran.jpg",
+      "dimensions": [
+        3840,
+        2475
+      ],
+      "sha256": null,
+      "download_verified": false,
+      "category": "nature",
+      "period": "night",
+      "original_dimensions": [
+        5180,
+        3338
+      ],
+      "visual_review": "Commons category thumbnail and source-page review",
+      "validation": "Source metadata only; validate actual bytes before display"
+    },
+    {
+      "file": "night-098.jpg",
+      "title": "Spiš castle during winter.jpg",
+      "location": "Spis Castle, Slovakia",
+      "story": "",
+      "author": "DaliborBlizman",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Spi%C5%A1_castle_during_winter.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/a/ac/Spi%C5%A1_castle_during_winter.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Spi%C5%A1_castle_during_winter.jpg/3840px-Spi%C5%A1_castle_during_winter.jpg",
+      "dimensions": [
+        3840,
+        2551
+      ],
+      "sha256": null,
+      "download_verified": false,
+      "category": "nature",
+      "period": "night",
+      "original_dimensions": [
+        4096,
+        2721
+      ],
+      "visual_review": "Commons category thumbnail and source-page review",
+      "validation": "Source metadata only; validate actual bytes before display"
+    },
+    {
+      "file": "night-099.jpg",
+      "title": "Star trail in Hebei.jpg",
+      "location": "Hebei, China",
+      "story": "",
+      "author": "Bryant",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Star_trail_in_Hebei.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/db/Star_trail_in_Hebei.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Star_trail_in_Hebei.jpg/3840px-Star_trail_in_Hebei.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": null,
+      "download_verified": false,
+      "category": "nature",
+      "period": "night",
+      "original_dimensions": [
+        5760,
+        3840
+      ],
+      "visual_review": "Commons category thumbnail and source-page review",
+      "validation": "Source metadata only; validate actual bytes before display"
+    },
+    {
+      "file": "night-100.jpg",
+      "title": "Star trail in Rishikesh.jpg",
+      "location": "Rishikesh, India",
+      "story": "",
+      "author": "Navneet Sharma",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Star_trail_in_Rishikesh.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Star_trail_in_Rishikesh.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Star_trail_in_Rishikesh.jpg/3840px-Star_trail_in_Rishikesh.jpg",
+      "dimensions": [
+        3840,
+        2555
+      ],
+      "sha256": null,
+      "download_verified": false,
+      "category": "nature",
+      "period": "night",
+      "original_dimensions": [
+        6048,
+        4024
+      ],
+      "visual_review": "Commons category thumbnail and source-page review",
+      "validation": "Source metadata only; validate actual bytes before display"
+    },
+    {
+      "file": "night-101.jpg",
+      "title": "Star trails near Araku 02.jpg",
+      "location": "Araku, India",
+      "story": "",
+      "author": "Drashokk",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Star_trails_near_Araku_02.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Star_trails_near_Araku_02.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Star_trails_near_Araku_02.jpg/3840px-Star_trails_near_Araku_02.jpg",
+      "dimensions": [
+        3840,
+        2160
+      ],
+      "sha256": null,
+      "download_verified": false,
+      "category": "nature",
+      "period": "night",
+      "original_dimensions": [
+        4928,
+        2772
+      ],
+      "visual_review": "Commons category thumbnail and source-page review",
+      "validation": "Source metadata only; validate actual bytes before display"
+    },
+    {
+      "file": "night-102.jpg",
+      "title": "Star trails on Mount Batur.jpg",
+      "location": "Mount Batur, Bali, Indonesia",
+      "story": "",
+      "author": "Imadedana",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Star_trails_on_Mount_Batur.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Star_trails_on_Mount_Batur.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Star_trails_on_Mount_Batur.jpg/3840px-Star_trails_on_Mount_Batur.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": null,
+      "download_verified": false,
+      "category": "nature",
+      "period": "night",
+      "original_dimensions": [
+        6000,
+        4000
+      ],
+      "visual_review": "Commons category thumbnail and source-page review",
+      "validation": "Source metadata only; validate actual bytes before display"
+    },
+    {
+      "file": "night-103.jpg",
+      "title": "Starry night in Langtang National Park.jpg",
+      "location": "Langtang National Park, Nepal",
+      "story": "",
+      "author": "Q-lieb-in",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Starry_night_in_Langtang_National_Park.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/8/84/Starry_night_in_Langtang_National_Park.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Starry_night_in_Langtang_National_Park.jpg/3840px-Starry_night_in_Langtang_National_Park.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": null,
+      "download_verified": false,
+      "category": "nature",
+      "period": "night",
+      "original_dimensions": [
+        4000,
+        2667
+      ],
+      "visual_review": "Commons category thumbnail and source-page review",
+      "validation": "Source metadata only; validate actual bytes before display"
+    },
+    {
+      "file": "night-104.jpg",
+      "title": "Startrail Lava Merapi.jpg",
+      "location": "Mount Merapi, Indonesia",
+      "story": "",
+      "author": "Mamoxfwidayat",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Startrail_Lava_Merapi.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Startrail_Lava_Merapi.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Startrail_Lava_Merapi.jpg/3840px-Startrail_Lava_Merapi.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": null,
+      "download_verified": false,
+      "category": "nature",
+      "period": "night",
+      "original_dimensions": [
+        4000,
+        2667
+      ],
+      "visual_review": "Commons category thumbnail and source-page review",
+      "validation": "Source metadata only; validate actual bytes before display"
+    },
+    {
+      "file": "night-105.jpg",
+      "title": "White Desert star trail.jpg",
+      "location": "White Desert, Egypt",
+      "story": "",
+      "author": "Ahmed Khalil",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:White_Desert_star_trail.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/8/8f/White_Desert_star_trail.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/White_Desert_star_trail.jpg/3840px-White_Desert_star_trail.jpg",
+      "dimensions": [
+        3840,
+        2550
+      ],
+      "sha256": null,
+      "download_verified": false,
+      "category": "nature",
+      "period": "night",
+      "original_dimensions": [
+        4288,
+        2848
+      ],
+      "visual_review": "Commons category thumbnail and source-page review",
+      "validation": "Source metadata only; validate actual bytes before display"
+    },
+    {
+      "file": "night-106.jpg",
+      "title": "وادى الحيتان - مسار النجوم.jpg",
+      "location": "Wadi Al-Hitan, Egypt",
+      "story": "",
+      "author": "Ahmed abd elkader mohamed",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:%D9%88%D8%A7%D8%AF%D9%89_%D8%A7%D9%84%D8%AD%D9%8A%D8%AA%D8%A7%D9%86_-_%D9%85%D8%B3%D8%A7%D8%B1_%D8%A7%D9%84%D9%86%D8%AC%D9%88%D9%85.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d1/%D9%88%D8%A7%D8%AF%D9%89_%D8%A7%D9%84%D8%AD%D9%8A%D8%AA%D8%A7%D9%86_-_%D9%85%D8%B3%D8%A7%D8%B1_%D8%A7%D9%84%D9%86%D8%AC%D9%88%D9%85.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/%D9%88%D8%A7%D8%AF%D9%89_%D8%A7%D9%84%D8%AD%D9%8A%D8%AA%D8%A7%D9%86_-_%D9%85%D8%B3%D8%A7%D8%B1_%D8%A7%D9%84%D9%86%D8%AC%D9%88%D9%85.jpg/3840px-%D9%88%D8%A7%D8%AF%D9%89_%D8%A7%D9%84%D8%AD%D9%8A%D8%AA%D8%A7%D9%86_-_%D9%85%D8%B3%D8%A7%D8%B1_%D8%A7%D9%84%D9%86%D8%AC%D9%88%D9%85.jpg",
+      "dimensions": [
+        3840,
+        2445
+      ],
+      "sha256": null,
+      "download_verified": false,
+      "category": "nature",
+      "period": "night",
+      "original_dimensions": [
+        5133,
+        3268
+      ],
+      "visual_review": "Commons category thumbnail and source-page review",
+      "validation": "Source metadata only; validate actual bytes before display"
+    },
+    {
+      "file": "night-107.jpg",
+      "title": "沱沱河桥的夜空 tuotuo river‘s skynight - panoramio.jpg",
+      "location": "Tuotuo River, Tibet, China",
+      "story": "",
+      "author": "luxiaoxue",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:%E6%B2%B1%E6%B2%B1%E6%B2%B3%E6%A1%A5%E7%9A%84%E5%A4%9C%E7%A9%BA_tuotuo_river%E2%80%98s_skynight_-_panoramio.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/f/fa/%E6%B2%B1%E6%B2%B1%E6%B2%B3%E6%A1%A5%E7%9A%84%E5%A4%9C%E7%A9%BA_tuotuo_river%E2%80%98s_skynight_-_panoramio.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/%E6%B2%B1%E6%B2%B1%E6%B2%B3%E6%A1%A5%E7%9A%84%E5%A4%9C%E7%A9%BA_tuotuo_river%E2%80%98s_skynight_-_panoramio.jpg/3840px-%E6%B2%B1%E6%B2%B1%E6%B2%B3%E6%A1%A5%E7%9A%84%E5%A4%9C%E7%A9%BA_tuotuo_river%E2%80%98s_skynight_-_panoramio.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": null,
+      "download_verified": false,
+      "category": "nature",
+      "period": "night",
+      "original_dimensions": [
+        4368,
+        2912
+      ],
+      "visual_review": "Commons category thumbnail and source-page review",
+      "validation": "Source metadata only; validate actual bytes before display"
+    },
+    {
+      "file": "night-108.jpg",
+      "title": "Star trails and an atmospheric glow blanket Earth's horizon (iss072e921626).jpg",
+      "location": "Pacific Ocean southeast of Japan, from orbit",
+      "story": "An International Space Station long exposure captures star trails and atmospheric glow above the Pacific southeast of Japan.",
+      "author": "NASA Johnson Space Center",
+      "license": "Public domain",
+      "license_url": "https://commons.wikimedia.org/wiki/File:Star_trails_and_an_atmospheric_glow_blanket_Earth%27s_horizon_(iss072e921626).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Star_trails_and_an_atmospheric_glow_blanket_Earth%27s_horizon_(iss072e921626).jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Star_trails_and_an_atmospheric_glow_blanket_Earth%27s_horizon_%28iss072e921626%29.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Star_trails_and_an_atmospheric_glow_blanket_Earth%27s_horizon_%28iss072e921626%29.jpg/3840px-Star_trails_and_an_atmospheric_glow_blanket_Earth%27s_horizon_%28iss072e921626%29.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": null,
+      "download_verified": false,
+      "category": "nature",
+      "period": "night",
+      "original_dimensions": [
+        8256,
+        5504
+      ],
+      "visual_review": "Commons category thumbnail and source-page review",
+      "validation": "Source metadata only; validate actual bytes before display"
+    },
+    {
+      "file": "night-109.jpg",
+      "title": "Indonesian city lights and lightning storms streak below (iss073e0251575).jpg",
+      "location": "Indonesia from the International Space Station",
+      "story": "",
+      "author": "NASA Johnson Space Center",
+      "license": "Public domain",
+      "license_url": "https://commons.wikimedia.org/wiki/File:Indonesian_city_lights_and_lightning_storms_streak_below_(iss073e0251575).jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Indonesian_city_lights_and_lightning_storms_streak_below_(iss073e0251575).jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/6/68/Indonesian_city_lights_and_lightning_storms_streak_below_%28iss073e0251575%29.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Indonesian_city_lights_and_lightning_storms_streak_below_%28iss073e0251575%29.jpg/3840px-Indonesian_city_lights_and_lightning_storms_streak_below_%28iss073e0251575%29.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": null,
+      "download_verified": false,
+      "category": "nature",
+      "period": "night",
+      "original_dimensions": [
+        8256,
+        5504
+      ],
+      "visual_review": "Commons category thumbnail and source-page review",
+      "validation": "Source metadata only; validate actual bytes before display"
+    },
+    {
+      "file": "night-110.jpg",
+      "title": "STS 114 day before launch.jpg",
+      "location": "Kennedy Space Center, Florida, USA",
+      "story": "Space Shuttle Discovery stands illuminated on the night before the STS-114 mission launch.",
+      "author": "User:FEXX , from NASA photo.",
+      "license": "Public domain",
+      "license_url": "https://commons.wikimedia.org/wiki/File:STS_114_day_before_launch.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:STS_114_day_before_launch.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/9/97/STS_114_day_before_launch.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/9/97/STS_114_day_before_launch.jpg",
+      "dimensions": [
+        3008,
+        2000
+      ],
+      "sha256": null,
+      "download_verified": false,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        3008,
+        2000
+      ],
+      "visual_review": "Commons category thumbnail and source-page review",
+      "validation": "Source metadata only; validate actual bytes before display"
+    },
+    {
+      "file": "night-111.jpg",
+      "title": "STS-130 exhaust cloud engulfs Launch Pad 39A.jpg",
+      "location": "Kennedy Space Center, Florida, USA",
+      "story": "Endeavour launches at night on STS-130, carrying the Tranquility module and Cupola to the International Space Station.",
+      "author": "NASA/Sandra Joseph and Kevin O'Connell",
+      "license": "Public domain",
+      "license_url": "https://commons.wikimedia.org/wiki/File:STS-130_exhaust_cloud_engulfs_Launch_Pad_39A.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:STS-130_exhaust_cloud_engulfs_Launch_Pad_39A.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/f/f9/STS-130_exhaust_cloud_engulfs_Launch_Pad_39A.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/f/f9/STS-130_exhaust_cloud_engulfs_Launch_Pad_39A.jpg",
+      "dimensions": [
+        3000,
+        1996
+      ],
+      "sha256": null,
+      "download_verified": false,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        3000,
+        1996
+      ],
+      "visual_review": "Commons category thumbnail and source-page review",
+      "validation": "Source metadata only; validate actual bytes before display"
+    },
+    {
+      "file": "night-112.jpg",
+      "title": "International Commerce Centre on Victoria Harbour.jpg",
+      "location": "Victoria Harbour, Hong Kong",
+      "story": "",
+      "author": "Wilfredor",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "page": "https://commons.wikimedia.org/wiki/File:International_Commerce_Centre_on_Victoria_Harbour.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/51/International_Commerce_Centre_on_Victoria_Harbour.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/5/51/International_Commerce_Centre_on_Victoria_Harbour.jpg",
+      "dimensions": [
+        3500,
+        2045
+      ],
+      "sha256": null,
+      "download_verified": false,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        3500,
+        2045
+      ],
+      "visual_review": "Commons category thumbnail and source-page review",
+      "validation": "Source metadata only; validate actual bytes before display"
+    },
+    {
+      "file": "night-113.jpg",
+      "title": "Stanford Memorial Church May 2011 HDR 1.jpg",
+      "location": "Stanford, California, USA",
+      "story": "",
+      "author": "King of Hearts",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Stanford_Memorial_Church_May_2011_HDR_1.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/9/94/Stanford_Memorial_Church_May_2011_HDR_1.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Stanford_Memorial_Church_May_2011_HDR_1.jpg/3840px-Stanford_Memorial_Church_May_2011_HDR_1.jpg",
+      "dimensions": [
+        3840,
+        2561
+      ],
+      "sha256": null,
+      "download_verified": false,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        4364,
+        2910
+      ],
+      "visual_review": "Commons category thumbnail and source-page review",
+      "validation": "Source metadata only; validate actual bytes before display"
+    },
+    {
+      "file": "night-114.jpg",
+      "title": "MIT Dome night1 Edit.jpg",
+      "location": "Cambridge, Massachusetts, USA",
+      "story": "",
+      "author": "Fcb981, this edited version by Thermos",
+      "license": "CC BY-SA 3.0",
+      "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "page": "https://commons.wikimedia.org/wiki/File:MIT_Dome_night1_Edit.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/a/ac/MIT_Dome_night1_Edit.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/a/ac/MIT_Dome_night1_Edit.jpg",
+      "dimensions": [
+        2644,
+        1610
+      ],
+      "sha256": null,
+      "download_verified": false,
+      "category": "city",
+      "period": "night",
+      "original_dimensions": [
+        2644,
+        1610
+      ],
+      "visual_review": "Commons category thumbnail and source-page review",
+      "validation": "Source metadata only; validate actual bytes before display"
+    },
+    {
+      "file": "night-115.jpg",
+      "title": "Estátua do Laçador supermoon (black and white).jpg",
+      "location": "Porto Alegre, Brazil",
+      "story": "",
+      "author": "Original: LeonardoSVieira Derivative work: Lenny Maidana",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "page": "https://commons.wikimedia.org/wiki/File:Est%C3%A1tua_do_La%C3%A7ador_supermoon_(black_and_white).jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/6/61/Est%C3%A1tua_do_La%C3%A7ador_supermoon_%28black_and_white%29.jpg",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Est%C3%A1tua_do_La%C3%A7ador_supermoon_%28black_and_white%29.jpg/3840px-Est%C3%A1tua_do_La%C3%A7ador_supermoon_%28black_and_white%29.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "sha256": null,
+      "download_verified": false,
+      "category": "nature",
+      "period": "night",
+      "original_dimensions": [
+        5184,
+        3456
+      ],
+      "visual_review": "Commons category thumbnail and source-page review",
+      "validation": "Source metadata only; validate actual bytes before display"
+    },
     {
       "file": "013.jpg",
       "page": "https://commons.wikimedia.org/wiki/File:Aurora_Borealis_Skrova-1.jpg",
       "author": "Birgit Fostervold",
       "license": "CC BY-SA 4.0",
-      "original_dimensions": [3840, 2160],
+      "original_dimensions": [
+        3840,
+        2160
+      ],
       "original_url": "https://upload.wikimedia.org/wikipedia/commons/8/81/Aurora_Borealis_Skrova-1.jpg",
       "download_url": "https://upload.wikimedia.org/wikipedia/commons/8/81/Aurora_Borealis_Skrova-1.jpg",
-      "dimensions": [3840, 2160],
+      "dimensions": [
+        3840,
+        2160
+      ],
       "format": "JPEG",
       "bytes": 4753914,
-      "sha256": "98ca616b360b0365bba3f4dfdf6afdf1aa1fc5f22722db2433c14437ae94643a"
+      "sha256": "98ca616b360b0365bba3f4dfdf6afdf1aa1fc5f22722db2433c14437ae94643a",
+      "title": "Aurora Borealis Skrova-1.jpg",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "location": "Skrova, Norway",
+      "category": "nature",
+      "story": "",
+      "download_verified": true,
+      "period": "night",
+      "validation": "Pillow-verified downloaded dimensions"
     },
     {
-      "file": "014.jpg",
-      "page": "https://commons.wikimedia.org/wiki/File:Milky_Way_over_Rocky_Mountain_National_Park_(26367276674).jpg",
-      "author": "NPS/Jeremy M. White",
-      "license": "Public domain (United States federal government work)",
-      "original_dimensions": [4000, 1374],
-      "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Milky_Way_over_Rocky_Mountain_National_Park_%2826367276674%29.jpg",
-      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Milky_Way_over_Rocky_Mountain_National_Park_%2826367276674%29.jpg/3840px-Milky_Way_over_Rocky_Mountain_National_Park_%2826367276674%29.jpg",
-      "dimensions": [3840, 1319],
-      "format": "JPEG",
-      "bytes": 1432887,
-      "sha256": "12b841777e1773873ebf02461e2d3a2fb344a28a29ac1c80dc7ffd1c37d2cf77"
+      "file": "culture-001.jpg",
+      "title": "Amy Winehouse at Eurockeennes",
+      "location": "Eurockeennes festival, France",
+      "story": "Amy Winehouse on stage at the 2007 Eurockeennes festival.",
+      "story_source": "https://commons.wikimedia.org/wiki/File:Amy_Winehouse_f4962007.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Amy_Winehouse_f4962007.jpg",
+      "author": "Rama",
+      "license": "CC BY-SA 2.0 fr",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0/fr/deed.en",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/9/91/Amy_Winehouse_f4962007.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Amy_Winehouse_f4962007.jpg/3840px-Amy_Winehouse_f4962007.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "width": 3840,
+      "height": 2560,
+      "sha256": "4fb2aa13a811dd56f380ac73ec079ba1ca991ebb6f84535fc8ec5ce31b2280a8",
+      "category": "music",
+      "period": "night",
+      "original_dimensions": [
+        4368,
+        2912
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "culture-002.jpg",
+      "title": "Amy Winehouse, live in 2007",
+      "location": "Eurockeennes festival, France",
+      "story": "A second stage perspective from Amy Winehouse’s 2007 Eurockeennes performance.",
+      "story_source": "https://commons.wikimedia.org/wiki/File:Amy_Winehouse_f5385431.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Amy_Winehouse_f5385431.jpg",
+      "author": "Rama",
+      "license": "CC BY-SA 2.0 fr",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0/fr/deed.en",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Amy_Winehouse_f5385431.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Amy_Winehouse_f5385431.jpg/3840px-Amy_Winehouse_f5385431.jpg",
+      "dimensions": [
+        3840,
+        2568
+      ],
+      "width": 3840,
+      "height": 2568,
+      "sha256": "0845f19a0c7997c7286fb082fd32a9714b293785470173427b5b07451120da02",
+      "category": "music",
+      "period": "night",
+      "original_dimensions": [
+        4151,
+        2776
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "culture-004.jpg",
+      "title": "Elton John: the Rocket Man",
+      "location": "Expo 2016, Antalya, Turkey",
+      "story": "Elton John performing at Expo 2016 in Antalya on 9 September 2016.",
+      "story_source": "https://commons.wikimedia.org/wiki/File:ELTON_JOHN_THE_ROCKET_MAN.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:ELTON_JOHN_THE_ROCKET_MAN.jpg",
+      "author": "Mustafa Doğan Özçelik",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/6/6b/ELTON_JOHN_THE_ROCKET_MAN.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/ELTON_JOHN_THE_ROCKET_MAN.jpg/3840px-ELTON_JOHN_THE_ROCKET_MAN.jpg",
+      "dimensions": [
+        3840,
+        2560
+      ],
+      "width": 3840,
+      "height": 2560,
+      "sha256": "c05a3636421a3c318363f8d50def3353638b22fea12b4f632c754f104671a4bc",
+      "category": "music",
+      "period": "night",
+      "original_dimensions": [
+        5472,
+        3648
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "culture-008.jpg",
+      "title": "Jazz on 52nd Street",
+      "location": "52nd Street, New York City, USA",
+      "story": "William P. Gottlieb photographed the New York street that housed a concentration of jazz clubs.",
+      "story_source": "https://commons.wikimedia.org/wiki/File:52nd_Street,_New_York_City,_NY_0001_original.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:52nd_Street,_New_York_City,_NY_0001_original.jpg",
+      "author": "William P. Gottlieb",
+      "license": "Public domain",
+      "license_url": "https://commons.wikimedia.org/wiki/File:52nd_Street,_New_York_City,_NY_0001_original.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/df/52nd_Street%2C_New_York_City%2C_NY_0001_original.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/52nd_Street%2C_New_York_City%2C_NY_0001_original.jpg/3840px-52nd_Street%2C_New_York_City%2C_NY_0001_original.jpg",
+      "dimensions": [
+        3840,
+        2994
+      ],
+      "width": 3840,
+      "height": 2994,
+      "sha256": "0ba2f6be0fe7df7e10097c0159e410cef8d5b07b1e9956175e12a975e14a469c",
+      "category": "music",
+      "period": "night",
+      "original_dimensions": [
+        4504,
+        3512
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "culture-012.jpg",
+      "title": "A Beatles concert night at Washington Coliseum",
+      "location": "Washington Coliseum, Washington, DC, USA",
+      "story": "The exterior of Washington Coliseum on a Beatles concert night, photographed by Marion S. Trikosko and preserved by the Library of Congress.",
+      "story_source": "https://commons.wikimedia.org/wiki/File:Beatles_Washington_Coliseum.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Beatles_Washington_Coliseum.jpg",
+      "author": "Marion S. Trikosko",
+      "license": "Public domain",
+      "license_url": "https://commons.wikimedia.org/wiki/File:Beatles_Washington_Coliseum.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/db/Beatles_Washington_Coliseum.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Beatles_Washington_Coliseum.jpg/3840px-Beatles_Washington_Coliseum.jpg",
+      "dimensions": [
+        3840,
+        2516
+      ],
+      "width": 3840,
+      "height": 2516,
+      "sha256": "9c0cf8a61bd978a0b6f8e4805cc9ca5239fe4ee8caa5e9515525d958b3ca2e4d",
+      "category": "music",
+      "period": "night",
+      "original_dimensions": [
+        5084,
+        3331
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "culture-014.jpg",
+      "title": "Earthrise from Apollo 8",
+      "location": "Lunar orbit, looking toward Earth",
+      "story": "The rising Earth greeted Apollo 8 as its crew came from behind the Moon after the fourth nearside orbit.",
+      "story_source": "https://commons.wikimedia.org/wiki/File:Earth-moon.jpg",
+      "page": "https://commons.wikimedia.org/wiki/File:Earth-moon.jpg",
+      "author": "Apollo 8  crewmember  Bill Anders",
+      "license": "Public domain",
+      "license_url": "https://commons.wikimedia.org/wiki/File:Earth-moon.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Earth-moon.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Earth-moon.jpg",
+      "dimensions": [
+        3000,
+        2400
+      ],
+      "width": 3000,
+      "height": 2400,
+      "sha256": "df528e70dd7313cbc88c78cc174c9cb5a07eff344431dcad988b2f1f317a9180",
+      "category": "history",
+      "period": "night",
+      "original_dimensions": [
+        3000,
+        2400
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
+    },
+    {
+      "file": "culture-016.jpg",
+      "title": "Nina Simone in Brittany",
+      "location": "Morlaix, Brittany, France",
+      "story": "Nina Simone performing in Morlaix in May 1982.",
+      "story_source": "https://commons.wikimedia.org/wiki/File:Nina_Simone14.JPG",
+      "page": "https://commons.wikimedia.org/wiki/File:Nina_Simone14.JPG",
+      "author": "Roland Godefroy",
+      "license": "CC BY-SA 3.0",
+      "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Nina_Simone14.JPG",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Nina_Simone14.JPG",
+      "dimensions": [
+        3681,
+        2481
+      ],
+      "width": 3681,
+      "height": 2481,
+      "sha256": "260e1587270cfc347bb189e437b282db919a20ed1f40f87030c2f1c08eb3bde2",
+      "category": "music",
+      "period": "night",
+      "original_dimensions": [
+        3681,
+        2481
+      ],
+      "download_verified": true,
+      "validation": "Pillow-verified downloaded dimensions"
     }
   ]
 }

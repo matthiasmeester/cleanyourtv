@@ -18,10 +18,37 @@
     "directory": "wallpapers",
     "source_manifest": "wallpapers.sources.json",
     "night_source_manifest": "night-wallpapers.sources.json",
-    "count": 14,
+    "count": 220,
     "night_schedule_without_location": "19:00-07:00 in the TV time zone",
-    "minimum_width_pixels": 3557,
-    "maximum_width_pixels": 3840
+    "minimum_width_pixels": 2644,
+    "maximum_width_pixels": 3840,
+    "day_count": 106,
+    "night_count": 114,
+    "minimum_height_pixels": 1483,
+    "storage": "online catalogue with bounded local cache",
+    "cache_limit_bytes": 100000000,
+    "catalogue": "catalog.html",
+    "index": "catalog.csv",
+    "online_catalog": "wallpapers/catalog.tsv",
+    "metadata_only_count": 28,
+    "credits": "wallpapers/credits.txt",
+    "locations": "wallpapers/captions.txt",
+    "offline_seed_files": [
+      "001.jpg",
+      "002.jpg",
+      "013.jpg",
+      "culture-001.jpg"
+    ],
+    "cache_directory": "wallpaper-cache",
+    "maximum_single_image_bytes": 20000000,
+    "included_seed_bytes": 11732325,
+    "network_permission": "android.permission.INTERNET",
+    "allowed_image_hosts": [
+      "upload.wikimedia.org",
+      "thumb.wikimedia.org"
+    ],
+    "download_mode": "on-demand while rotating Home wallpapers",
+    "api_key_required": false
   },
   "components": [
     {
@@ -37,11 +64,16 @@
       "source": "console-shortcut",
       "built_from_source": true,
       "required": false,
-      "configuration": ["Ps5InputId", "Ps5TvPackage"]
+      "configuration": [
+        "Ps5InputId",
+        "Ps5TvPackage"
+      ]
     }
   ],
   "third_party_apps_installed": [],
   "packages_disabled": [],
-  "device_specific_values_required": ["TvHost"],
+  "device_specific_values_required": [
+    "TvHost"
+  ],
   "private_runtime_output": "../../backup/compact-glass-<timestamp>/"
 }
