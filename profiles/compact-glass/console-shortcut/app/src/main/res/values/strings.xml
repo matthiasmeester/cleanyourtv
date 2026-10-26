@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PS5</string>
+    <string name="input_unavailable">Could not open the configured input. Choose it from the TV Inputs menu.</string>
+</resources>

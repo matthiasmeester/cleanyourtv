@@ -1,0 +1,42 @@
+plugins {
+    id 'com.android.application'
+}
+
+def ps5InputId = providers.gradleProperty('ps5InputId').getOrElse('')
+def ps5TvPackage = providers.gradleProperty('ps5TvPackage').getOrElse('')
+if (!ps5InputId.matches('[A-Za-z0-9_.$/:-]+')) {
+    throw new GradleException('Pass -Pps5InputId=<verified TV input ID>; no device input is built in.')
+}
+if (ps5TvPackage && !ps5TvPackage.matches('[A-Za-z][A-Za-z0-9_]*(\\.[A-Za-z][A-Za-z0-9_]*)+')) {
+    throw new GradleException('ps5TvPackage must be a package name or omitted.')
+}
+
+android {
+    namespace 'com.local.grundig.playstation'
+    compileSdk 34
+
+    defaultConfig {
+        // Retain the existing local shortcut package so a matching signed build can update it.
+        applicationId 'com.local.grundig.playstation'
+        minSdk 26
+        targetSdk 34
+        versionCode 2
+        versionName '1.1'
+        resValue 'string', 'ps5_input_id', ps5InputId
+        resValue 'string', 'ps5_tv_package', ps5TvPackage
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt')
+            signingConfig signingConfigs.debug
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}

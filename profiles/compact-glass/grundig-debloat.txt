@@ -1,0 +1,15 @@
+# Audit of the original Grundig Android TV / ARCELIK sinchon, Android 11 API 30.
+# This is NOT an automatic cross-TV install list. Inspect and back up each TV first.
+# Disabled for user 0 only; never uninstalled. Apply only with tools/disable.ps1.
+# Restore the exact list with tools/restore.ps1 using its saved recovery record.
+# Stock Home may be disabled only after the new Home is installed and verified.
+# TV/input/remote/network/keyboard/Play Store/core services are retained.
+com.google.android.feedback
+com.google.android.partnersetup
+android.autoinstalls.config.arcelik.an
+com.google.android.katniss
+com.google.android.play.games
+com.ted.android.tv
+com.google.android.tvlauncher
+com.google.android.youtube.tv
+com.google.android.youtube.tvmusic

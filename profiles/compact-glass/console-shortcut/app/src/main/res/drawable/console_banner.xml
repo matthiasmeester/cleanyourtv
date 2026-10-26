@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Original generic console/controller art, kept as editable vector source. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="320dp"
+    android:height="180dp"
+    android:viewportWidth="320"
+    android:viewportHeight="180">
+    <path android:fillColor="#B7CEE8" android:pathData="M0,0h320v180h-320z" />
+    <path android:fillColor="#E8F0F9" android:pathData="M195,34l24,7l-4,103l-25,4l4,-57zM228,41l24,-7l1,57l4,57l-25,-4z" />
+    <path android:fillColor="#23364E" android:pathData="M219,41h9l4,103h-17zM177,149h94v5h-94z" />
+    <path android:fillColor="#F3F6FB" android:pathData="M91,80C76,80 69,91 65,107L57,137C54,150 66,156 75,146L91,128h47l16,18C164,156 176,150 172,137L165,107C160,91 154,80 139,80z" />
+    <path android:fillColor="#23364E" android:pathData="M84,97h7v9h9v7h-9v9h-7v-9h-9v-7h9zM142,98a4,4 0,1 0,0.01 0zM153,109a4,4 0,1 0,0.01 0zM131,109a4,4 0,1 0,0.01 0zM142,120a4,4 0,1 0,0.01 0zM108,119a7,7 0,1 0,0.01 0zM126,119a7,7 0,1 0,0.01 0z" />
+</vector>

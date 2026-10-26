@@ -1,0 +1,36 @@
+{
+  "format": 1,
+  "name": "compact-glass",
+  "description": "Reusable source profile for the compact glass TV launcher.",
+  "minimum_android_sdk": 26,
+  "installer": "install.ps1",
+  "theme": "config.json",
+  "wallpapers": {
+    "directory": "wallpapers",
+    "source_manifest": "wallpapers.sources.json",
+    "count": 12,
+    "minimum_width_pixels": 3557,
+    "maximum_width_pixels": 3840
+  },
+  "components": [
+    {
+      "name": "TV launcher",
+      "package": "com.gathin.tvhome",
+      "source": "../../launcher",
+      "built_from_source": true,
+      "required": true
+    },
+    {
+      "name": "PS5 input shortcut",
+      "package": "com.local.grundig.playstation",
+      "source": "console-shortcut",
+      "built_from_source": true,
+      "required": false,
+      "configuration": ["Ps5InputId", "Ps5TvPackage"]
+    }
+  ],
+  "third_party_apps_installed": [],
+  "packages_disabled": [],
+  "device_specific_values_required": ["TvHost"],
+  "private_runtime_output": "../../backup/compact-glass-<timestamp>/"
+}

@@ -42,6 +42,7 @@ public class GlassView extends View {
         // move it without replaying clipPath and the glow on every frame. That path is
         // software-rendered on the MT5895 and is what makes the highlight crawl.
         setLayerType(LAYER_TYPE_HARDWARE, null);
+        if (getResources().getBoolean(R.bool.outline_app_focus)) setStyle(Config.GLASS_RIM);
     }
 
     /** Tints the rim and the outer glow; 0 restores the plain white glass. */

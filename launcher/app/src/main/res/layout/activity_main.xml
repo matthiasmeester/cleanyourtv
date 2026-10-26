@@ -323,6 +323,14 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/btnMusic"
+                    style="@style/TopButtonIcon"
+                    android:visibility="gone"
+                    android:contentDescription="@string/play_spotify"
+                    android:drawableStart="@drawable/ic_play_music"
+                    android:nextFocusDown="@+id/grid" />
+
+                <TextView
                     android:id="@+id/btnInputs"
                     style="@style/TopButton"
                     android:text="@string/inputs"
@@ -400,5 +408,14 @@
         android:layout_width="10dp"
         android:layout_height="10dp"
         android:alpha="0"
+        android:importantForAccessibility="no" />
+    <ImageView
+        android:id="@+id/dockDownHint"
+        android:layout_width="16dp"
+        android:layout_height="9dp"
+        android:visibility="gone"
+        android:src="@drawable/ic_dock_down"
+        android:scaleType="fitCenter"
+        android:focusable="false"
         android:importantForAccessibility="no" />
 </FrameLayout>

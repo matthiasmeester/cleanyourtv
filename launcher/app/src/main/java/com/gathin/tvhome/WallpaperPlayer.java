@@ -22,6 +22,7 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -55,6 +56,8 @@ final class WallpaperPlayer {
     /** wallpaper_captions: the shown picture's name from wallpapers/captions.txt; null when off or there are none. */
     private final TextView caption;
     private final Map<String, String> names;
+    /** Photo attribution shown only in More, keyed by the wallpaper's local filename. */
+    private final Map<String, String> sources = new HashMap<>();
     /** wallpaper_moods: the collection's groups by time of day; empty rotates through all of it. */
     private final Map<String, Set<String>> moods;
     /** config.xml latitude and longitude for the sun's times, and today's {sunrise, sunset} once worked out. */
@@ -88,6 +91,13 @@ final class WallpaperPlayer {
         image = new ImageView(context);
         image.setScaleType(ImageView.ScaleType.CENTER_CROP);
         image.setImportantForAccessibility(View.IMPORTANT_FOR_ACCESSIBILITY_NO);
+        for (String entry : context.getResources().getStringArray(R.array.wallpaper_sources)) {
+            int split = entry.indexOf('=');
+            if (split <= 0) continue;
+            String file = entry.substring(0, split).trim();
+            String credit = entry.substring(split + 1).trim();
+            if (!file.isEmpty() && !credit.isEmpty()) sources.put(file, credit);
+        }
         names = config.wallpaperCaptions && config.wallpaperEnabled && !files.isEmpty()
                 ? WallpaperCaptions.read(files.get(0).getParentFile()) : Collections.emptyMap();
         caption = names.isEmpty() ? null : makeCaption(context, root);
@@ -135,6 +145,11 @@ final class WallpaperPlayer {
 
     void stop() {
         active = false;
+    }
+
+    String sourceCredit() {
+        String credit = sources.get(displayed);
+        return credit == null ? "" : credit;
     }
 
     /** Drops the wallpaper texture when Home is hidden and Android asks the process to free memory. */

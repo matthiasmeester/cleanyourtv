@@ -1,0 +1,8 @@
+.gradle/
+build/
+app/build/
+local.properties
+*.apk
+*.aab
+hs_err_pid*.log
+replay_pid*.log

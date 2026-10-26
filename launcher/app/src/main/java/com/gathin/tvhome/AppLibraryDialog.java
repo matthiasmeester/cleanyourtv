@@ -36,6 +36,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.text.Collator;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
@@ -82,9 +83,14 @@ final class AppLibraryDialog {
     private final boolean selectionMode;
     /** library_ok_opens without app_library_selection: OK opens every app, Add to Home is in the hold menu. */
     private final boolean okOpens;
+    /** A configured utility shelf reuses the picker without exposing Home shortcut controls. */
+    private final Set<String> moreApps;
+    private final boolean moreMode;
+    private final String wallpaperSource;
     private final boolean animations;
     private final boolean rtl;
     private TextView instructions;
+    private TextView backButton;
     private int totalApps;
     final PopupWindow popup;
     private final float density;
@@ -103,6 +109,7 @@ final class AppLibraryDialog {
     private float scrollOffset;
     private boolean highlightShown;
     private final int catalogWidth;
+    private final int catalogHeight;
 
     private void stopHighlight() {
         if (spring != null) spring.cancel();
@@ -143,17 +150,21 @@ final class AppLibraryDialog {
         if (popup.isShowing()) popup.update(width, height);
     }
 
-    AppLibraryDialog(Activity activity, boolean animations, boolean reducedMotion, boolean selectionMode, boolean okOpens, Predicate<String> onHome, Runnable changed, Runnable dismissed) {
+    AppLibraryDialog(Activity activity, boolean animations, boolean reducedMotion, boolean selectionMode, boolean okOpens, String wallpaperSource, Predicate<String> onHome, Runnable changed, Runnable dismissed) {
         this.activity = activity;
         this.animations = animations;
         this.rtl = activity.getResources().getBoolean(R.bool.rtl_app_grid);
         this.reducedMotion = reducedMotion;
-        this.selectionMode = selectionMode;
-        this.okOpens = okOpens && !selectionMode;
+        this.moreApps = new HashSet<>(Arrays.asList(activity.getResources().getStringArray(R.array.more_apps)));
+        this.moreMode = !moreApps.isEmpty();
+        this.wallpaperSource = wallpaperSource == null ? "" : wallpaperSource.trim();
+        this.selectionMode = selectionMode && !moreMode;
+        this.okOpens = moreMode || okOpens && !selectionMode;
         this.onHome = onHome;
         this.changed = changed;
         this.dismissed = dismissed;
         density = activity.getResources().getDisplayMetrics().density;
+        catalogHeight = dp(moreMode && !this.wallpaperSource.isEmpty() ? 340 : 280);
         panel = new LinearLayout(activity);
         panel.setLayoutDirection(rtl ? View.LAYOUT_DIRECTION_RTL : View.LAYOUT_DIRECTION_LTR);
         panel.setOrientation(LinearLayout.VERTICAL);
@@ -162,7 +173,7 @@ final class AppLibraryDialog {
         View decor = activity.getWindow().getDecorView();
         catalogWidth = Math.min(dp(800), Math.max(dp(200), decor.getWidth() - dp(64)));
         int width = catalogWidth;
-        int height = dp(280);
+        int height = catalogHeight;
         popup = new PopupWindow(panel, width, height, true);
         popup.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         popup.setOutsideTouchable(true);
@@ -228,6 +239,7 @@ final class AppLibraryDialog {
                 for (ResolveInfo info : pm.queryIntentActivities(new Intent(Intent.ACTION_MAIN).addCategory(category), 0)) {
                     if (info.activityInfo == null || !info.activityInfo.exported) continue;
                     String pkg = info.activityInfo.packageName;
+                    if (moreMode && !moreApps.contains(pkg)) continue;
                     if (Intent.CATEGORY_LEANBACK_LAUNCHER.equals(category)) tv.add(pkg);
                     if (!pkg.equals(self) && !unique.containsKey(pkg)) unique.put(pkg, info);
                 }
@@ -280,7 +292,7 @@ final class AppLibraryDialog {
             String pa = a.activityInfo.packageName, pb = b.activityInfo.packageName;
             if (selectionMode) return LibraryApps.compareCatalog(home.get(pa), label(a), pa,
                     home.get(pb), label(b), pb, collator);
-            int priority = LibraryApps.comparePriority(home.get(pa), installTimes.get(pa),
+            int priority = moreMode ? 0 : LibraryApps.comparePriority(home.get(pa), installTimes.get(pa),
                     home.get(pb), installTimes.get(pb), catalogTime);
             if (priority != 0) return priority;
             int byLabel = collator.compare(label(a), label(b));
@@ -338,6 +350,7 @@ final class AppLibraryDialog {
 
     /** Reuse translated actions instead of shipping another hint in every locale. */
     private String hint(boolean home) {
+        if (moreMode) return activity.getString(R.string.library_hint_open);
         if (selectionMode) return activity.getString(android.R.string.ok) + ": "
                 + activity.getString(home ? R.string.library_remove_shortcut : R.string.library_add_home);
         return activity.getString(home || okOpens ? R.string.library_hint_open : R.string.library_hint_add);
@@ -345,12 +358,12 @@ final class AppLibraryDialog {
 
     private void showCatalog() {
         stopHighlight();
-        resize(catalogWidth, dp(280));
+        resize(catalogWidth, catalogHeight);
         panel.removeAllViews();
         LinearLayout header = new LinearLayout(activity);
         header.setGravity(Gravity.CENTER_VERTICAL);
         header.setPadding(dp(12), dp(4), dp(8), dp(4));
-        TextView title = text(activity.getString(R.string.app_library), 22, Color.WHITE);
+        TextView title = text(activity.getString(moreMode ? R.string.more_apps_title : R.string.app_library), 22, Color.WHITE);
         header.addView(title, new LinearLayout.LayoutParams(0, dp(36), 1));
         title.setGravity(Gravity.CENTER_VERTICAL);
         title.setSingleLine(true);
@@ -359,6 +372,31 @@ final class AppLibraryDialog {
                 R.plurals.library_app_count, totalApps, totalApps), 13, 0xA6FFFFFF);
         count.setSingleLine(true);
         header.addView(count, new LinearLayout.LayoutParams(-2, -2));
+        if (moreMode) {
+            backButton = text(activity.getString(R.string.more_apps_back), 15, Color.WHITE);
+            backButton.setBackgroundResource(R.drawable.pill_bg);
+            backButton.setTextColor(activity.getColorStateList(R.color.more_button_text));
+            backButton.setGravity(Gravity.CENTER);
+            backButton.setSingleLine(true);
+            backButton.setPadding(dp(14), 0, dp(14), 0);
+            backButton.setFocusableInTouchMode(true);
+            backButton.setOnClickListener(v -> close());
+            backButton.setOnFocusChangeListener((v, focused) -> {
+                if (focused && highlight != null) highlight.setAlpha(0f);
+            });
+            backButton.setOnKeyListener((v, key, event) -> {
+                if (event.getAction() != KeyEvent.ACTION_DOWN) return false;
+                if (key == KeyEvent.KEYCODE_DPAD_DOWN) {
+                    focusMoreCard();
+                    return true;
+                }
+                return key == KeyEvent.KEYCODE_DPAD_UP || key == KeyEvent.KEYCODE_DPAD_LEFT
+                        || key == KeyEvent.KEYCODE_DPAD_RIGHT;
+            });
+            LinearLayout.LayoutParams backParams = new LinearLayout.LayoutParams(-2, dp(36));
+            backParams.setMarginStart(dp(16));
+            header.addView(backButton, backParams);
+        }
         panel.addView(header, new LinearLayout.LayoutParams(-1, dp(44)));
         instructions = text(hint(false), 13, 0xBBFFFFFF);
         instructions.setSingleLine(true);
@@ -369,8 +407,10 @@ final class AppLibraryDialog {
         if (apps.isEmpty()) {
             instructions.setVisibility(View.GONE);
             heading(activity.getString(R.string.library_empty));
-            panel.setFocusableInTouchMode(true);
-            panel.requestFocus();
+            panel.setFocusableInTouchMode(!moreMode);
+            if (moreMode) backButton.requestFocus();
+            else panel.requestFocus();
+            addWallpaperSource();
             return;
         }
         shelf = new FrameLayout(activity);
@@ -409,6 +449,7 @@ final class AppLibraryDialog {
             }
         });
         panel.addView(shelf, new LinearLayout.LayoutParams(-1, 0, 1));
+        addWallpaperSource();
         int position = Math.min(selectedPosition, apps.size() - 1);
         for (int i = 0; i < apps.size(); i++) {
             if (apps.get(i).activityInfo.packageName.equals(selectedPackage)) { position = i; break; }
@@ -422,10 +463,36 @@ final class AppLibraryDialog {
         });
     }
 
+    private void addWallpaperSource() {
+        if (!moreMode || wallpaperSource.isEmpty()) return;
+        TextView source = text(wallpaperSource, 11, 0xA6FFFFFF);
+        source.setMaxLines(4);
+        source.setPadding(dp(12), dp(8), dp(12), 0);
+        source.setFocusable(false);
+        source.setClickable(false);
+        panel.addView(source, new LinearLayout.LayoutParams(-1, -2));
+    }
+
     private void dismissActions() {
         PopupWindow menu = actionPopup;
         actionPopup = null;
         if (menu != null) menu.dismiss();
+    }
+
+    private void focusMoreCard() {
+        RecyclerView list = catalog;
+        if (list == null || apps.isEmpty()) return;
+        int target = Math.max(0, Math.min(selectedPosition, apps.size() - 1));
+        RecyclerView.ViewHolder holder = list.findViewHolderForAdapterPosition(target);
+        if (holder != null) holder.itemView.requestFocus();
+        else {
+            list.scrollToPosition(target);
+            list.post(() -> {
+                if (catalog != list || !popup.isShowing()) return;
+                RecyclerView.ViewHolder restored = list.findViewHolderForAdapterPosition(target);
+                if (restored != null) restored.itemView.requestFocus();
+            });
+        }
     }
 
     private void restoreCardFocus() {
@@ -524,9 +591,11 @@ final class AppLibraryDialog {
             restoreCardFocus();
         });
         addAction(rows, R.string.library_open, () -> open(app));
-        boolean home = onHome.test(pkg);
-        addAction(rows, home ? R.string.library_remove_shortcut : R.string.library_add_home,
-                () -> changeHome(app, !home));
+        if (!moreMode) {
+            boolean home = onHome.test(pkg);
+            addAction(rows, home ? R.string.library_remove_shortcut : R.string.library_add_home,
+                    () -> changeHome(app, !home));
+        }
         Intent info = SystemSettings.appInfo(activity, pkg);
         if (info != null) addAction(rows, R.string.library_app_info, () -> {
             close();
@@ -637,10 +706,10 @@ final class AppLibraryDialog {
             name.setText(label(app));
             name.setEllipsize(TextUtils.TruncateAt.END);
             TextView status = holder.itemView.findViewById(R.id.status);
-            boolean home = onHome.test(pkg);
-            boolean recent = !selectionMode && LibraryApps.recent(installTimes.getOrDefault(pkg, 0L), catalogTime);
+            boolean home = !moreMode && onHome.test(pkg);
+            boolean recent = !moreMode && !selectionMode && LibraryApps.recent(installTimes.getOrDefault(pkg, 0L), catalogTime);
             status.setText(home ? R.string.library_on_home : recent ? R.string.library_recent : R.string.library_add_home);
-            status.setVisibility(home || !okOpens ? View.VISIBLE : View.INVISIBLE);
+            status.setVisibility(moreMode ? View.GONE : home || !okOpens ? View.VISIBLE : View.INVISIBLE);
             holder.itemView.setBackground(surface(home ? 0x1475BBA4 : 0x0CFFFFFF, 18));
             View check = holder.itemView.findViewById(R.id.dot);
             check.getLayoutParams().width = dp(home ? 18 : 8);
@@ -664,6 +733,10 @@ final class AppLibraryDialog {
                 }
             });
             holder.itemView.setOnKeyListener((v, key, event) -> {
+                if (moreMode && event.getAction() == KeyEvent.ACTION_DOWN && key == KeyEvent.KEYCODE_DPAD_UP) {
+                    backButton.requestFocus();
+                    return true;
+                }
                 int index = holder.getBindingAdapterPosition();
                 return event.getAction() == KeyEvent.ACTION_DOWN && (key == KeyEvent.KEYCODE_DPAD_UP
                         || key == KeyEvent.KEYCODE_DPAD_DOWN

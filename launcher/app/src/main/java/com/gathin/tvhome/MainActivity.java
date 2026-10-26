@@ -505,6 +505,17 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
         if (lunar) lunarDate.setVisibility(View.VISIBLE);
         greetingName = cfg.greetingName;
         if (cfg.dateBelowClock) moveDateBelowClock();
+        if (getResources().getBoolean(R.bool.compact_home_clock)) {
+            ((TextView) findViewById(R.id.clock)).setTextSize(36.4f);
+            ((TextView) findViewById(R.id.ampm)).setTextSize(10.5f);
+            android.widget.TextClock date = findViewById(R.id.date);
+            date.setTextSize(9.8f);
+            date.setAllCaps(false);
+            date.setLetterSpacing(0.02f);
+            date.setSingleLine(true);
+            date.setFormat12Hour("EEE d MMM");
+            date.setFormat24Hour("EEE d MMM");
+        }
         if (shamsi) {
             shamsiDate.setVisibility(View.VISIBLE);
             TextView date = findViewById(R.id.date);
@@ -519,6 +530,15 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
         hiddenApps = new HashSet<>(cfg.hiddenApps);
 
         grid = findViewById(R.id.grid);
+        int personalGridWidth = getResources().getInteger(R.integer.home_grid_width_dp);
+        final boolean compactGrid = personalGridWidth > 0;
+        if (compactGrid) {
+            FrameLayout.LayoutParams gridParams = (FrameLayout.LayoutParams) grid.getLayoutParams();
+            gridParams.width = Math.min(Math.round(personalGridWidth * density),
+                    getResources().getDisplayMetrics().widthPixels - Math.round(96 * density));
+            gridParams.gravity = Gravity.CENTER_HORIZONTAL;
+            grid.setLayoutParams(gridParams);
+        }
         rtlAppGrid = getResources().getBoolean(R.bool.rtl_app_grid);
         // Mirror only the app grid; the header and other locales keep their own layouts.
         // single_row: one span laid out sideways, so the same adapter, glass and dock band serve a scrolling row.
@@ -563,10 +583,12 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
                 // A row already fully on screen stays put, even inside the bottom padding (the last row
                 // rows_below_dock leaves visible ends there; nudging it up was the bug). A row that has to scroll
                 // in still stops at the padding line, clear of the screen edge, as before.
-                int limitBottom = getHeight() - getPaddingBottom();
+                int visibleBottom = compactGrid && parent.getClipBounds() != null
+                        ? parent.getClipBounds().bottom : getHeight();
+                int limitBottom = Math.min(visibleBottom, getHeight() - getPaddingBottom());
                 int dy;
                 if (top < 0) dy = top;
-                else if (bottom <= getHeight()) dy = 0;
+                else if (bottom <= visibleBottom) dy = 0;
                 else dy = Math.min(top, bottom - limitBottom);
                 if (dy == 0) return false;
                 if (immediate || reducedMotion || !animations) parent.scrollBy(0, dy);
@@ -611,11 +633,19 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
         int rowsBelowDock = cfg.rowsBelowDock;
         grid.addOnLayoutChangeListener((v, l, t, r, b, ol, ot, or, ob) -> {
             int h = b - t;
+            if (compactGrid) {
+                // Keep the next row completely below the visible dock until Down scrolls it in.
+                int visibleBottom = Math.max(0, h - Math.round(AppAdapter.BOTTOM_ROOM_DP * density));
+                grid.setClipBounds(new Rect(0, 0, r - l, visibleBottom));
+            }
             // Item height follows the tile size, which follows the columns and the rows that must fit (AppAdapter.tileWidthPx).
             int inner = (r - l) - grid.getPaddingLeft() - grid.getPaddingRight();
             int tileW = AppAdapter.tileWidthPx(inner, h, COLUMNS, rowsBelowDock, cfg.dockTitle, cfg.dockRow, density);
-            int itemH = AppAdapter.itemHeightPx(AppAdapter.tileHeightPx(tileW), density);
-            int dockRow = itemH + (int) (AppAdapter.DOCK_EXTRA_DP * density);   // item height plus DockDecoration offsets
+            boolean compactTiles = getResources().getBoolean(R.bool.compact_home_tiles);
+            int itemH = compactTiles ? AppAdapter.compactItemHeightPx(inner, COLUMNS, tileW, density)
+                    : AppAdapter.itemHeightPx(AppAdapter.tileHeightPx(tileW), density);
+            int dockRow = itemH + (compactTiles ? AppAdapter.compactTileGapPx(inner, COLUMNS, tileW, density) / 2
+                    : (int) (AppAdapter.DOCK_EXTRA_DP * density));
             int gridRows = itemH * rowsBelowDock;
             // Keep the hero below the header when the library is enabled on a short screen,
             // even when the theme requests an extra visible row below the dock.
@@ -652,6 +682,7 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
             // Cold start or column count > 4: the first focus can run before the grid has its final width or
             // padding, leaving the glass at the XML design size until a key is pressed.
             grid.post(this::refitGlass);
+            grid.post(this::updateDockDownHint);
         });
 
         // Keep the glass glued to its tile while the grid scrolls.
@@ -707,6 +738,13 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
         }
 
         btnInputs = findViewById(R.id.btnInputs);
+        View btnMusic = findViewById(R.id.btnMusic);
+        btnMusic.setVisibility(SpotifyPlayback.isAvailable(this) ? View.VISIBLE : View.GONE);
+        btnMusic.setOnClickListener(v -> SpotifyPlayback.play(this));
+        btnMusic.setOnLongClickListener(v -> {
+            SpotifyPlayback.configure(this);
+            return true;
+        });
         View btnSettings = findViewById(R.id.btnSettings);
         btnInputs.setOnClickListener(v -> showInputs());
         btnWifi.setOnClickListener(v -> openNetworkPill());
@@ -732,6 +770,10 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
         showInputsPill = cfg.showInputsPill;
         showInputsMenuRow = cfg.showInputsPill;
         btnLibraryTop = findViewById(R.id.btnLibraryTop);
+        if (getResources().getStringArray(R.array.more_apps).length > 0) {
+            ((TextView) btnLibraryTop).setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.ic_more, 0, 0, 0);
+            btnLibraryTop.setContentDescription(getString(R.string.more_apps_title));
+        }
         btnLibraryTop.setOnClickListener(v -> {
             onLibraryRequested();
             libraryFromTopBar = true;   // closing it goes back to this button, not to the pill after the last row
@@ -789,13 +831,15 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
                 focusTile(singleRow ? lastFocused : lastFocused % COLUMNS);
                 return true;
             }
-            int firstButton = btnInputs.getVisibility() == View.VISIBLE ? R.id.btnInputs : firstTopButton().getId();
+            int firstButton = btnMusic.getVisibility() == View.VISIBLE ? R.id.btnMusic
+                    : btnInputs.getVisibility() == View.VISIBLE ? R.id.btnInputs : firstTopButton().getId();
             int leftButton = rtlMenuBar ? R.id.btnSettings : firstButton;
             int rightButton = rtlMenuBar ? firstButton : R.id.btnSettings;
             if (keyCode == KeyEvent.KEYCODE_DPAD_LEFT) return v.getId() == leftButton;
             return keyCode == KeyEvent.KEYCODE_DPAD_RIGHT && v.getId() == rightButton;
         };
         btnInputs.setOnKeyListener(pillKeys);
+        btnMusic.setOnKeyListener(pillKeys);
         btnWifi.setOnKeyListener(pillKeys);
         btnVpn.setOnKeyListener(pillKeys);
         btnSettings.setOnKeyListener(pillKeys);
@@ -803,7 +847,7 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
         btnLibraryTop.setOnKeyListener(pillKeys);
         for (View button : topAppButtons) button.setOnKeyListener(pillKeys);
         if (advancedEffects) {
-            List<View> pills = new ArrayList<>(Arrays.asList(btnInputs, btnWifi, btnVpn, btnReorder, btnLibraryTop, btnSettings));
+            List<View> pills = new ArrayList<>(Arrays.asList(btnMusic, btnInputs, btnWifi, btnVpn, btnReorder, btnLibraryTop, btnSettings));
             pills.addAll(topAppButtons);
             for (View button : pills) {
                 button.setOnFocusChangeListener((view, focused) -> view.animate()
@@ -812,6 +856,11 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
             }
         }
         if (festive) applyFestiveSkin((TextView) btnInputs, (TextView) btnSettings);
+        if (getResources().getBoolean(R.bool.text_only_buttons)) {
+            makeTextOnly((TextView) btnInputs, R.string.inputs);
+            makeTextOnly((TextView) btnSettings,
+                    launcherSettingsButton && !topMenu ? R.string.launcher_settings : R.string.settings);
+        }
 
         // Hide the glass when focus leaves the tiles.
         getWindow().getDecorView().getViewTreeObserver().addOnGlobalFocusChangeListener((oldF, newF) -> {
@@ -1332,8 +1381,12 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
             endReorder();
             return;
         }
+        String selectedKey = lastFocusedKey;
+        int selectedPosition = lastFocused;
         if (!beginReorder()) return;
-        focusTile(Math.max(0, Math.min(lastFocused, adapter.movableCount() - 1)));
+        int restoredPosition = adapter.positionOf(selectedKey);
+        focusTile(Math.max(0, Math.min(restoredPosition >= 0 ? restoredPosition : selectedPosition,
+                adapter.movableCount() - 1)));
         Toast.makeText(this, R.string.reorder_hint, Toast.LENGTH_LONG).show();
     }
 
@@ -1486,6 +1539,7 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
     /** Ends the mode and saves the order if it changed since the mode started. */
     private void endReorder() {
         if (!reordering) return;
+        String selectedKey = lastFocusedKey;
         dockEditing = false;
         dockEditSlot = -1;
         dockEditAppKey = null;
@@ -1514,6 +1568,8 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
             }
         }
         if (fillDockLeavesSlots) reloadTiles();   // the empty dock slots left out while reordering come back
+        int restoredPosition = adapter.positionOf(selectedKey);
+        if (restoredPosition >= 0) refocusAfterLayout(restoredPosition);
     }
 
     /**
@@ -1600,7 +1656,8 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
         libraryFocusPending = false;
         libraryFromTopBar = false;
         libraryFromVpnPill = false;
-        appLibrary = new AppLibraryDialog(this, animations, reducedMotion, appLibrarySelection, libraryOkOpens, adapter::containsPackage, () -> reloadApps(false), () -> {
+        appLibrary = new AppLibraryDialog(this, animations, reducedMotion, appLibrarySelection, libraryOkOpens,
+                wallpaperPlayer.sourceCredit(), adapter::containsPackage, () -> reloadApps(false), () -> {
             appLibrary = null;
             openPopup = null;
             if (libraryFromTopBar) {
@@ -1626,6 +1683,7 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
 
     @Override
     public void onTileFocused(int position, View card) {
+        updateDockDownHint();
         lastFocused = position;
         lastFocusedKey = adapter.keyAt(position);
         // Focus restored before the first layout (cold start): the tile has no size yet, and the glass
@@ -1687,7 +1745,8 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
         if (dockRow && (singleRow || position < COLUMNS)) {
             // Dock: park it at the bottom of the screen and show the top shelf for this app. In a single row
             // every tile is in the dock's row, which never scrolls vertically.
-            int decoratedTop = item.getTop() - (int) (6 * density);
+            int decoratedTop = item.getTop() - (getResources().getBoolean(R.bool.compact_home_tiles)
+                    ? 0 : (int) (6 * density));
             int dy = decoratedTop - grid.getPaddingTop();
             // A 1px mismatch used to start a scroll on every dock move. Only scroll when the row is
             // actually off; reduced motion does it in one jump so it does not fight the highlight.
@@ -1720,6 +1779,29 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
         int h = (int) (card.getHeight() * scale + 2 * pad);
         if (!glassShown || card.getWidth() != glassCardW || glass.getWidth() != w || glass.getHeight() != h) {
             onTileFocused(pos, card);
+        }
+    }
+
+    /** A small visual cue below the collapsed dock, hidden while browsing the expanded rows. */
+    private void updateDockDownHint() {
+        View hint = findViewById(R.id.dockDownHint);
+        if (hint == null || grid == null || adapter == null) return;
+        int focused = focusedTilePosition();
+        boolean visible = getResources().getBoolean(R.bool.show_dock_down_hint)
+                && dockRow && !singleRow && adapter.appCount() > COLUMNS
+                && (focused < 0 || focused < COLUMNS);
+        hint.setVisibility(visible ? View.VISIBLE : View.GONE);
+        if (visible) {
+            if (hint.getWidth() == 0) {
+                hint.postOnAnimation(this::updateDockDownHint);
+                return;
+            }
+            Rect bounds = new Rect(0, 0, grid.getWidth(), grid.getHeight());
+            Rect clip = grid.getClipBounds();
+            if (clip != null) bounds.set(clip);
+            root.offsetDescendantRectToMyCoords(grid, bounds);
+            hint.setX(bounds.exactCenterX() - hint.getWidth() / 2f);
+            hint.setY(bounds.bottom + 8 * density);
         }
     }
 
@@ -2381,6 +2463,12 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
     }
 
     private void focusLibrary() {
+        int morePosition = adapter.morePosition();
+        if (morePosition >= 0) {
+            libraryFocusPending = false;
+            focusTile(morePosition);
+            return;
+        }
         cancelPendingFocusScroll();
         int position = adapter.appCount();
         if (!adapter.isLibraryAt(position)) return;
@@ -2736,6 +2824,19 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
         pill.getLayoutParams().width = Math.round(42 * density);
     }
 
+    private void makeTextOnly(TextView pill, int label) {
+        pill.setText(label);
+        pill.setContentDescription(null);
+        pill.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, 0, 0);
+        pill.setCompoundDrawablePadding(0);
+        pill.setMaxWidth(Integer.MAX_VALUE);
+        int pad = Math.round(18 * density);
+        pill.setPaddingRelative(pad, 0, pad, 0);
+        ViewGroup.LayoutParams params = pill.getLayoutParams();
+        params.width = ViewGroup.LayoutParams.WRAP_CONTENT;
+        pill.setLayoutParams(params);
+    }
+
     // ---- festive skin ------------------------------------------------------------------------------
 
     /**
@@ -3025,12 +3126,6 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
         boolean tunerIsAnalog = false;
         if (tim != null) {
             List<TvInputInfo> inputs = new ArrayList<>(tim.getTvInputList());
-            // HDMI ports first in port order, then AV and the rest.
-            Collections.sort(inputs, (a, b) -> {
-                boolean ha = a.getType() == TvInputInfo.TYPE_HDMI, hb = b.getType() == TvInputInfo.TYPE_HDMI;
-                if (ha != hb) return ha ? -1 : 1;
-                return String.valueOf(a.loadLabel(this)).compareToIgnoreCase(String.valueOf(b.loadLabel(this)));
-            });
             // An HDMI-CEC device (an Apple TV, a soundbar) gets an input of its own whose parent is the
             // port it sits on, so the port and the device would each get a row (Vestel MT7332: "HDMI 1"
             // and "HDMI Apple TV"). The device takes its port's row instead, and a bare port is listed
@@ -3056,6 +3151,33 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
                 if (tim.getInputState(info.getId()) == TvInputManager.INPUT_STATE_CONNECTED) hdmiConnected++;
             }
             boolean hdmiStateBogus = hdmiPorts > 1 && hdmiConnected == hdmiPorts;
+            boolean activeFirst = getResources().getBoolean(R.bool.inputs_active_first) && !hdmiStateBogus;
+            Set<String> connectedHdmi = new HashSet<>();
+            if (activeFirst) {
+                // Snapshot before sorting: state can change, and comparator results must stay consistent.
+                for (TvInputInfo info : inputs) {
+                    if (info.getType() == TvInputInfo.TYPE_HDMI
+                            && tim.getInputState(info.getId()) == TvInputManager.INPUT_STATE_CONNECTED)
+                        connectedHdmi.add(info.getId());
+                }
+                // A connected CEC child also makes its port active when the port reports standby.
+                // cecDevices already excludes hidden/non-passthrough children.
+                for (Map.Entry<String, List<TvInputInfo>> entry : cecDevices.entrySet()) {
+                    for (TvInputInfo device : entry.getValue()) {
+                        if (tim.getInputState(device.getId()) == TvInputManager.INPUT_STATE_CONNECTED) {
+                            connectedHdmi.add(entry.getKey());
+                            connectedHdmi.add(device.getId());
+                        }
+                    }
+                }
+            }
+            java.util.Comparator<TvInputInfo> inputOrder = (a, b) -> InputOrder.compare(
+                    a.getType() == TvInputInfo.TYPE_HDMI, connectedHdmi.contains(a.getId()),
+                    String.valueOf(a.loadLabel(this)),
+                    b.getType() == TvInputInfo.TYPE_HDMI, connectedHdmi.contains(b.getId()),
+                    String.valueOf(b.loadLabel(this)), activeFirst);
+            Collections.sort(inputs, inputOrder);
+            for (List<TvInputInfo> devices : cecDevices.values()) Collections.sort(devices, inputOrder);
             for (TvInputInfo info : inputs) {
                 if (info.getType() == TvInputInfo.TYPE_TUNER
                         && (info.getServiceInfo().applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) != 0

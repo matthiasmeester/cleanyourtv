@@ -64,7 +64,7 @@ public class AppAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     }
 
     static final class Entry {
-        static final int APP = 0, HOME_SETTINGS = 1, CARD = 2, EMPTY = 3;
+        static final int APP = 0, HOME_SETTINGS = 1, CARD = 2, EMPTY = 3, MORE = 4;
 
         final int kind;
         final String label;
@@ -125,6 +125,17 @@ public class AppAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         return tileHeightPx + Math.round((dockRow ? ITEM_EXTRA_DP : COMPACT_ITEM_EXTRA_DP) * density);
     }
 
+    /** Label-free rows use the same gap vertically as the space between two tile edges. */
+    static int compactItemHeightPx(int innerWidthPx, int columns, int tileWidthPx, float density) {
+        return tileHeightPx(tileWidthPx) + compactTileGapPx(innerWidthPx, columns, tileWidthPx, density);
+    }
+
+    static int compactTileGapPx(int innerWidthPx, int columns, int tileWidthPx, float density) {
+        int gap = innerWidthPx > 0 && columns > 0 ? Math.round(innerWidthPx / (float) columns - tileWidthPx) : 0;
+        // Six dp above and below keeps the focus outline clear of the item edges on very narrow grids.
+        return Math.max(Math.round(12 * density), gap);
+    }
+
     /**
      * dock_row false: 4dp padding above and below, a 4dp gap and a 20dp name label, and 16dp kept under the last
      * row. The plain grid fits more rows on the screen, and with item_app.xml's roomier spacing the tiles came
@@ -182,6 +193,8 @@ public class AppAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private final int dockSize;
     /** config dock_row: false makes the dock apps the first tiles of one plain grid (names shown, no empty slots). */
     private final boolean dockRow;
+    /** Personal Home layout: no names below tiles, with matching horizontal and vertical gaps. */
+    private final boolean compactHome;
     /** config single_row: tiles sit in one sideways row, each as wide as a grid column would be. */
     private final boolean singleRow;
     /** config always_show_names: the alpha of an unfocused tile's name (0 hides it). */
@@ -201,6 +214,8 @@ public class AppAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private final boolean animations;
     private final boolean advancedEffects;
     private final boolean showLibrary;
+    /** Utilities open from an app-shaped tile after the dock instead of the library footer. */
+    private final boolean showMore;
     /** Packages with a leanback entry at the last reload(): their tiles launch with the leanback category. */
     private Set<String> leanbackPackages = new HashSet<>();
     private final boolean showHomeSettings;
@@ -222,6 +237,7 @@ public class AppAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     AppAdapter(Context ctx, TileListener listener, int dockSize, Config cfg) {
         this.ctx = ctx;
+        this.compactHome = ctx.getResources().getBoolean(R.bool.compact_home_tiles);
         this.listener = listener;
         this.dockSize = dockSize;
         this.favourites = cfg.dockApps;
@@ -231,7 +247,8 @@ public class AppAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         this.animations = cfg.animations;
         this.advancedEffects = cfg.animations && cfg.advancedEffects;
         this.showHomeSettings = cfg.showHomeSettingsShortcut;
-        this.showLibrary = LibraryApps.showPill(cfg.appLibrary, cfg.libraryButton, cfg.showLibraryPill);
+        this.showMore = ctx.getResources().getStringArray(R.array.more_apps).length > 0;
+        this.showLibrary = !showMore && LibraryApps.showPill(cfg.appLibrary, cfg.libraryButton, cfg.showLibraryPill);
         this.reducedMotion = cfg.reducedMotion;
         this.focusOvershoot = cfg.focusOvershoot;
         this.rowsBelowDock = cfg.rowsBelowDock;
@@ -333,14 +350,26 @@ public class AppAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         }
         docked = 0;
         while (docked < fresh.size() && isDocked(fresh.get(docked))) docked++;
-        emptySlots = dockRow && !reordering ? DockSlots.empty(docked, dockSize, fresh.size(), fillDock) : 0;
+        emptySlots = dockRow && !reordering
+                ? DockSlots.empty(docked, dockSize, fresh.size() + (showMore ? 1 : 0), fillDock) : 0;
         for (int i = 0; i < emptySlots; i++) {
             fresh.add(docked + i, new Entry(Entry.EMPTY, "", new ComponentName(ctx, "empty-dock-slot-" + i),
                     null, null, null, 0));
         }
+        if (showMore && !reordering) fresh.add(moreIndex(fresh.size()), moreEntry());
         items.clear();
         items.addAll(fresh);
         notifyDataSetChanged();
+    }
+
+    private int moreIndex(int count) {
+        return Math.min(dockRow ? dockSize : docked, count);
+    }
+
+    private Entry moreEntry() {
+        return new Entry(Entry.MORE, ctx.getString(R.string.more_apps_title),
+                new ComponentName(ctx.getPackageName(), "more-apps"),
+                ctx.getDrawable(R.drawable.banner_more), null, null, 0xFF9CAEC5);
     }
 
     /** icon_tiles: the app's icon centred on a dark banner-shaped tile, for apps whose own banner crops badly. */
@@ -430,6 +459,12 @@ public class AppAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             v.setPadding(v.getPaddingLeft(), pad, v.getPaddingRight(), pad);
         }
         name.setLayoutParams(nameLp);
+        if (compactHome) {
+            name.setVisibility(View.GONE);
+            int gap = compactTileGapPx(inner, dockSize, w, density);
+            int top = gap / 2;
+            v.setPadding(v.getPaddingLeft(), top, v.getPaddingRight(), gap - top);
+        }
         // A sideways row would stretch a match_parent item across the whole screen: give it a grid column's width.
         if (singleRow) v.getLayoutParams().width = inner / dockSize;
         if (uniformTiles) {
@@ -462,7 +497,8 @@ public class AppAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             // A free dock slot keeps its place in the row and the band, but shows nothing and takes no focus.
             h.card.setVisibility(View.INVISIBLE);
             h.card.setFocusable(false);
-            h.name.setVisibility(View.INVISIBLE);
+            h.name.setVisibility(compactHome ? View.GONE : View.INVISIBLE);
+            h.card.setContentDescription(null);
             h.banner.setImageDrawable(null);
             h.icon.setImageDrawable(null);
             h.card.setOnClickListener(null);
@@ -472,10 +508,11 @@ public class AppAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         h.card.setVisibility(View.VISIBLE);
         h.card.setFocusable(true);
         h.name.setText(e.name);
+        h.card.setContentDescription(compactHome ? e.name : null);
         // The dock has no labels, unless always_show_names asks for them (DockDecoration then makes room in the band).
         // In a single row every tile is the dock's kind: the big title above names it.
         boolean dockKind = dockRow && (singleRow || position < dockSize);
-        h.name.setVisibility(dockKind && restNameAlpha == 0f ? View.INVISIBLE : View.VISIBLE);
+        h.name.setVisibility(compactHome ? View.GONE : dockKind && restNameAlpha == 0f ? View.INVISIBLE : View.VISIBLE);
         boolean focused = h.card.isFocused();   // a rebind after reload() can hit the focused tile
         h.name.setAlpha(focused ? 1f : restNameAlpha);
         h.card.setScaleX(focused && animations ? focusScale() : 1f);
@@ -506,6 +543,7 @@ public class AppAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         }
         h.card.setOnClickListener(v -> launch(e));
         h.card.setOnLongClickListener(v -> {
+            if (e.kind == Entry.MORE) return true;
             if (tileMenu) {
                 int pos = h.getBindingAdapterPosition();
                 if (pos != RecyclerView.NO_POSITION) listener.onTileLongPress(pos, v);
@@ -523,6 +561,10 @@ public class AppAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     /** Opens the tile's activity by explicit component, with no extras: a card can name nothing else. */
     private void launch(Entry e) {
+        if (e.kind == Entry.MORE) {
+            listener.onLibraryRequested();
+            return;
+        }
         if (e.kind == Entry.HOME_SETTINGS) {
             ctx.startActivity(new Intent(ctx, HomeSettingsActivity.class)
                     .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
@@ -557,14 +599,20 @@ public class AppAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         return items.size() + (showLibrary ? 1 : 0);
     }
 
+    /** Tile positions, including the synthetic More tile, for layout and D-pad navigation. */
     int appCount() { return items.size(); }
+
+    int morePosition() {
+        for (int i = 0; i < items.size(); i++) if (items.get(i).kind == Entry.MORE) return i;
+        return -1;
+    }
 
     boolean isLibraryAt(int position) { return showLibrary && position == items.size(); }
 
     @Override public int getItemViewType(int position) { return isLibraryAt(position) ? 1 : 0; }
 
     boolean containsPackage(String pkg) {
-        for (Entry entry : items) if (entry.pkg.equals(pkg)) return true;
+        for (Entry entry : items) if (entry.kind != Entry.MORE && entry.pkg.equals(pkg)) return true;
         return false;
     }
 
@@ -584,32 +632,44 @@ public class AppAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
      * the owner moved into the dock stays there (#499); else a dock_apps entry.
      */
     private boolean isDocked(Entry e) {
+        if (e.kind == Entry.MORE) return false;
         if (savedDocked < 0) return favourites.contains(e.pkg);
         Integer rank = savedRanks.get(e.component.flattenToShortString());
         return rank != null && rank < savedDocked;
     }
 
-    /** Reorder mode on or off; takes effect at the next reload() (empty dock slots are left out while on). */
+    /** Reorder mode omits More immediately; empty dock slots are left out at the next reload(). */
     void setReordering(boolean on) {
+        if (reordering == on) return;
         reordering = on;
+        int more = morePosition();
+        if (on && more >= 0) {
+            items.remove(more);
+            notifyItemRemoved(more);
+        } else if (!on && showMore && more < 0) {
+            int position = moreIndex(items.size());
+            items.add(position, moreEntry());
+            notifyItemInserted(position);
+        }
     }
 
     boolean hasEmptySlots() {
         return emptySlots > 0;
     }
 
-    /** Tiles that can be moved: everything but the "Default home" tile, which always stays last. */
+    /** Upper position bound for movable tiles. More is absent during actual reordering. */
     int movableCount() {
         int n = items.size();
-        return n > 0 && items.get(n - 1).kind == Entry.HOME_SETTINGS ? n - 1 : n;
+        while (n > 0 && (items.get(n - 1).kind == Entry.HOME_SETTINGS || items.get(n - 1).kind == Entry.MORE)) n--;
+        return n;
     }
 
     /** Keys of the movable tiles in their current order, for Order (empty dock slots are not tiles). */
     List<String> movableKeys() {
         List<String> keys = new ArrayList<>();
-        for (int i = 0; i < movableCount(); i++) {
-            Entry e = items.get(i);
-            if (e.kind != Entry.EMPTY) keys.add(e.component.flattenToShortString());
+        for (Entry e : items) {
+            if (e.kind != Entry.EMPTY && e.kind != Entry.MORE && e.kind != Entry.HOME_SETTINGS)
+                keys.add(e.component.flattenToShortString());
         }
         return keys;
     }
@@ -617,6 +677,7 @@ public class AppAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     /** Moves one tile; the others shift by one. Stable ids keep the moved tile's view (and its focus). */
     void move(int from, int to) {
         if (from == to || from < 0 || to < 0 || from >= movableCount() || to >= movableCount()) return;
+        if (items.get(from).kind == Entry.MORE || items.get(to).kind == Entry.MORE) return;
         items.add(to, items.remove(from));
         notifyItemMoved(from, to);
         // The dock row hides names by position: rebind the tiles whose side of the dock edge changed.

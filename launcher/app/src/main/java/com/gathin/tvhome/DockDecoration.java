@@ -19,6 +19,7 @@ public class DockDecoration extends RecyclerView.ItemDecoration {
     private final Paint band = new Paint(Paint.ANTI_ALIAS_FLAG);
     private final Paint edge = new Paint(Paint.ANTI_ALIAS_FLAG);
     private final RectF rect = new RectF();
+    private final Rect visibleBounds = new Rect();
 
     /** Extra band below the tiles for their names (always_show_names), in px. */
     private final float namesRoom;
@@ -78,6 +79,7 @@ public class DockDecoration extends RecyclerView.ItemDecoration {
     @Override
     public void getItemOffsets(@NonNull Rect outRect, @NonNull View view, @NonNull RecyclerView parent,
                                @NonNull RecyclerView.State state) {
+        if (parent.getResources().getBoolean(R.bool.compact_home_tiles)) return;
         int pos = parent.getChildAdapterPosition(view);
         if (pos >= 0 && (singleRow || pos < dockSize)) {
             outRect.top = (int) (6 * density);
@@ -88,12 +90,16 @@ public class DockDecoration extends RecyclerView.ItemDecoration {
     @Override
     public void onDraw(@NonNull Canvas c, @NonNull RecyclerView parent, @NonNull RecyclerView.State state) {
         if (!bandVisible) return;
+        boolean allRows = !singleRow && parent.getResources().getBoolean(R.bool.glass_all_rows);
+        if (allRows && !parent.getClipBounds(visibleBounds)) {
+            visibleBounds.set(0, 0, parent.getWidth(), parent.getHeight());
+        }
         boolean any = false;
         int cardWidth = 0;
         for (int i = 0; i < parent.getChildCount(); i++) {
             View child = parent.getChildAt(i);
             int pos = parent.getChildAdapterPosition(child);
-            if (pos < 0 || (!bandAll && pos >= dockSize)) continue;
+            if (pos < 0 || (!bandAll && !allRows && pos >= dockSize)) continue;
             RecyclerView.ViewHolder vh = parent.getChildViewHolder(child);
             View card = vh instanceof AppAdapter.Holder ? ((AppAdapter.Holder) vh).card : child.findViewById(R.id.card);
             if (card == null) continue;
@@ -101,6 +107,10 @@ public class DockDecoration extends RecyclerView.ItemDecoration {
             float t = child.getTop() + card.getTop() + child.getTranslationY();
             float r = l + card.getWidth();
             float b = t + card.getHeight();
+            // RecyclerView can attach the next rows ahead of scrolling. Keep those outside the visible
+            // app window out of the enclosing glass, so the collapsed dock retains its rounded bottom.
+            if (allRows && (r <= visibleBounds.left || l >= visibleBounds.right
+                    || b <= visibleBounds.top || t >= visibleBounds.bottom)) continue;
             cardWidth = card.getWidth();
             if (!any) {
                 rect.set(l, t, r, b);
@@ -123,7 +133,9 @@ public class DockDecoration extends RecyclerView.ItemDecoration {
             // The same padding on all four sides, so the band's corners are concentric with the tiles' everywhere.
             int inner = parent.getWidth() - parent.getPaddingLeft() - parent.getPaddingRight();
             // A single row's tiles can run off the screen, so only its top limits the padding; its ends are clamped below.
-            float room = (singleRow ? rect.top : Math.min(rect.top, Math.min(rect.left, parent.getWidth() - rect.right))) - density;
+            float room = (singleRow ? rect.top : allRows
+                    ? Math.min(rect.left - visibleBounds.left, visibleBounds.right - rect.right)
+                    : Math.min(rect.top, Math.min(rect.left, parent.getWidth() - rect.right))) - density;
             float even = evenPaddingPx(inner, dockSize, cardWidth, room);
             rect.inset(-even, -even);
             radius = radiusPx(radius, even);
@@ -138,7 +150,16 @@ public class DockDecoration extends RecyclerView.ItemDecoration {
             rect.left = Math.max(rect.left, density);
             rect.right = Math.min(rect.right, parent.getWidth() - density);
         }
-        rect.bottom += namesRoom;
+        if (!parent.getResources().getBoolean(R.bool.compact_home_tiles)) rect.bottom += namesRoom;
+        if (allRows) {
+            // Rows may enter at either edge while scrolling. Keep the enclosing edge itself within the
+            // app window, including a compact launcher's smaller clip area above the screen's bottom.
+            rect.left = Math.max(rect.left, visibleBounds.left + density);
+            rect.top = Math.max(rect.top, visibleBounds.top + density);
+            rect.right = Math.min(rect.right, visibleBounds.right - density);
+            rect.bottom = Math.min(rect.bottom, visibleBounds.bottom - density);
+            if (rect.width() <= 0 || rect.height() <= 0) return;
+        }
         if (lightGlass && (rect.top != shaderTop || rect.bottom != shaderBottom)) {
             // The pills' glass (pill_bg: white, 18% fading to 8%), a little fainter over this much larger area.
             band.setShader(new LinearGradient(0, rect.top, 0, rect.bottom, 0x24FFFFFF, 0x0DFFFFFF,

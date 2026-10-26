@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- This TV's utilities, opened from the three-dot More tile instead of Home tiles.
+         An empty list retains the standard app library. These are personal build settings. -->
+    <string-array name="more_apps" translatable="false">
+        <item>flar2.homebutton</item>
+        <item>com.esaba.downloader</item>
+        <item>com.arcelik.smartremotecompanion.grundig</item>
+        <item>com.arcelik.ChannelEditor</item>
+        <item>com.mediatek.wwtv.mediaplayer</item>
+    </string-array>
+    <string name="more_apps_title" translatable="false">More</string>
+    <string name="more_apps_back" translatable="false">Back</string>
+    <bool name="text_only_buttons">false</bool>
+    <integer name="home_grid_width_dp">480</integer>
+    <bool name="glass_all_rows">true</bool>
+    <bool name="compact_home_tiles">true</bool>
+    <bool name="compact_home_clock">true</bool>
+    <bool name="outline_app_focus">true</bool>
+    <bool name="show_dock_down_hint">true</bool>
+    <bool name="inputs_active_first">true</bool>
+    <string name="play_spotify" translatable="false">Play Spotify</string>
+</resources>
